@@ -4,41 +4,49 @@
     <meta charset="UTF-8">
     <title>Live Code Generator</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; background: #f0f2f5; }
+        body { font-family: sans-serif; padding: 20px; background: #f4f7f6; }
         .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; margin-top: 20px; }
-        h2 { color: #333; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        .code-box { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 5px; position: relative; margin-top: 20px; }
+        #copyBtn { margin-top: 10px; padding: 10px 20px; cursor: pointer; background: #27ae60; color: white; border: none; border-radius: 5px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>رجسٹریشن فارم</h2>
+    <h2>رجسٹریشن فارم بنائیں</h2>
     <input type="text" id="name" placeholder="اپنا نام لکھیں" oninput="updateCode()">
     <input type="email" id="email" placeholder="اپنی ای میل لکھیں" oninput="updateCode()">
     <input type="password" id="password" placeholder="پاس ورڈ لکھیں" oninput="updateCode()">
 
-    <h2>آٹو جنریٹڈ کوڈ:</h2>
-    <pre id="codeOutput">
-&lt;!-- یہاں کوڈ ظاہر ہوگا --&gt;
-    </pre>
+    <h3>نیچے آپ کی کوڈنگ تیار ہے:</h3>
+    <div class="code-box">
+        <pre id="codeOutput">&lt;form&gt;
+    &lt;input type="text" placeholder="نام"&gt;
+&lt;/form&gt;</pre>
+        <button id="copyBtn" onclick="copyCode()">کاپی کوڈ</button>
+    </div>
 </div>
 
 <script>
     function updateCode() {
-        const name = document.getElementById('name').value || "نام";
-        const email = document.getElementById('email').value || "ای میل";
-        const password = document.getElementById('password').value || "پاس ورڈ";
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
-        const code = `
-<form>
-    <label>نام: ${name}</label>
-    <label>ای میل: ${email}</label>
-    <input type="password" value="${password}">
+        const code = `<form>
+    <input type="text" value="${name}" placeholder="نام">
+    <input type="email" value="${email}" placeholder="ای میل">
+    <input type="password" value="${password}" placeholder="پاس ورڈ">
 </form>`;
         
         document.getElementById('codeOutput').innerText = code;
+    }
+
+    function copyCode() {
+        const codeText = document.getElementById('codeOutput').innerText;
+        navigator.clipboard.writeText(codeText);
+        alert("کوڈ کاپی ہو گیا!");
     }
 </script>
 
