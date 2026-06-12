@@ -2,31 +2,45 @@
 <html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Code Future Academy</title>
+    <title>Live Code Generator</title>
     <style>
-        /* CSS: ڈیزائن اور اینیمیشن */
-        body { font-family: Arial, sans-serif; text-align: center; background: #f4f4f9; padding: 50px; }
-        h1 { color: #2c3e50; animation: fadeIn 2s; }
-        .btn { padding: 15px 30px; font-size: 18px; cursor: pointer; background: #3498db; color: white; border: none; border-radius: 5px; transition: 0.3s; }
-        .btn:hover { background: #2980b9; transform: scale(1.1); }
-        
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        body { font-family: sans-serif; padding: 20px; background: #f0f2f5; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; margin-top: 20px; }
+        h2 { color: #333; }
     </style>
 </head>
 <body>
 
-    <h1>Code Future Academy</h1>
-    <p>آپ کا ڈیجیٹل مستقبل یہاں سے شروع ہوتا ہے۔</p>
-    
-    <br><br>
-    <button class="btn" onclick="showMessage()">کورس دیکھیں</button>
+<div class="container">
+    <h2>رجسٹریشن فارم</h2>
+    <input type="text" id="name" placeholder="اپنا نام لکھیں" oninput="updateCode()">
+    <input type="email" id="email" placeholder="اپنی ای میل لکھیں" oninput="updateCode()">
+    <input type="password" id="password" placeholder="پاس ورڈ لکھیں" oninput="updateCode()">
 
-    <script>
-        // JavaScript: بٹن کا فنکشن
-        function showMessage() {
-            alert("کورسز کا صفحہ جلد آرہا ہے، تیار رہیں!");
-        }
-    </script>
+    <h2>آٹو جنریٹڈ کوڈ:</h2>
+    <pre id="codeOutput">
+&lt;!-- یہاں کوڈ ظاہر ہوگا --&gt;
+    </pre>
+</div>
+
+<script>
+    function updateCode() {
+        const name = document.getElementById('name').value || "نام";
+        const email = document.getElementById('email').value || "ای میل";
+        const password = document.getElementById('password').value || "پاس ورڈ";
+
+        const code = `
+<form>
+    <label>نام: ${name}</label>
+    <label>ای میل: ${email}</label>
+    <input type="password" value="${password}">
+</form>`;
+        
+        document.getElementById('codeOutput').innerText = code;
+    }
+</script>
 
 </body>
 </html>
