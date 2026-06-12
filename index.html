@@ -2,43 +2,56 @@
 <html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Live Code Generator</title>
+    <title>Ultimate Form Builder</title>
     <style>
         body { font-family: sans-serif; padding: 20px; background: #f4f7f6; }
         .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        .code-box { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 5px; position: relative; margin-top: 20px; }
-        #copyBtn { margin-top: 10px; padding: 10px 20px; cursor: pointer; background: #27ae60; color: white; border: none; border-radius: 5px; }
+        .input-row { margin-bottom: 15px; }
+        input { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        .code-box { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 5px; margin-top: 20px; }
+        button { margin-top: 10px; padding: 10px 20px; background: #27ae60; color: white; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>رجسٹریشن فارم بنائیں</h2>
-    <input type="text" id="name" placeholder="اپنا نام لکھیں" oninput="updateCode()">
-    <input type="email" id="email" placeholder="اپنی ای میل لکھیں" oninput="updateCode()">
-    <input type="password" id="password" placeholder="پاس ورڈ لکھیں" oninput="updateCode()">
+    <h2>فارم کسٹمائزر</h2>
+    
+    <div class="input-row">
+        <label>فارم کا عنوان:</label>
+        <input type="text" id="formTitle" placeholder="مثلاً: رجسٹریشن فارم" oninput="updateCode()">
+    </div>
+    <div class="input-row">
+        <label>پہلی فیلڈ کا نام:</label>
+        <input type="text" id="label1" placeholder="مثلاً: اپنا نام" oninput="updateCode()">
+    </div>
+    <div class="input-row">
+        <label>دوسری فیلڈ کا نام:</label>
+        <input type="text" id="label2" placeholder="مثلاً: پاس ورڈ" oninput="updateCode()">
+    </div>
 
-    <h3>نیچے آپ کی کوڈنگ تیار ہے:</h3>
     <div class="code-box">
-        <pre id="codeOutput">&lt;form&gt;
-    &lt;input type="text" placeholder="نام"&gt;
-&lt;/form&gt;</pre>
-        <button id="copyBtn" onclick="copyCode()">کاپی کوڈ</button>
+        <pre id="codeOutput">
+&lt;h2&gt;عنوان&lt;/h2&gt;
+&lt;label&gt;فیلڈ 1&lt;/label&gt;
+&lt;input type="text"&gt;
+        </pre>
+        <button onclick="copyCode()">کاپی کوڈ</button>
     </div>
 </div>
 
 <script>
     function updateCode() {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const title = document.getElementById('formTitle').value || "فارم کا عنوان";
+        const l1 = document.getElementById('label1').value || "فیلڈ 1";
+        const l2 = document.getElementById('label2').value || "فیلڈ 2";
 
-        const code = `<form>
-    <input type="text" value="${name}" placeholder="نام">
-    <input type="email" value="${email}" placeholder="ای میل">
-    <input type="password" value="${password}" placeholder="پاس ورڈ">
-</form>`;
+        const code = `<h2>${title}</h2>
+<label>${l1}</label>
+<input type="text">
+<br>
+<label>${l2}</label>
+<input type="password">`;
         
         document.getElementById('codeOutput').innerText = code;
     }
