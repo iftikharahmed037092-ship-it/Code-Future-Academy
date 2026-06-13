@@ -1,67 +1,249 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ultimate Form Builder</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; background: #f4f7f6; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .input-row { margin-bottom: 15px; }
-        input { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; }
-        .code-box { background: #272822; color: #f8f8f2; padding: 20px; border-radius: 5px; margin-top: 20px; }
-        button { margin-top: 10px; padding: 10px 20px; background: #27ae60; color: white; border: none; cursor: pointer; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebCraft AI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<div class="container">
-    <h2>فارم کسٹمائزر</h2>
-    
-    <div class="input-row">
-        <label>فارم کا عنوان:</label>
-        <input type="text" id="formTitle" placeholder="مثلاً: رجسٹریشن فارم" oninput="updateCode()">
-    </div>
-    <div class="input-row">
-        <label>پہلی فیلڈ کا نام:</label>
-        <input type="text" id="label1" placeholder="مثلاً: اپنا نام" oninput="updateCode()">
-    </div>
-    <div class="input-row">
-        <label>دوسری فیلڈ کا نام:</label>
-        <input type="text" id="label2" placeholder="مثلاً: پاس ورڈ" oninput="updateCode()">
-    </div>
+<div class="bg-animation"></div>
 
-    <div class="code-box">
-        <pre id="codeOutput">
-&lt;h2&gt;عنوان&lt;/h2&gt;
-&lt;label&gt;فیلڈ 1&lt;/label&gt;
-&lt;input type="text"&gt;
-        </pre>
-        <button onclick="copyCode()">کاپی کوڈ</button>
-    </div>
+<header class="navbar">
+
+<div class="logo">
+<span>W</span> WebCraft AI
 </div>
 
-<script>
-    function updateCode() {
-        const title = document.getElementById('formTitle').value || "فارم کا عنوان";
-        const l1 = document.getElementById('label1').value || "فیلڈ 1";
-        const l2 = document.getElementById('label2').value || "فیلڈ 2";
+<nav>
 
-        const code = `<h2>${title}</h2>
-<label>${l1}</label>
-<input type="text">
-<br>
-<label>${l2}</label>
-<input type="password">`;
-        
-        document.getElementById('codeOutput').innerText = code;
-    }
+<a href="#">Home</a>
+<a href="#">Templates</a>
+<a href="#">Features</a>
+<a href="#">Pricing</a>
+<a href="#">Support</a>
 
-    function copyCode() {
-        const codeText = document.getElementById('codeOutput').innerText;
-        navigator.clipboard.writeText(codeText);
-        alert("کوڈ کاپی ہو گیا!");
-    }
-</script>
+</nav>
+
+<div class="nav-buttons">
+
+<button class="login-btn">Login</button>
+<button class="start-btn">Get Started</button>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="badge">
+✨ Build. Customize. Export.
+</div>
+
+<h1>
+Design Beautiful Websites
+<span>Visually.</span>
+Get Clean Code.
+</h1>
+
+<p>
+Choose a template, customize every detail,
+and export the full HTML, CSS & JavaScript code.
+</p>
+
+<div class="hero-buttons">
+
+<button class="explore-btn">
+Explore Templates
+</button>
+
+<button class="demo-btn">
+Watch Demo
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="preview-window">
+
+<div class="preview-top">
+
+<button class="edit-btn">
+Edit Page
+</button>
+
+<button class="save-btn">
+Save Page
+</button>
+
+</div>
+
+<div class="preview-content">
+
+<div class="preview-navbar">
+
+<div class="brand">
+Brand.
+</div>
+
+<div class="preview-links">
+
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Contact</a>
+
+</div>
+
+</div>
+
+<div class="preview-body">
+
+<div class="preview-text">
+
+<h2>
+We Build Digital Experiences
+</h2>
+
+<p>
+Modern responsive websites
+for your business.
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+<div class="blob"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="feature-card">
+
+<h3>Visual Builder</h3>
+
+<p>
+Customize everything without limits.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Fully Customizable</h3>
+
+<p>
+Change colors, buttons and layouts.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Live Preview</h3>
+
+<p>
+See changes instantly.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Export Full Code</h3>
+
+<p>
+Download HTML CSS JS.
+</p>
+
+</div>
+
+</section>
+
+<section class="templates">
+
+<h2>Popular Templates</h2>
+
+<div class="template-grid">
+
+<div class="template-card">
+<div class="template-image"></div>
+<h3>Creative Agency</h3>
+</div>
+
+<div class="template-card">
+<div class="template-image"></div>
+<h3>Business Solution</h3>
+</div>
+
+<div class="template-card">
+<div class="template-image"></div>
+<h3>Personal Portfolio</h3>
+</div>
+
+<div class="template-card">
+<div class="template-image"></div>
+<h3>E-Commerce Store</h3>
+</div>
+
+<div class="template-card">
+<div class="template-image"></div>
+<h3>SaaS Landing</h3>
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>500+</h2>
+<p>Happy Users</p>
+</div>
+
+<div class="stat-box">
+<h2>50+</h2>
+<p>Templates</p>
+</div>
+
+<div class="stat-box">
+<h2>1 Click</h2>
+<p>Export</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+
+</section>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
