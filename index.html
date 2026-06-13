@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>WebCraft AI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -35,6 +33,7 @@ min-height:100vh;
 position:relative;
 }
 
+/* background effects */
 body::before{
 content:'';
 position:fixed;
@@ -42,10 +41,7 @@ width:1200px;
 height:1200px;
 left:-400px;
 top:-300px;
-background:radial-gradient(circle,
-rgba(143,79,255,.25),
-transparent 60%);
-pointer-events:none;
+background:radial-gradient(circle,rgba(143,79,255,.25),transparent 60%);
 z-index:-3;
 }
 
@@ -56,10 +52,7 @@ width:1000px;
 height:1000px;
 right:-300px;
 bottom:-300px;
-background:radial-gradient(circle,
-rgba(51,182,255,.20),
-transparent 60%);
-pointer-events:none;
+background:radial-gradient(circle,rgba(51,182,255,.20),transparent 60%);
 z-index:-3;
 }
 
@@ -99,27 +92,17 @@ animation-delay:2s;
 }
 
 @keyframes floatOrb{
-
-0%{
-transform:translateY(0px);
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-40px);}
 }
 
-50%{
-transform:translateY(-40px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
+/* NAVBAR */
 .navbar{
 height:80px;
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:0 70px;
+align-items:center;
+padding:0 50px;
 border-bottom:1px solid var(--border);
 background:rgba(5,8,22,.85);
 backdrop-filter:blur(20px);
@@ -129,98 +112,50 @@ z-index:1000;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:28px;
-font-weight:700;
-}
-
-.logo-icon{
-font-size:34px;
+font-size:26px;
 font-weight:800;
-background:linear-gradient(135deg,var(--purple),var(--blue));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
 .nav-links{
 display:flex;
-gap:40px;
+gap:25px;
 }
 
 .nav-links a{
 color:white;
 text-decoration:none;
-font-size:16px;
-transition:.3s;
+opacity:.8;
 }
 
 .nav-links a:hover{
 color:var(--blue);
-}
-
-.nav-actions{
-display:flex;
-gap:15px;
-align-items:center;
+opacity:1;
 }
 
 .btn{
+padding:10px 18px;
+border-radius:10px;
 border:none;
 cursor:pointer;
-transition:.3s;
 font-weight:600;
 }
 
-.btn-login{
-padding:12px 24px;
-background:#12192d;
-color:white;
-border-radius:12px;
-}
-
 .btn-primary{
-padding:12px 24px;
-border-radius:12px;
 background:linear-gradient(135deg,var(--purple),var(--blue));
 color:white;
-box-shadow:0 0 30px rgba(143,79,255,.4);
 }
 
-.btn:hover{
-transform:translateY(-3px);
-}
-
+/* HERO */
 .hero{
-padding:80px 70px;
 display:grid;
-grid-template-columns:1fr 1.1fr;
-gap:50px;
-align-items:center;
-}
-
-.hero-left{
-position:relative;
-z-index:5;
-}
-
-.hero-badge{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:12px 20px;
-background:rgba(255,255,255,.04);
-border:1px solid var(--border);
-border-radius:50px;
-margin-bottom:30px;
+grid-template-columns:1fr 1fr;
+padding:80px 50px;
+gap:40px;
 }
 
 .hero-title{
-font-size:78px;
-line-height:1.05;
+font-size:60px;
 font-weight:800;
-margin-bottom:25px;
 }
 
 .hero-title span{
@@ -230,657 +165,132 @@ background:linear-gradient(135deg,var(--purple),var(--blue));
 }
 
 .hero-text{
-font-size:22px;
-line-height:1.8;
 color:var(--gray);
-max-width:700px;
-margin-bottom:35px;
+margin-top:20px;
+line-height:1.7;
 }
 
-.hero-buttons{
-display:flex;
-gap:18px;
-align-items:center;
-}
-
-.btn-big{
-padding:18px 35px;
-border-radius:16px;
-font-size:18px;
-}
-
-.btn-secondary{
-background:#12192d;
-color:white;
-}
-
-.hero-right{
-position:relative;
-}
-
-.preview-window{
-background:rgba(13,18,36,.92);
-border:1px solid rgba(143,79,255,.35);
-border-radius:28px;
-padding:20px;
-box-shadow:
-0 0 40px rgba(143,79,255,.25),
-0 0 120px rgba(51,182,255,.08);
-position:relative;
-overflow:hidden;
-}
-
-.preview-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:18px;
-}
-
-.editor-actions{
-display:flex;
-gap:12px;
-}
-
-.edit-btn{
-background:linear-gradient(135deg,#7a3cff,#33b6ff);
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:12px;
-font-weight:600;
-cursor:pointer;
-}
-
-.save-btn{
-background:linear-gradient(135deg,#16c172,#28df99);
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:12px;
-font-weight:600;
-cursor:pointer;
-}
-
-.preview-mode{
-padding:12px 20px;
-background:#12192d;
-border-radius:12px;
+.hero-box{
+background:var(--card);
+padding:30px;
+border-radius:20px;
 border:1px solid var(--border);
 }
-.preview-navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:60px;
-}
 
-.preview-brand{
-font-size:26px;
-font-weight:700;
-}
-
-.preview-links{
-display:flex;
-gap:25px;
-}
-
-.preview-links a{
-text-decoration:none;
-color:white;
-font-size:14px;
-opacity:.8;
-transition:.3s;
-}
-
-.preview-links a:hover{
-color:var(--blue);
-opacity:1;
-}
-
-.preview-cta{
-padding:12px 22px;
-border-radius:12px;
-background:linear-gradient(135deg,var(--purple),var(--blue));
-border:none;
-color:white;
-cursor:pointer;
-}
-
-.preview-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:30px;
-}
-
-.preview-text-side{
-max-width:420px;
-}
-
-.preview-text-side h2{
-font-size:58px;
-line-height:1.1;
-margin-bottom:20px;
-}
-
-.preview-text-side span{
-background:linear-gradient(135deg,var(--purple),var(--blue));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.preview-text-side p{
-color:var(--gray);
-line-height:1.8;
-font-size:18px;
-margin-bottom:25px;
-}
-
-.learn-btn{
-padding:14px 26px;
-border:none;
-border-radius:14px;
-background:linear-gradient(135deg,var(--purple),var(--blue));
-color:white;
-cursor:pointer;
-}
-
-.blob-container{
-position:relative;
-width:360px;
-height:360px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.blob{
-width:260px;
-height:260px;
-background:linear-gradient(
-135deg,
-#33b6ff,
-#8f4fff,
-#d58cff
-);
-border-radius:42% 58% 65% 35%;
-animation:blobMove 8s infinite ease-in-out;
-filter:blur(2px);
-box-shadow:
-0 0 80px rgba(143,79,255,.7),
-0 0 120px rgba(51,182,255,.3);
-}
-
-@keyframes blobMove{
-
-0%{
-transform:rotate(0deg) scale(1);
-border-radius:42% 58% 65% 35%;
-}
-
-25%{
-transform:rotate(90deg) scale(1.05);
-border-radius:55% 45% 35% 65%;
-}
-
-50%{
-transform:rotate(180deg) scale(.95);
-border-radius:60% 40% 50% 50%;
-}
-
-75%{
-transform:rotate(270deg) scale(1.05);
-border-radius:35% 65% 55% 45%;
-}
-
-100%{
-transform:rotate(360deg) scale(1);
-border-radius:42% 58% 65% 35%;
-}
-
-}
-
-.ring{
-position:absolute;
-width:520px;
-height:520px;
-border:2px solid rgba(51,182,255,.35);
-border-radius:50%;
-animation:ringSpin 15s linear infinite;
-}
-
-.ring2{
-width:620px;
-height:620px;
-animation-duration:22s;
-border-color:rgba(143,79,255,.25);
-}
-
-@keyframes ringSpin{
-
-from{
-transform:rotate(0deg);
-}
-
-to{
-transform:rotate(360deg);
-}
-
-}
-
-.code-box{
-position:absolute;
-left:-40px;
-bottom:40px;
-width:120px;
-height:120px;
-border-radius:25px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:50px;
-background:rgba(143,79,255,.15);
-border:1px solid rgba(143,79,255,.4);
-backdrop-filter:blur(10px);
-box-shadow:0 0 40px rgba(143,79,255,.35);
-animation:floatCard 5s ease-in-out infinite;
-}
-
-@keyframes floatCard{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-15px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
+/* FEATURES */
 .features{
-padding:40px 70px 80px;
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(3,1fr);
 gap:20px;
+padding:50px;
 }
 
 .feature-card{
-background:rgba(13,18,36,.95);
-border:1px solid var(--border);
-border-radius:20px;
+background:var(--card);
 padding:25px;
-transition:.4s;
-position:relative;
-overflow:hidden;
-}
-
-.feature-card::before{
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(
-135deg,
-rgba(143,79,255,.15),
-transparent
-);
-opacity:0;
-transition:.4s;
-}
-
-.feature-card:hover::before{
-opacity:1;
+border-radius:15px;
+border:1px solid var(--border);
+transition:.3s;
 }
 
 .feature-card:hover{
 transform:translateY(-8px);
-box-shadow:0 0 40px rgba(143,79,255,.2);
 }
 
-.feature-icon{
-width:55px;
-height:55px;
-border-radius:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
-background:linear-gradient(
-135deg,
-var(--purple),
-var(--blue)
-);
-margin-bottom:18px;
-}
-
-.feature-card h3{
-margin-bottom:10px;
-font-size:22px;
-}
-
-.feature-card p{
-line-height:1.8;
-color:var(--gray);
-}
-
-.templates{
-padding:30px 70px 80px;
-}
-
-.section-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
-}
-
-.section-header h2{
-font-size:42px;
-}
-
-.template-badge{
-padding:8px 14px;
-background:rgba(143,79,255,.18);
-border-radius:30px;
-font-size:14px;
-}
-
-.view-all{
-color:var(--blue);
-text-decoration:none;
-}
-
-.template-grid{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:20px;
-}
-
-.template-card{
-background:#0d1224;
-border:1px solid var(--border);
-border-radius:20px;
-overflow:hidden;
-transition:.4s;
-}
-
-.template-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 40px rgba(143,79,255,.25);
-}
-
-.template-image{
-height:190px;
-background:linear-gradient(
-135deg,
-#131f45,
-#090d18
-);
-position:relative;
-overflow:hidden;
-}
-
-.template-image::before{
-content:'';
-position:absolute;
-width:180px;
-height:180px;
-background:radial-gradient(
-circle,
-rgba(143,79,255,.8),
-transparent
-);
-right:-40px;
-top:-40px;
-}
-  
-.preview-body{
-background:#050816;
-border-radius:22px;
-border:1px solid rgba(143,79,255,.25);
-padding:35px;
-min-height:520px;
-position:relative;
-overflow:hidden;
-}
-  .template-image::after{
-content:'';
-position:absolute;
-width:100px;
-height:100px;
-background:radial-gradient(
-circle,
-rgba(51,182,255,.7),
-transparent
-);
-left:-20px;
-bottom:-20px;
-}
-
-.template-info{
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.preview-card-btn{
-padding:10px 18px;
-border:none;
-border-radius:12px;
-background:#151d34;
-color:white;
-cursor:pointer;
-}
-
+/* FOOTER STATS */
 .stats{
-padding:20px 70px 80px;
-}
-
-.stats-wrapper{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(3,1fr);
 gap:20px;
-background:#0d1224;
-border:1px solid var(--border);
-border-radius:25px;
-padding:35px;
+padding:50px;
 }
 
 .stat{
-display:flex;
-align-items:center;
-gap:18px;
+background:var(--card);
+padding:25px;
+border-radius:15px;
+border:1px solid var(--border);
+text-align:center;
 }
 
-.stat-icon{
-width:60px;
-height:60px;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-background:linear-gradient(
-135deg,
-var(--purple),
-var(--blue)
-);
-}
-
-.stat h3{
-font-size:36px;
-margin-bottom:4px;
-}
-
-.stat p{
-color:var(--gray);
-}
-
-@media(max-width:1200px){
-
+/* RESPONSIVE */
+@media(max-width:900px){
 .hero{
 grid-template-columns:1fr;
 }
-
-.features{
-grid-template-columns:repeat(2,1fr);
+.features,.stats{
+grid-template-columns:1fr;
 }
-
-.template-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.stats-wrapper{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:768px){
-
 .navbar{
-padding:20px;
 flex-direction:column;
-gap:20px;
 height:auto;
+gap:10px;
+padding:20px;
 }
-
-.hero{
-padding:50px 20px;
 }
-
-.features,
-.templates,
-.stats{
-padding-left:20px;
-padding-right:20px;
-}
-
-.hero-title{
-font-size:48px;
-}
-
-.preview-content{
-flex-direction:column;
-}
-
-.features{
-grid-template-columns:1fr;
-}
-
-.template-grid{
-grid-template-columns:1fr;
-}
-
-.stats-wrapper{
-grid-template-columns:1fr;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="bg-grid"></div>
-
 <div class="floating-orb orb1"></div>
 <div class="floating-orb orb2"></div>
 
+<!-- NAVBAR -->
+<div class="navbar">
+<div class="logo">WebCraft AI</div>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Features</a>
+<a href="#">Templates</a>
+<a href="#">Contact</a>
+</div>
+<button class="btn btn-primary">Get Started</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1 class="hero-title">Build <span>Modern</span> Websites Fast</h1>
+<p class="hero-text">
+AI powered web builder design system. Create landing pages, dashboards and templates easily.
+</p>
+<button class="btn btn-primary">Start Now</button>
+</div>
+
+<div class="hero-box">
+<h2>Live Preview</h2>
+<p style="color:#b9bfd0;margin-top:10px;">
+Your design preview will appear here.
+</p>
+</div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+<div class="feature-card">Fast Performance</div>
+<div class="feature-card">AI Design System</div>
+<div class="feature-card">Responsive Layout</div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+<div class="stat">Users: 10K+</div>
+<div class="stat">Projects: 5K+</div>
+<div class="stat">Templates: 200+</div>
+</div>
+
 <script>
-
-document.querySelectorAll('.btn').forEach(button=>{
-
-button.addEventListener('mouseenter',()=>{
-
-button.style.transform='translateY(-4px) scale(1.03)';
-
+// smooth button effect only (safe)
+document.querySelectorAll('.btn').forEach(btn=>{
+btn.addEventListener('mouseenter',()=>{
+btn.style.transform='scale(1.05)';
 });
-
-button.addEventListener('mouseleave',()=>{
-
-button.style.transform='translateY(0px) scale(1)';
-
+btn.addEventListener('mouseleave',()=>{
+btn.style.transform='scale(1)';
 });
-
 });
-
-document.addEventListener('mousemove',(e)=>{
-
-const orb=document.querySelector('.orb1');
-
-const x=e.clientX/50;
-const y=e.clientY/50;
-
-orb.style.transform=
-`translate(${x}px,${y}px)`;
-
-});
-
-const editButtons=
-document.querySelectorAll(
-'.edit-btn'
-);
-
-editButtons.forEach(btn=>{
-
-btn.addEventListener('click',()=>{
-
-alert(
-'Edit Mode Activated'
-);
-
-});
-
-});
-
-const saveButtons=
-document.querySelectorAll(
-'.save-btn'
-);
-
-saveButtons.forEach(btn=>{
-
-btn.addEventListener('click',()=>{
-
-alert(
-'Page Saved Successfully'
-);
-
-});
-
-});
-
-const cards=
-document.querySelectorAll(
-'.template-card'
-);
-
-cards.forEach(card=>{
-
-card.addEventListener('mouseenter',()=>{
-
-card.style.transform=
-'translateY(-10px)';
-
-});
-
-card.addEventListener('mouseleave',()=>{
-
-card.style.transform=
-'translateY(0px)';
-
-});
-
-});
-
 </script>
 
 </body>
