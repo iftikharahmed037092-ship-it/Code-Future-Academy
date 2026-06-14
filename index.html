@@ -1,296 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WebCraft AI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-Future Academy AI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: white; }
+        
+        /* ہیڈر کا ڈیزائن */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #0b0e14; border-bottom: 1px solid #222; }
+        
+        .logo-box { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { background: linear-gradient(135deg, #6e8efb, #a777e3); padding: 8px 15px; border-radius: 8px; font-weight: 800; }
+        
+        nav { display: flex; align-items: center; }
+        nav a { color: #a0a0a0; text-decoration: none; margin: 0 15px; transition: 0.3s; }
+        nav a:hover { color: #6e8efb; }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        .auth-btns { display: flex; gap: 15px; align-items: center; }
+        .btn-login { color: white; text-decoration: none; }
+        .btn-start { background: linear-gradient(90deg, #6e8efb, #a777e3); padding: 8px 20px; border-radius: 20px; color: white; text-decoration: none; }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        /* موبائل مینیو (تین لائنیں) */
+        .menu-toggle { display: none; cursor: pointer; font-size: 24px; }
 
-:root{
---bg:#050816;
---card:#0d1224;
---border:rgba(255,255,255,.08);
---purple:#8f4fff;
---blue:#33b6ff;
---text:#ffffff;
---gray:#b9bfd0;
-}
-
-body{
-background:var(--bg);
-color:white;
-overflow-x:hidden;
-min-height:100vh;
-position:relative;
-}
-
-/* background effects */
-body::before{
-content:'';
-position:fixed;
-width:1200px;
-height:1200px;
-left:-400px;
-top:-300px;
-background:radial-gradient(circle,rgba(143,79,255,.25),transparent 60%);
-z-index:-3;
-}
-
-body::after{
-content:'';
-position:fixed;
-width:1000px;
-height:1000px;
-right:-300px;
-bottom:-300px;
-background:radial-gradient(circle,rgba(51,182,255,.20),transparent 60%);
-z-index:-3;
-}
-
-.bg-grid{
-position:fixed;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
-background-size:40px 40px;
-z-index:-2;
-}
-
-.floating-orb{
-position:absolute;
-border-radius:50%;
-filter:blur(80px);
-opacity:.35;
-animation:floatOrb 8s ease-in-out infinite;
-}
-
-.orb1{
-width:250px;
-height:250px;
-background:#8f4fff;
-top:120px;
-left:60%;
-}
-
-.orb2{
-width:200px;
-height:200px;
-background:#33b6ff;
-top:450px;
-left:75%;
-animation-delay:2s;
-}
-
-@keyframes floatOrb{
-0%,100%{transform:translateY(0px);}
-50%{transform:translateY(-40px);}
-}
-
-/* NAVBAR */
-.navbar{
-height:80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 50px;
-border-bottom:1px solid var(--border);
-background:rgba(5,8,22,.85);
-backdrop-filter:blur(20px);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-size:26px;
-font-weight:800;
-}
-
-.nav-links{
-display:flex;
-gap:25px;
-}
-
-.nav-links a{
-color:white;
-text-decoration:none;
-opacity:.8;
-}
-
-.nav-links a:hover{
-color:var(--blue);
-opacity:1;
-}
-
-.btn{
-padding:10px 18px;
-border-radius:10px;
-border:none;
-cursor:pointer;
-font-weight:600;
-}
-
-.btn-primary{
-background:linear-gradient(135deg,var(--purple),var(--blue));
-color:white;
-}
-
-/* HERO */
-.hero{
-display:grid;
-grid-template-columns:1fr 1fr;
-padding:80px 50px;
-gap:40px;
-}
-
-.hero-title{
-font-size:60px;
-font-weight:800;
-}
-
-.hero-title span{
-background:linear-gradient(135deg,var(--purple),var(--blue));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero-text{
-color:var(--gray);
-margin-top:20px;
-line-height:1.7;
-}
-
-.hero-box{
-background:var(--card);
-padding:30px;
-border-radius:20px;
-border:1px solid var(--border);
-}
-
-/* FEATURES */
-.features{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:50px;
-}
-
-.feature-card{
-background:var(--card);
-padding:25px;
-border-radius:15px;
-border:1px solid var(--border);
-transition:.3s;
-}
-
-.feature-card:hover{
-transform:translateY(-8px);
-}
-
-/* FOOTER STATS */
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:50px;
-}
-
-.stat{
-background:var(--card);
-padding:25px;
-border-radius:15px;
-border:1px solid var(--border);
-text-align:center;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-.hero{
-grid-template-columns:1fr;
-}
-.features,.stats{
-grid-template-columns:1fr;
-}
-.navbar{
-flex-direction:column;
-height:auto;
-gap:10px;
-padding:20px;
-}
-}
-</style>
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            nav { display: none; position: absolute; top: 70px; right: 0; background: #161b22; width: 100%; flex-direction: column; padding: 20px; }
+            nav.active { display: flex; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="bg-grid"></div>
-<div class="floating-orb orb1"></div>
-<div class="floating-orb orb2"></div>
+<header>
+    <div class="logo-box">
+        <div class="logo-icon">CFAA</div>
+        <span>Code-Future Academy AI</span>
+    </div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-<div class="logo">WebCraft AI</div>
-<div class="nav-links">
-<a href="#">Home</a>
-<a href="#">Features</a>
-<a href="#">Templates</a>
-<a href="#">Contact</a>
-</div>
-<button class="btn btn-primary">Get Started</button>
-</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-<!-- HERO -->
-<div class="hero">
-<div>
-<h1 class="hero-title">Build <span>Modern</span> Websites Fast</h1>
-<p class="hero-text">
-AI powered web builder design system. Create landing pages, dashboards and templates easily.
-</p>
-<button class="btn btn-primary">Start Now</button>
-</div>
+    <nav id="navMenu">
+        <a href="#">ہوم</a>
+        <a href="#">ٹیمپلیٹس</a>
+        <a href="#">فیچرز</a>
+    </nav>
 
-<div class="hero-box">
-<h2>Live Preview</h2>
-<p style="color:#b9bfd0;margin-top:10px;">
-Your design preview will appear here.
-</p>
-</div>
-</div>
-
-<!-- FEATURES -->
-<div class="features">
-<div class="feature-card">Fast Performance</div>
-<div class="feature-card">AI Design System</div>
-<div class="feature-card">Responsive Layout</div>
-</div>
-
-<!-- STATS -->
-<div class="stats">
-<div class="stat">Users: 10K+</div>
-<div class="stat">Projects: 5K+</div>
-<div class="stat">Templates: 200+</div>
-</div>
+    <div class="auth-btns">
+        <a href="#" class="btn-login">Login</a>
+        <a href="#" class="btn-start">Get Started</a>
+    </div>
+</header>
 
 <script>
-// smooth button effect only (safe)
-document.querySelectorAll('.btn').forEach(btn=>{
-btn.addEventListener('mouseenter',()=>{
-btn.style.transform='scale(1.05)';
-});
-btn.addEventListener('mouseleave',()=>{
-btn.style.transform='scale(1)';
-});
-});
+    function toggleMenu() {
+        const nav = document.getElementById('navMenu');
+        nav.classList.toggle('active');
+    }
 </script>
 
 </body>
