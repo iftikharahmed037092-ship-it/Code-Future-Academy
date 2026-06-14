@@ -1,75 +1,55 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-    <meta charset="UTF-8">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background: #0b0e14; color: white; }
-
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 50px; background: #0b0e14; border-bottom: 1px solid #1f2937; 
-        }
-
-        /* لوگو ڈیزائن: CFAA اوپر AI نیچے */
-        .brand-box { display: flex; align-items: center; gap: 15px; }
-        .logo-icon { 
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            padding: 8px 12px; border-radius: 8px; font-weight: 800;
-            display: flex; flex-direction: column; align-items: center; line-height: 1;
-        }
-        .logo-icon span:first-child { font-size: 16px; letter-spacing: 2px; }
-        .logo-icon span:last-child { font-size: 10px; text-transform: uppercase; }
+        body { background: #0b0e14; font-family: sans-serif; }
         
-        .brand-name { font-size: 20px; font-weight: 700; color: #fff; }
-
-        /* نیویگیشن */
-        nav { display: flex; align-items: center; }
-        nav a { color: #9ca3af; text-decoration: none; margin: 0 20px; position: relative; transition: 0.3s; }
-        nav a:hover, nav a.active { color: #6e8efb; }
-        nav a::after { content: ''; position: absolute; bottom: -25px; right: 0; width: 0; height: 2px; background: #6e8efb; transition: 0.3s; }
-        nav a:hover::after, nav a.active::after { width: 100%; }
-
-        /* بٹنز */
-        .right-section { display: flex; align-items: center; gap: 20px; }
-        .btn-login { color: #fff; text-decoration: none; }
-        .btn-start { 
-            background: #2563eb; padding: 10px 25px; border-radius: 25px; 
-            text-decoration: none; color: white; font-weight: 600;
+        header { 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 15px 40px; background: #0b0e14; border-bottom: 1px solid #222;
         }
 
-        /* موبائل مینیو */
-        .menu-toggle { display: none; cursor: pointer; font-size: 28px; }
-
-        @media (max-width: 900px) {
-            .menu-toggle { display: block; }
-            nav { display: none; } /* یہاں آپ مینیو سلائیڈنگ ایفیکٹ لگا سکتے ہیں */
+        /* لوگو اور اینیمیشن */
+        .logo-box { position: relative; display: flex; align-items: center; gap: 15px; padding: 10px; }
+        .cfaa-logo { 
+            background: #161b22; padding: 8px; border-radius: 10px; 
+            border: 1px solid #333; position: relative; overflow: hidden;
+            display: flex; flex-direction: column; align-items: center;
         }
+        /* وہ لائن جو کونے سے کونے تک اینیمیٹ ہوگی */
+        .cfaa-logo::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, #6e8efb, transparent);
+            animation: moveLine 3s infinite;
+        }
+        @keyframes moveLine { 100% { left: 100%; } }
+
+        /* گلو ایفیکٹ */
+        .glow-text:hover { color: #fff; text-shadow: 0 0 10px #6e8efb; transform: translateY(-2px); }
+
+        /* ترتیب تبدیل کرنے کے لیے */
+        .menu-left { display: flex; align-items: center; gap: 20px; }
+        .actions-right { display: flex; align-items: center; gap: 20px; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="brand-box">
-        <div class="logo-icon">
-            <span>CFA</span>
-            <span>AI</span>
+    <div class="menu-left">
+        <div style="color:white; font-size: 24px; cursor: pointer;">☰</div>
+        <div class="logo-box">
+            <div class="cfaa-logo">
+                <span style="font-weight:bold;">CFA</span>
+                <span style="font-size: 10px;">AI</span>
+            </div>
+            <div class="glow-text">Code-Future Academy AI</div>
         </div>
-        <div class="brand-name">Code-Future <br>
-          Academy AI</div>
     </div>
 
-    <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#">Templates</a>
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
-    </nav>
-
-    <div class="right-section">
-        <a href="#" class="btn-start">Get Started</a>
-        <a href="#" class="btn-login">Login</a>
-        <div class="menu-toggle">☰</div>
+    <div class="actions-right">
+        <a href="#" style="color:white; text-decoration:none;">Login</a>
+        <a href="#" style="background:#6e8efb; padding:8px 20px; border-radius:20px; color:white; text-decoration:none;">Get Started</a>
     </div>
 </header>
 
