@@ -68,6 +68,51 @@
         <a href="#" class="btn-start" onclick="alert('Coming Soon!')">Get Started</a>
     </div>
 </header>
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <style>
+        body { 
+            background: #0b0e14; height: 100vh; display: flex; align-items: center; justify-content: center;
+            font-family: 'Segoe UI', sans-serif; color: white; margin: 0;
+        }
+        .login-card {
+            width: 350px; padding: 40px; background: #161b22;
+            border: 1px solid rgba(110, 142, 251, 0.3); border-radius: 20px;
+            position: relative; overflow: hidden; text-align: center;
+        }
+        /* وہی اینیمیشن */
+        .login-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(110,142,251,0.3) 50%, transparent 60%);
+            animation: lightSweep 4s infinite linear;
+        }
+        @keyframes lightSweep { 0% { transform: translate(-50%, -50%) rotate(45deg); } 100% { transform: translate(50%, 50%) rotate(45deg); } }
 
+        input {
+            width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px;
+            border: 1px solid #333; background: #0b0e14; color: white;
+        }
+        .btn-login {
+            width: 100%; padding: 12px; background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <h2>Login</h2>
+    <p style="color: #888;">Code-Future Academy AI میں خوش آمدید</p>
+    
+    <input type="email" placeholder="Email Address">
+    <input type="password" placeholder="Password">
+    
+    <button class="btn-login" onclick="alert('Coming Soon!')">Login</button>
+    <p style="margin-top: 15px; font-size: 12px; cursor: pointer;">Forgot Password?</p>
+</div>
+
+</body>
+</html>
 </body>
 </html>
