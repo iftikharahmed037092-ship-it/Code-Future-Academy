@@ -3,53 +3,69 @@
 <head>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0b0e14; font-family: sans-serif; }
+        body { background: #0b0e14; color: white; font-family: 'Segoe UI', sans-serif; }
         
         header { 
             display: flex; align-items: center; justify-content: space-between; 
-            padding: 15px 40px; background: #0b0e14; border-bottom: 1px solid #222;
+            padding: 15px 50px; background: #0b0e14; border-bottom: 1px solid #222;
         }
 
-        /* لوگو اور اینیمیشن */
-        .logo-box { position: relative; display: flex; align-items: center; gap: 15px; padding: 10px; }
-        .cfaa-logo { 
-            background: #161b22; padding: 8px; border-radius: 10px; 
-            border: 1px solid #333; position: relative; overflow: hidden;
-            display: flex; flex-direction: column; align-items: center;
-        }
-        /* وہ لائن جو کونے سے کونے تک اینیمیٹ ہوگی */
-        .cfaa-logo::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, #6e8efb, transparent);
-            animation: moveLine 3s infinite;
-        }
-        @keyframes moveLine { 100% { left: 100%; } }
+        /* بائیں طرف: مینیو بٹن + لوگو + نام */
+        .left-side { display: flex; align-items: center; gap: 20px; }
+        .menu-icon { font-size: 28px; cursor: pointer; }
 
-        /* گلو ایفیکٹ */
-        .glow-text:hover { color: #fff; text-shadow: 0 0 10px #6e8efb; transform: translateY(-2px); }
+        /* لوگو باکس: 3D + لائٹ ایفیکٹ */
+        .logo-box { 
+            width: 50px; height: 50px; border-radius: 10px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo-box::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
+            animation: lightSweep 3s infinite linear;
+        }
+        @keyframes lightSweep { 0% { transform: translate(-50%, -50%) rotate(45deg); } 100% { transform: translate(50%, 50%) rotate(45deg); } }
 
-        /* ترتیب تبدیل کرنے کے لیے */
-        .menu-left { display: flex; align-items: center; gap: 20px; }
-        .actions-right { display: flex; align-items: center; gap: 20px; }
+        .brand-text { display: flex; flex-direction: column; line-height: 1.2; font-weight: bold; }
+
+        /* دائیں طرف: لاگ ان، سائن اپ، گیٹ سٹارٹڈ */
+        .right-side { display: flex; align-items: center; gap: 25px; }
+        .nav-link { color: #ccc; text-decoration: none; font-size: 14px; }
+        .nav-link:hover { color: #fff; }
+        
+        .btn-start { 
+            background: linear-gradient(135deg, #6e8efb, #a777e3); padding: 10px 25px; 
+            border-radius: 25px; color: white; text-decoration: none; font-weight: bold;
+            position: relative; overflow: hidden;
+        }
+        .btn-start::after {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
+            animation: lightSweep 3s infinite linear;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="menu-left">
-        <div style="color:white; font-size: 24px; cursor: pointer;">☰</div>
+    <div class="left-side">
+        <div class="menu-icon" onclick="alert('Coming Soon!')">☰</div>
         <div class="logo-box">
-            <div class="cfaa-logo">
-                <span style="font-weight:bold;">CFA</span>
-                <span style="font-size: 10px;">AI</span>
-            </div>
-            <div class="glow-text">Code-Future Academy AI</div>
+            <span style="font-size:12px; font-weight:bold;">CFA</span>
+            <span style="font-size:8px;">AI</span>
+        </div>
+        <div class="brand-text">
+            <span>Code-Future</span>
+            <span>Academy AI</span>
         </div>
     </div>
 
-    <div class="actions-right">
-        <a href="#" style="color:white; text-decoration:none;">Login</a>
-        <a href="#" style="background:#6e8efb; padding:8px 20px; border-radius:20px; color:white; text-decoration:none;">Get Started</a>
+    <div class="right-side">
+        <a href="#" class="nav-link" onclick="alert('Coming Soon!')">Login</a>
+        <a href="#" class="nav-link" onclick="alert('Coming Soon!')">Sign Up</a>
+        <a href="#" class="btn-start" onclick="alert('Coming Soon!')">Get Started</a>
     </div>
 </header>
 
