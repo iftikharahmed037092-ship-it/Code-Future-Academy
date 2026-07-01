@@ -1,118 +1,14 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en">
+
 <head>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0b0e14; color: white; font-family: 'Segoe UI', sans-serif; }
-        
-        header { 
-            display: flex; align-items: center; justify-content: space-between; 
-            padding: 15px 50px; background: #0b0e14; border-bottom: 1px solid #222;
-        }
-
-        /* بائیں طرف: مینیو بٹن + لوگو + نام */
-        .left-side { display: flex; align-items: center; gap: 20px; }
-        .menu-icon { font-size: 28px; cursor: pointer; }
-
-        /* لوگو باکس: 3D + لائٹ ایفیکٹ */
-        .logo-box { 
-            width: 50px; height: 50px; border-radius: 10px;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
-        }
-        .logo-box::after {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
-            animation: lightSweep 3s infinite linear;
-        }
-        @keyframes lightSweep { 0% { transform: translate(-50%, -50%) rotate(45deg); } 100% { transform: translate(50%, 50%) rotate(45deg); } }
-
-        .brand-text { display: flex; flex-direction: column; line-height: 1.2; font-weight: bold; }
-
-        /* دائیں طرف: لاگ ان، سائن اپ، گیٹ سٹارٹڈ */
-        .right-side { display: flex; align-items: center; gap: 25px; }
-        .nav-link { color: #ccc; text-decoration: none; font-size: 14px; }
-        .nav-link:hover { color: #fff; }
-        
-        .btn-start { 
-            background: linear-gradient(135deg, #6e8efb, #a777e3); padding: 10px 25px; 
-            border-radius: 25px; color: white; text-decoration: none; font-weight: bold;
-            position: relative; overflow: hidden;
-        }
-        .btn-start::after {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
-            animation: lightSweep 3s infinite linear;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
 </head>
+
 <body>
 
-<header>
-    <div class="left-side">
-        <div class="menu-icon" onclick="alert('Coming Soon!')">☰</div>
-        <div class="logo-box">
-            <span style="font-size:12px; font-weight:bold;">CFA</span>
-            <span style="font-size:8px;">AI</span>
-        </div>
-        <div class="brand-text">
-            <span>Code-Future</span>
-            <span>Academy AI</span>
-        </div>
-    </div>
-
-    <div class="right-side">
-        <a href="#" class="nav-link" onclick="alert('coming soon')">Login</a>
-        <a href="#" class="nav-link" onclick="alert('Coming Soon!')">Sign Up</a>
-        <a href="#" class="btn-start" onclick="alert('Coming Soon!')">Get Started</a>
-    </div>
-</header>
-<!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head>
-    <style>
-        body { 
-            background: #0b0e14; height: 100vh; display: flex; align-items: center; justify-content: center;
-            font-family: 'Segoe UI', sans-serif; color: white; margin: 0;
-        }
-        .login-card {
-            width: 350px; padding: 40px; background: #161b22;
-            border: 1px solid rgba(110, 142, 251, 0.3); border-radius: 20px;
-            position: relative; overflow: hidden; text-align: center;
-        }
-        /* وہی اینیمیشن */
-        .login-card::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent 40%, rgba(110,142,251,0.3) 50%, transparent 60%);
-            animation: lightSweep 4s infinite linear;
-        }
-        @keyframes lightSweep { 0% { transform: translate(-50%, -50%) rotate(45deg); } 100% { transform: translate(50%, 50%) rotate(45deg); } }
-
-        input {
-            width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px;
-            border: 1px solid #333; background: #0b0e14; color: white;
-        }
-        .btn-login {
-            width: 100%; padding: 12px; background: linear-gradient(135deg, #6e8efb, #a777e3);
-            border: none; border-radius: 10px; color: white; font-weight: bold; cursor: pointer; margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="login-card">
-    <h2>Login</h2>
-    <p style="color: #888;">Code-Future Academy AI میں خوش آمدید</p>
-    
-    <input type="email" placeholder="Email Address">
-    <input type="password" placeholder="Password">
-    
-    <button class="btn-login" onclick="alert('Coming Soon!')">Login</button>
-    <p style="margin-top: 15px; font-size: 12px; cursor: pointer;">Forgot Password?</p>
-</div>
-
 </body>
-</html>
-</body>
+
 </html>
