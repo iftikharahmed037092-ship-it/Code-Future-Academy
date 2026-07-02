@@ -431,6 +431,84 @@ header{
 .featured{
     transform:scale(1.05);
 }
+        .testimonials{
+    padding:120px 8%;
+    background:#f8fbff;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.testimonial-card{
+    background:#ffffff;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-10px);
+}
+
+.testimonial-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.testimonial-card h3{
+    color:#111;
+    font-size:1.1rem;
+}
+        .faq{
+    padding:120px 8%;
+    background:#ffffff;
+}
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-container details{
+    background:#f8fbff;
+    margin-bottom:20px;
+    padding:20px 25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.faq-container summary{
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    color:#111;
+}
+
+.faq-container p{
+    margin-top:15px;
+    color:#666;
+    line-height:1.8;
+}
+        footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#bbb;
+    margin-bottom:10px;
+}
     </style>
 </head>
 
@@ -618,6 +696,91 @@ header{
     </div>
 
     </section>
+    <section class="testimonials">
+
+    <div class="section-title">
+        <span>TESTIMONIALS</span>
+        <h2>What Our Clients Say</h2>
+        <p>
+            Trusted by customers around the world.
+        </p>
+    </div>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+            <p>
+                Excellent service and professional support.
+                Highly recommended.
+            </p>
+            <h3>Client Name</h3>
+        </div>
+
+        <div class="testimonial-card">
+            <p>
+                Amazing experience and outstanding quality.
+            </p>
+            <h3>Client Name</h3>
+        </div>
+
+        <div class="testimonial-card">
+            <p>
+                Fast delivery and excellent communication.
+            </p>
+            <h3>Client Name</h3>
+        </div>
+
+    </div>
+
+    </section>
+    <section class="faq">
+
+    <div class="section-title">
+        <span>FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>
+            Find answers to the most common questions.
+        </p>
+    </div>
+
+    <div class="faq-container">
+
+        <details>
+            <summary>What services do you provide?</summary>
+            <p>Answer goes here.</p>
+        </details>
+
+        <details>
+            <summary>How can I contact you?</summary>
+            <p>Answer goes here.</p>
+        </details>
+
+        <details>
+            <summary>Do you offer support?</summary>
+            <p>Answer goes here.</p>
+        </details>
+
+        <details>
+            <summary>How does payment work?</summary>
+            <p>Answer goes here.</p>
+        </details>
+
+    </div>
+
+    </section>
+    <footer>
+
+    <h3>My Website</h3>
+
+    <p>
+        Professional solutions for modern businesses.
+    </p>
+
+    <p>
+        © 2026 All Rights Reserved
+    </p>
+
+    </footer>
     <script>
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
