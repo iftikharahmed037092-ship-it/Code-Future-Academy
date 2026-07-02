@@ -79,10 +79,42 @@ header{
     }
 
 }
+        @media(max-width:768px){
+
+    .navbar{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#ffffff;
+        flex-direction:column;
+        gap:0;
+        box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .navbar a{
+        padding:20px;
+        border-bottom:1px solid #eee;
+    }
+
+    .navbar.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+        }
     </style>
 </head>
 
 <body>
+    <script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+    </script>
 
 </body>
 <header>
