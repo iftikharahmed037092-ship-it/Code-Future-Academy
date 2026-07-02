@@ -387,6 +387,51 @@ header{
     color:#0066ff;
     font-weight:700;
 }
+        .pricing{
+    padding:120px 8%;
+    background:#ffffff;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.pricing-card{
+    background:#fff;
+    padding:40px 30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.pricing-card:hover{
+    transform:translateY(-10px);
+}
+
+.price{
+    font-size:3rem;
+    font-weight:700;
+    color:#0066ff;
+    margin:20px 0;
+}
+
+.pricing-card button{
+    margin-top:20px;
+    padding:12px 30px;
+    border:none;
+    border-radius:50px;
+    background:#0066ff;
+    color:#fff;
+    cursor:pointer;
+}
+
+.featured{
+    transform:scale(1.05);
+    border:2px solid #0066ff;
+        }
     </style>
 </head>
 
@@ -533,6 +578,42 @@ header{
                 <p>Short description here.</p>
                 <a href="#">View Project</a>
             </div>
+        </div>
+
+    </div>
+
+    </section>
+    <section class="pricing">
+
+    <div class="section-title">
+        <span>PRICING PLANS</span>
+        <h2>Choose Your Plan</h2>
+        <p>
+            Flexible plans for every type of customer.
+        </p>
+    </div>
+
+    <div class="pricing-grid">
+
+        <div class="pricing-card">
+            <h3>Basic</h3>
+            <div class="price">$9</div>
+            <p>Perfect for beginners</p>
+            <button>Choose Plan</button>
+        </div>
+
+        <div class="pricing-card featured">
+            <h3>Premium</h3>
+            <div class="price">$29</div>
+            <p>Most popular package</p>
+            <button>Choose Plan</button>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Pro</h3>
+            <div class="price">$59</div>
+            <p>Advanced business solution</p>
+            <button>Choose Plan</button>
         </div>
 
     </div>
