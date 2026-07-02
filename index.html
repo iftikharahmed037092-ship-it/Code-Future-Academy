@@ -117,6 +117,79 @@ header{
         font-size:14px;
     }
 }
+        .hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
+    background:linear-gradient(
+        135deg,
+        #f8fbff,
+        #eef4ff,
+        #ffffff
+    );
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    color:#111;
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    color:#666;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+    background:#0066ff;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.secondary-btn{
+    padding:14px 32px;
+    border:2px solid #0066ff;
+    border-radius:50px;
+    background:transparent;
+    color:#0066ff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+}
     </style>
 </head>
 
@@ -139,7 +212,25 @@ header{
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </div>
     </header>
-    
+    <section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Build Something Amazing</h1>
+
+        <p>
+            Create modern, professional and responsive websites
+            with a premium user experience.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn">Get Started</button>
+            <button class="secondary-btn">Learn More</button>
+        </div>
+
+    </div>
+
+    </section>
     <script>
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
