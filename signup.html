@@ -5,6 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sign Up</title>
 <link rel="stylesheet" href="login.css">
+    <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #eef4ff,
+        #ffffff,
+        #f4f7ff
+    );
+}
+
+.container{
+    width:100%;
+    padding:20px;
+}
+
+.signup-box{
+    max-width:500px;
+    margin:auto;
+    background:#ffffff;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+.signup-box h1{
+    text-align:center;
+    margin-bottom:10px;
+    color:#111;
+}
+
+.signup-box p{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:15px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#0066ff;
+}
+
+button{
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#0066ff;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.login-text{
+    margin-top:20px;
+    text-align:center;
+}
+
+.login-text a{
+    text-decoration:none;
+    color:#0066ff;
+    font-weight:600;
+}
+
+    </style>
 </head>
 <body>
 
