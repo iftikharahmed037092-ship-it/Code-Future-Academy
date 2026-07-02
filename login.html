@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="login.css">
+  <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #eef4ff,
+        #ffffff,
+        #f4f7ff
+    );
+
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    width:100%;
+    padding:20px;
+}
+
+.login-box{
+
+    max-width:450px;
+    margin:auto;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.1);
+
+}
+
+.login-box h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:15px;
+    font-size:16px;
+}
+
+button{
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#0066ff;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+a{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    text-decoration:none;
+}
+
+.signup-text{
+    margin-top:20px;
+}
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="login-box">
+
+        <h1>Welcome Back</h1>
+
+        <p>Login to your account</p>
+
+        <form>
+
+            <input type="email" placeholder="Email Address">
+
+            <input type="password" placeholder="Password">
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <a href="#">Forgot Password?</a>
+
+        <p class="signup-text">
+            Don't have an account?
+            <a href="signup.html">Sign Up</a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
