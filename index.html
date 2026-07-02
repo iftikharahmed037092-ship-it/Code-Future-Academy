@@ -336,6 +336,57 @@ header{
     color:#666;
     line-height:1.7;
 }
+        .portfolio{
+    padding:120px 8%;
+    background:#f8fbff;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.portfolio-card{
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.portfolio-card:hover{
+    transform:translateY(-10px);
+}
+
+.portfolio-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+}
+
+.portfolio-content{
+    padding:25px;
+}
+
+.portfolio-content h3{
+    font-size:1.4rem;
+    margin-bottom:12px;
+    color:#111;
+}
+
+.portfolio-content p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.portfolio-content a{
+    text-decoration:none;
+    color:#0066ff;
+    font-weight:700;
+}
     </style>
 </head>
 
@@ -431,6 +482,57 @@ header{
         <div class="service-card">
             <h3>Service Six</h3>
             <p>Description goes here.</p>
+        </div>
+
+    </div>
+
+    </section>
+    <section class="portfolio">
+
+    <div class="section-title">
+        <span>OUR PORTFOLIO</span>
+        <h2>Recent Projects</h2>
+        <p>
+            Showcase your best work, products, services or projects here.
+        </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+            <img src="project1.jpg" alt="Project">
+            <div class="portfolio-content">
+                <h3>Project One</h3>
+                <p>Short description here.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="project2.jpg" alt="Project">
+            <div class="portfolio-content">
+                <h3>Project Two</h3>
+                <p>Short description here.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="project3.jpg" alt="Project">
+            <div class="portfolio-content">
+                <h3>Project Three</h3>
+                <p>Short description here.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+
+        <div class="portfolio-card">
+            <img src="project4.jpg" alt="Project">
+            <div class="portfolio-content">
+                <h3>Project Four</h3>
+                <p>Short description here.</p>
+                <a href="#">View Project</a>
+            </div>
         </div>
 
     </div>
