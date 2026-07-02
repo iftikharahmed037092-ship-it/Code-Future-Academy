@@ -117,42 +117,80 @@ header{
         font-size:14px;
     }
 }
-        .hero{
+.hero{
     min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
-    text-align:center;
-    padding:120px 20px 80px;
-    background:linear-gradient(
+    justify-content:space-between;
+    gap:60px;
+    padding:120px 8% 80px;
+
+    background:
+    linear-gradient(
         135deg,
-        #f8fbff,
-        #eef4ff,
-        #ffffff
+        #eef4ff 0%,
+        #ffffff 50%,
+        #f4f7ff 100%
     );
+
+    overflow:hidden;
 }
 
-.hero-content{
-    max-width:800px;
+.hero::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(0,102,255,.18),
+        transparent
+    );
+
+    top:-100px;
+    right:-100px;
+
+    filter:blur(40px);
 }
 
-.hero-content h1{
-    font-size:4rem;
-    color:#111;
+.hero{
+    position:relative;
+}
+
+.hero-text{
+    flex:1;
+    z-index:2;
+}
+
+.tag{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:50px;
+    background:#ffffff;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
     margin-bottom:20px;
-    line-height:1.1;
+    font-weight:600;
 }
 
-.hero-content p{
-    font-size:1.2rem;
-    color:#666;
+.hero-text h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:20px;
+    color:#111;
+}
+
+.hero-text p{
+    font-size:1.1rem;
     line-height:1.8;
-    margin-bottom:35px;
+    color:#666;
+    max-width:600px;
+    margin-bottom:30px;
 }
 
 .hero-buttons{
     display:flex;
-    justify-content:center;
     gap:15px;
     flex-wrap:wrap;
 }
@@ -163,9 +201,8 @@ header{
     border-radius:50px;
     background:#0066ff;
     color:#fff;
-    font-size:16px;
-    font-weight:600;
     cursor:pointer;
+    font-weight:600;
 }
 
 .secondary-btn{
@@ -174,19 +211,69 @@ header{
     border-radius:50px;
     background:transparent;
     color:#0066ff;
-    font-size:16px;
-    font-weight:600;
     cursor:pointer;
+    font-weight:600;
+}
+
+.hero-image{
+    flex:1;
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:550px;
+}
+
+.floating-card{
+    position:absolute;
+    top:40px;
+    left:0;
+
+    padding:18px 25px;
+
+    background:#ffffff;
+    border-radius:20px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.12);
+
+    font-weight:700;
+
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
 }
 
 @media(max-width:768px){
 
-    .hero-content h1{
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text h1{
         font-size:2.5rem;
     }
 
-    .hero-content p{
-        font-size:1rem;
+    .hero-image img{
+        max-width:350px;
     }
 
 }
@@ -212,15 +299,17 @@ header{
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </div>
     </header>
-    <section class="hero">
+<section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-text">
 
-        <h1>Build Something Amazing</h1>
+        <span class="tag">Modern Design</span>
+
+        <h1>Build Professional Websites With Style</h1>
 
         <p>
-            Create modern, professional and responsive websites
-            with a premium user experience.
+            Create modern, responsive and beautiful websites
+            with premium user experience and stunning layouts.
         </p>
 
         <div class="hero-buttons">
@@ -230,7 +319,17 @@ header{
 
     </div>
 
-    </section>
+    <div class="hero-image">
+
+        <img src="image.png" alt="Hero Image">
+
+        <div class="floating-card">
+            Premium Design
+        </div>
+
+    </div>
+
+</section>
     <script>
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("active");
