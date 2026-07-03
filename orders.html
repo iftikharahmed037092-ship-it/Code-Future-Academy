@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Orders</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    color:#111;
+
+    font-size:24px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.orders-container{
+    max-width:1100px;
+    margin:100px auto;
+    padding:20px;
+}
+
+.page-title{
+    margin-bottom:25px;
+}
+
+.order-card{
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:20px;
+}
+
+.order-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.order-id{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.order-status{
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    background:#e8f5e9;
+
+    color:#2e7d32;
+
+    font-size:14px;
+}
+
+.order-details{
+    margin-top:15px;
+    color:#666;
+    line-height:1.8;
+}
+
+</style>
+
+</head>
+<body>
+
+<a href="dashboard.html" class="back-btn">←</a>
+
+<div class="orders-container">
+
+    <h1 class="page-title">
+        My Orders
+    </h1>
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div class="order-id">
+                Order #1001
+            </div>
+
+            <div class="order-status">
+                Completed
+            </div>
+
+        </div>
+
+        <div class="order-details">
+            Service Name <br>
+            Order Date <br>
+            Payment Status
+        </div>
+
+    </div>
+
+    <div class="order-card">
+
+        <div class="order-top">
+
+            <div class="order-id">
+                Order #1002
+            </div>
+
+            <div class="order-status">
+                Processing
+            </div>
+
+        </div>
+
+        <div class="order-details">
+            Service Name <br>
+            Order Date <br>
+            Payment Status
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
