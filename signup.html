@@ -146,42 +146,41 @@ button{
     </style>
 </head>
 <body>
-    
- <a href="login.html" class="back-btn">←</a>
 
-    
-<div class="container">
+    <a href="login.html" class="back-btn">←</a>
 
-    <div class="signup-box">
+    <div class="container">
 
-        <h1>Create Account</h1>
+        <div class="signup-box">
 
-        <p>Register a new account</p>
+            <h1>Create Account</h1>
 
-   <form id="signupForm">
+            <p>Register a new account</p>
 
-    <input type="text" id="fullName" placeholder="Full Name">
+            <form id="signupForm">
 
-    <input type="email" id="email" placeholder="Email Address">
+                <input type="text" id="fullName" placeholder="Full Name" required>
 
-    <input type="password" id="password" placeholder="Password">
+                <input type="email" id="email" placeholder="Email Address" required>
 
-    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                <input type="password" id="password" placeholder="Password" required>
 
-    <button type="submit">Sign Up</button>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
-</form>
+                <button type="submit">Sign Up</button>
 
-        <p class="signup-text">
-            Already have an account?
-            <a href="login.html">Login</a>
-        </p>
+            </form>
+
+            <p class="signup-text">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
 
     </div>
 
-</div>
-
-<script type="module" src="signup.js"></script>
+    <script type="module" src="signup.js"></script>
 
 </body>
 </html>
