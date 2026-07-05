@@ -2,6 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebas
 
 import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
 
+import { getDatabase } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA65Nzil2LTMZbMWU5AIGqsKDd24tEuDAM",
   authDomain: "smartservices-2ac5f.firebaseapp.com",
@@ -13,6 +15,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 
-export { auth };
+export const auth = getAuth(app);
+
+export const db = getDatabase(app);
