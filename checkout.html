@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f7fb;
+    font-family:Arial,sans-serif;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.container{
+    max-width:700px;
+    margin:80px auto;
+    padding:20px;
+}
+
+.checkout-box{
+    background:#fff;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+.place-order-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#0066ff;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">←</a>
+
+<div class="container">
+
+    <div class="checkout-box">
+
+        <h1>Checkout</h1>
+
+        <form id="checkoutForm">
+
+            <input
+            type="text"
+            id="customerName"
+            placeholder="Full Name"
+            required>
+
+            <input
+            type="email"
+            id="customerEmail"
+            placeholder="Email"
+            required>
+
+            <input
+            type="text"
+            id="customerPhone"
+            placeholder="Phone Number"
+            required>
+
+            <input
+            type="text"
+            id="customerCountry"
+            placeholder="Country">
+
+            <input
+            type="text"
+            id="customerCity"
+            placeholder="City">
+
+            <textarea
+            id="customerAddress"
+            placeholder="Complete Address"></textarea>
+
+            <select id="paymentMethod">
+
+                <option value="">
+                    Select Payment Method
+                </option>
+
+                <option>
+                    Easypaisa
+                </option>
+
+                <option>
+                    JazzCash
+                </option>
+
+                <option>
+                    Bank Transfer
+                </option>
+
+                <option>
+                    Cash On Delivery
+                </option>
+
+            </select>
+
+            <button
+            type="submit"
+            class="place-order-btn">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script type="module" src="checkout.js"></script>
+
+</body>
+
+</html>
