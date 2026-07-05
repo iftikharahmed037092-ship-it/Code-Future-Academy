@@ -5,84 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Settings</title>
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
-}
-
-.back-btn{
-    position:fixed;
-    top:20px;
-    left:20px;
-
-    width:45px;
-    height:45px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-decoration:none;
-
-    background:#fff;
-
-    border-radius:50%;
-
-    color:#111;
-
-    font-size:24px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.settings-container{
-    max-width:800px;
-    margin:100px auto;
-    padding:20px;
-}
-
-.settings-box{
-    background:#fff;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.settings-box h1{
-    margin-bottom:25px;
-}
-
-.setting-item{
-    padding:18px;
-    margin-bottom:15px;
-
-    background:#f8fafc;
-
-    border-radius:12px;
-}
-
-.setting-item h3{
-    margin-bottom:8px;
-}
-
-.setting-item p{
-    color:#666;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-
-    <a href="dashboard.html">←</a>
 
 <a href="dashboard.html" class="back-btn">←</a>
 
@@ -90,31 +16,52 @@ body{
 
     <div class="settings-box">
 
-        <h1>Settings</h1>
+        <h1>Account Settings</h1>
 
-        <div class="setting-item">
-            <h3>Account Settings</h3>
-            <p>Manage your account details.</p>
-        </div>
+        <form id="settingsForm">
 
-        <div class="setting-item">
-            <h3>Security</h3>
-            <p>Change password and security options.</p>
-        </div>
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Full Name"
+            >
 
-        <div class="setting-item">
-            <h3>Notifications</h3>
-            <p>Control email and system notifications.</p>
-        </div>
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                readonly
+            >
 
-        <div class="setting-item">
-            <h3>Privacy</h3>
-            <p>Manage privacy preferences.</p>
-        </div>
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="New Password"
+            >
+
+            <button
+                type="submit"
+                id="saveBtn"
+            >
+                Save Changes
+            </button>
+
+        </form>
+
+        <hr>
+
+        <button
+            id="deleteAccountBtn"
+            class="delete-btn"
+        >
+            Delete Account
+        </button>
 
     </div>
 
 </div>
+
+<script type="module" src="settings.js"></script>
 
 </body>
 </html>
