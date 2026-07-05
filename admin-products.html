@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Products</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f7fb;
+    font-family:Arial,sans-serif;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+.admin-box{
+    background:#fff;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#0066ff;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-btn">←</a>
+
+<div class="container">
+
+<div class="admin-box">
+
+<h1>Add Product</h1>
+
+<form id="productForm">
+
+<input
+type="text"
+id="productName"
+placeholder="Product Name"
+required>
+
+<input
+type="number"
+id="productPrice"
+placeholder="Price"
+required>
+
+<input
+type="text"
+id="productImage"
+placeholder="Image URL">
+
+<select id="productCategory">
+
+<option>Website Template</option>
+<option>Logo Design</option>
+<option>Web Development</option>
+<option>Graphic Design</option>
+<option>Mobile App</option>
+
+</select>
+
+<textarea
+id="productDescription"
+placeholder="Product Description">
+</textarea>
+
+<button type="submit">
+Add Product
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script type="module" src="admin-products.js"></script>
+
+</body>
+
+</html>
