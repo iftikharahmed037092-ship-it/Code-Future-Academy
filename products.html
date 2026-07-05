@@ -1,29 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Products</title>
+<title>Product Details</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f7fb;
+    font-family:Arial,sans-serif;
+}
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.container{
+    max-width:900px;
+    margin:80px auto;
+    padding:20px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.product-image{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.product-title{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.product-price{
+    color:#0066ff;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.product-category{
+    color:#666;
+    margin-bottom:15px;
+}
+
+.product-description{
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.actions{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.actions button{
+    padding:14px 25px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.cart-btn{
+    background:#0066ff;
+    color:white;
+}
+
+.buy-btn{
+    background:#111;
+    color:white;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<a href="dashboard.html" class="back-btn">←</a>
+<a href="products.html" class="back-btn">←</a>
 
 <div class="container">
 
-    <h1>All Products</h1>
+    <div class="product-card">
 
-    <div id="productsContainer">
+        <img
+        id="productImage"
+        class="product-image"
+        src="https://via.placeholder.com/800x400"
+        alt="Product">
+
+        <h1
+        id="productTitle"
+        class="product-title">
+            Product Name
+        </h1>
+
+        <div
+        id="productPrice"
+        class="product-price">
+            Rs 0
+        </div>
+
+        <div
+        id="productCategory"
+        class="product-category">
+            Category
+        </div>
+
+        <p
+        id="productDescription"
+        class="product-description">
+            Product Description
+        </p>
+
+        <div class="actions">
+
+            <button
+            id="addToCartBtn"
+            class="cart-btn">
+                Add To Cart
+            </button>
+
+            <button
+            id="buyNowBtn"
+            class="buy-btn">
+                Buy Now
+            </button>
+
+        </div>
 
     </div>
 
 </div>
 
-<script type="module" src="products.js"></script>
+<script type="module" src="product-details.js"></script>
 
 </body>
+
 </html>
