@@ -1,22 +1,25 @@
 import { db } from "./firebase.js";
 
 import {
-  ref,
-  onValue
+    ref,
+    onValue
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
-const productsContainer = document.getElementById("productsContainer");
+const productsGrid = document.getElementById("productsGrid");
 
 const productsRef = ref(db, "products");
 
 onValue(productsRef, (snapshot) => {
 
-    productsContainer.innerHTML = "";
+    productsGrid.innerHTML = "";
 
     if (!snapshot.exists()) {
 
-        productsContainer.innerHTML =
-        "<h3>No Products Found</h3>";
+        productsGrid.innerHTML = `
+        <h2 style="text-align:center;color:#666;">
+            No Products Found
+        </h2>
+        `;
 
         return;
     }
@@ -25,22 +28,39 @@ onValue(productsRef, (snapshot) => {
 
         const product = childSnapshot.val();
 
-        productsContainer.innerHTML += `
+        productsGrid.innerHTML += `
 
         <div class="product-card">
 
             <img
             src="${product.image}"
             alt="${product.title}"
-            width="250">
+            class="product-image">
 
-            <h2>${product.title}</h2>
+            <div class="product-content">
 
-            <h3>Rs ${product.price}</h3>
+                <h2 class="product-title">
+                    ${product.title}
+                </h2>
 
-            <p>${product.category}</p>
+                <div class="product-price">
+                    Rs ${product.price}
+                </div>
 
-            <p>${product.description}</p>
+                <p class="product-description">
+                    ${product.description}
+                </p>
+
+                <p style="margin-bottom:15px;color:#555;">
+                    Category: ${product.category}
+                </p>
+
+                <a href="product-details.html"
+                class="view-btn">
+                    View Details
+                </a>
+
+            </div>
 
         </div>
 
