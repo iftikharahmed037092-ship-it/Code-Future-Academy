@@ -1,23 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Admin Panel</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+}
+
+.back-btn{
+position:fixed;
+top:20px;
+left:20px;
+width:45px;
+height:45px;
+border-radius:50%;
+background:#fff;
+color:#111;
+text-decoration:none;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+z-index:999;
+}
+
+.container{
+max-width:700px;
+margin:90px auto 40px;
+padding:20px;
+}
+
+.card{
+background:#fff;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+color:#111;
+}
+
+input,
+textarea{
+width:100%;
+padding:15px;
+margin-bottom:18px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+
+textarea{
+height:120px;
+resize:vertical;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:50px;
+background:#0066ff;
+color:#fff;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#0052cc;
+}
+
+#result{
+margin-top:20px;
+text-align:center;
+font-weight:bold;
+color:green;
+}
+
+</style>
+
 </head>
+
 <body>
 
-<h1>Admin Panel</h1>
+<a href="dashboard.html" class="back-btn">←</a>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Add New Product</h1>
 
 <form id="productForm">
 
-<input type="text" id="title" placeholder="Product Name">
+<input
+type="text"
+id="title"
+placeholder="Product Name"
+required>
 
-<input type="text" id="price" placeholder="Price">
+<input
+type="text"
+id="price"
+placeholder="Price"
+required>
 
-<input type="text" id="category" placeholder="Category">
+<input
+type="text"
+id="category"
+placeholder="Category"
+required>
 
-<input type="text" id="image" placeholder="Image URL">
+<input
+type="text"
+id="image"
+placeholder="Image URL"
+required>
 
-<textarea id="description" placeholder="Description"></textarea>
+<textarea
+id="description"
+placeholder="Product Description"
+required></textarea>
 
 <button type="submit">
 Add Product
@@ -27,7 +151,12 @@ Add Product
 
 <p id="result"></p>
 
+</div>
+
+</div>
+
 <script type="module" src="admin.js"></script>
 
 </body>
+
 </html>
