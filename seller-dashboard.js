@@ -1,31 +1,31 @@
 document
 .getElementById("addProduct")
-.addEventListener("click",()=>{
+.addEventListener("click", () => {
 
-alert("Add Product Page Coming Soon");
+window.location.href = "admin.html";
 
 });
 
 document
 .getElementById("manageProducts")
-.addEventListener("click",()=>{
+.addEventListener("click", () => {
 
-alert("Manage Products Page Coming Soon");
+window.location.href = "products.html";
 
 });
 
 document
 .getElementById("viewOrders")
-.addEventListener("click",()=>{
+.addEventListener("click", () => {
 
-alert("Orders Page Coming Soon");
+window.location.href = "orders.html";
 
 });
 
 document
 .getElementById("withdrawMoney")
-.addEventListener("click",()=>{
+.addEventListener("click", () => {
 
-alert("Withdraw System Coming Soon");
+alert("Withdraw System will be available soon.");
 
 });
