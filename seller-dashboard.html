@@ -33,6 +33,7 @@ text-decoration:none;
 color:#111;
 font-size:24px;
 box-shadow:0 5px 15px rgba(0,0,0,.15);
+z-index:999;
 }
 
 .container{
@@ -41,9 +42,20 @@ margin:auto;
 padding:100px 20px 40px;
 }
 
-.title{
-text-align:center;
+.welcome-box{
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 margin-bottom:30px;
+}
+
+.welcome-box h1{
+margin-bottom:10px;
+}
+
+.welcome-box p{
+color:#666;
 }
 
 .stats{
@@ -70,6 +82,7 @@ margin-bottom:10px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
+margin-bottom:40px;
 }
 
 .action-card{
@@ -77,8 +90,8 @@ background:#fff;
 padding:25px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,.08);
-cursor:pointer;
 transition:.3s;
+cursor:pointer;
 }
 
 .action-card:hover{
@@ -93,6 +106,29 @@ margin-bottom:10px;
 color:#666;
 }
 
+.products-box{
+background:#fff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.products-box h2{
+margin-bottom:20px;
+}
+
+#sellerProducts{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.empty{
+text-align:center;
+color:#888;
+padding:40px;
+}
+
 </style>
 </head>
 
@@ -102,9 +138,9 @@ color:#666;
 
 <div class="container">
 
-<div class="title">
+<div class="welcome-box">
 <h1>Seller Dashboard</h1>
-<p>Manage your products and services</p>
+<p>Manage your products, orders and earnings from one place.</p>
 </div>
 
 <div class="stats">
@@ -135,7 +171,7 @@ color:#666;
 
 <div class="action-card" id="addProduct">
 <h3>Add Product</h3>
-<p>Create a new product or template.</p>
+<p>Create a new product.</p>
 </div>
 
 <div class="action-card" id="manageProducts">
@@ -144,20 +180,34 @@ color:#666;
 </div>
 
 <div class="action-card" id="viewOrders">
-<h3>View Orders</h3>
-<p>See customer orders.</p>
+<h3>Orders</h3>
+<p>View customer orders.</p>
 </div>
 
 <div class="action-card" id="withdrawMoney">
-<h3>Withdraw Earnings</h3>
-<p>Request payment withdrawal.</p>
+<h3>Withdraw</h3>
+<p>Withdraw your earnings.</p>
+</div>
+
+</div>
+
+<div class="products-box">
+
+<h2>Your Products</h2>
+
+<div id="sellerProducts">
+
+<div class="empty">
+No Products Yet
 </div>
 
 </div>
 
 </div>
 
-<script src="seller-dashboard.js"></script>
+</div>
+
+<script type="module" src="seller-dashboard.js"></script>
 
 </body>
 </html>
