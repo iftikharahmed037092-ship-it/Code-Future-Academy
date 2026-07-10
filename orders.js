@@ -56,41 +56,25 @@ ordersContainer.innerHTML+=`
 
 <p><b>Status:</b> ${order.status}</p>
 
-<div style="margin-top:15px;display:flex;gap:10px;">
+<div class="buttons">
 
 <button
-onclick="acceptOrder('${orderId}')"
-style="
-flex:1;
-padding:10px;
-background:#28a745;
-color:white;
-border:none;
-border-radius:10px;
-cursor:pointer;
-">
-
+class="accept-btn"
+onclick="acceptOrder('${orderId}')">
 Accept
-
 </button>
 
 <button
-onclick="rejectOrder('${orderId}')"
-style="
-flex:1;
-padding:10px;
-background:#dc3545;
-color:white;
-border:none;
-border-radius:10px;
-cursor:pointer;
-">
-
+class="reject-btn"
+onclick="rejectOrder('${orderId}')">
 Reject
-
 </button>
 
-</div>
+<button
+class="complete-btn"
+onclick="completeOrder('${orderId}')">
+Complete
+</button>
 
 </div>
 
