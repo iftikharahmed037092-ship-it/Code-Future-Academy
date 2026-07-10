@@ -96,38 +96,6 @@ Buy Now
 
 window.buyNow = function(productId){
 
-const productRef = ref(db,"products/"+productId);
-
-get(productRef).then((snapshot)=>{
-
-if(snapshot.exists()){
-
-const product = snapshot.val();
-
-const ordersRef = ref(db,"orders");
-
-const newOrder = push(ordersRef);
-
-set(newOrder,{
-
-productTitle: product.title,
-price: product.price,
-customerName: "Customer",
-date: new Date().toLocaleDateString(),
-status: "Pending"
-
-}).then(()=>{
-
-alert("Order Placed Successfully");
-
-}).catch((error)=>{
-
-alert(error.message);
-
-});
-
-}
-
-});
+window.location.href = "checkout.html?id=" + productId;
 
 }
