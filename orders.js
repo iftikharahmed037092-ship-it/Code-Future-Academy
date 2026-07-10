@@ -124,6 +124,18 @@ status:"Rejected"
 
 .then(()=>{
 
+const notificationRef = push(ref(db,"notifications"));
+
+set(notificationRef,{
+
+title:"Order Rejected",
+
+message:"One order has been rejected.",
+
+date:new Date().toLocaleString()
+
+});
+
 alert("Order Rejected");
 
 });
@@ -139,6 +151,18 @@ status:"Completed"
 })
 
 .then(()=>{
+
+const notificationRef = push(ref(db,"notifications"));
+
+set(notificationRef,{
+
+title:"Order Completed",
+
+message:"One order has been completed successfully.",
+
+date:new Date().toLocaleString()
+
+});
 
 alert("Order Completed Successfully");
 
