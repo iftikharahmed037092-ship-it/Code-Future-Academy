@@ -115,3 +115,25 @@ alert("Order Rejected");
 });
 
 }
+
+window.completeOrder = function(orderId){
+
+update(ref(db,"orders/"+orderId),{
+
+status:"Completed"
+
+})
+
+.then(()=>{
+
+alert("Order Completed Successfully");
+
+})
+
+.catch((error)=>{
+
+alert(error.message);
+
+});
+
+}
