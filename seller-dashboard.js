@@ -41,6 +41,14 @@ window.location.href="withdraw.html";
 
 });
 
+document
+.getElementById("notifications")
+.addEventListener("click",()=>{
+
+window.location.href="notifications.html";
+
+});
+
 const sellerProducts =
 document.getElementById("sellerProducts");
 
