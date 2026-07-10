@@ -1,10 +1,15 @@
 import { db } from "./firebase.js";
-
 import {
   ref,
   push,
-  set
+  set,
+  get,
+  update
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+const params = new URLSearchParams(window.location.search);
+
+const productId = params.get("id");
 
 const productForm = document.getElementById("productForm");
 
