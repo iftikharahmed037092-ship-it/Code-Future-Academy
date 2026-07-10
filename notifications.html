@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -11,59 +10,39 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f5f7fb;
-    font-family:Arial,sans-serif;
-}
-
-.back-btn{
-    position:fixed;
-    top:20px;
-    left:20px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#fff;
-    color:#111;
-    text-decoration:none;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
+background:#f5f7fb;
 }
 
 .container{
-    max-width:900px;
-    margin:auto;
-    padding:90px 20px;
+max-width:900px;
+margin:auto;
+padding:40px 20px;
 }
 
 h1{
-    text-align:center;
-    margin-bottom:25px;
+text-align:center;
+margin-bottom:30px;
 }
 
 .notification-card{
-    background:#fff;
-    padding:20px;
-    border-radius:18px;
-    margin-bottom:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+background:#fff;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+margin-bottom:15px;
 }
 
-.notification-title{
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.notification-time{
-    color:#777;
-    font-size:14px;
+.date{
+color:#777;
+font-size:14px;
+margin-top:8px;
 }
 
 </style>
@@ -72,33 +51,11 @@ h1{
 
 <body>
 
-<a href="javascript:history.back()" class="back-btn">←</a>
-
 <div class="container">
 
 <h1>Notifications</h1>
 
-<div id="notificationsList">
-
-<div class="notification-card">
-<div class="notification-title">
-Order Approved
-</div>
-<p>Your order #1001 has been approved.</p>
-<div class="notification-time">
-2 minutes ago
-</div>
-</div>
-
-<div class="notification-card">
-<div class="notification-title">
-New Product Added
-</div>
-<p>A new website template is now available.</p>
-<div class="notification-time">
-1 hour ago
-</div>
-</div>
+<div id="notificationsContainer">
 
 </div>
 
@@ -107,5 +64,4 @@ New Product Added
 <script type="module" src="notifications.js"></script>
 
 </body>
-
 </html>
