@@ -37,7 +37,7 @@ document
 .getElementById("withdrawMoney")
 .addEventListener("click",()=>{
 
-alert("Withdraw System Coming Soon");
+window.location.href="withdraw.html";
 
 });
 
