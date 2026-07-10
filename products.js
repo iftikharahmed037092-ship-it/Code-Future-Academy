@@ -2,7 +2,10 @@ import { db } from "./firebase.js";
 
 import {
     ref,
-    onValue
+    onValue,
+    push,
+    set,
+    get
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const productsGrid = document.getElementById("productsGrid");
@@ -90,3 +93,41 @@ Buy Now
     });
 
 });
+
+window.buyNow = function(productId){
+
+const productRef = ref(db,"products/"+productId);
+
+get(productRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+const product = snapshot.val();
+
+const ordersRef = ref(db,"orders");
+
+const newOrder = push(ordersRef);
+
+set(newOrder,{
+
+productTitle: product.title,
+price: product.price,
+customerName: "Customer",
+date: new Date().toLocaleDateString(),
+status: "Pending"
+
+}).then(()=>{
+
+alert("Order Placed Successfully");
+
+}).catch((error)=>{
+
+alert(error.message);
+
+});
+
+}
+
+});
+
+}
