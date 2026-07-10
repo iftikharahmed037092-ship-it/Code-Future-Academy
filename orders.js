@@ -96,6 +96,18 @@ status:"Accepted"
 
 .then(()=>{
 
+const notificationRef = push(ref(db,"notifications"));
+
+set(notificationRef,{
+
+title:"Order Accepted",
+
+message:"One order has been accepted successfully.",
+
+date:new Date().toLocaleString()
+
+});
+
 alert("Order Accepted");
 
 });
