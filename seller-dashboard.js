@@ -181,3 +181,50 @@ alert(error.message);
 }
 
   }
+
+const walletBalance =
+document.getElementById("walletBalance");
+
+const totalEarnings =
+document.getElementById("totalEarnings");
+
+const ordersRef =
+ref(db,"orders");
+
+onValue(ordersRef,(snapshot)=>{
+
+let earnings = 0;
+let wallet = 0;
+let orders = 0;
+
+if(snapshot.exists()){
+
+snapshot.forEach((child)=>{
+
+const order = child.val();
+
+if(order.status=="Accepted"){
+
+orders++;
+
+const price = Number(order.price);
+
+earnings += price;
+
+wallet += price * 0.90;
+
+}
+
+});
+
+}
+
+document.getElementById("totalOrders").innerHTML = orders;
+
+totalEarnings.innerHTML =
+"Rs " + earnings;
+
+walletBalance.innerHTML =
+"Rs " + wallet.toFixed(2);
+
+});
