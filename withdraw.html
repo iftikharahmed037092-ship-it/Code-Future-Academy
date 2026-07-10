@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Withdraw</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+}
+
+.container{
+max-width:500px;
+margin:80px auto;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+h1{
+text-align:center;
+margin-bottom:25px;
+}
+
+input,
+select,
+button{
+
+width:100%;
+padding:15px;
+margin-top:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+
+}
+
+button{
+
+background:#0066ff;
+color:white;
+border:none;
+cursor:pointer;
+font-weight:bold;
+
+}
+
+button:hover{
+
+background:#0052cc;
+
+}
+
+.back-btn{
+
+display:inline-block;
+margin-bottom:20px;
+text-decoration:none;
+font-size:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="seller-dashboard.html" class="back-btn">← Back</a>
+
+<h1>Withdraw Request</h1>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter Amount">
+
+<select id="method">
+
+<option>JazzCash</option>
+
+<option>EasyPaisa</option>
+
+<option>Bank Account</option>
+
+</select>
+
+<input
+type="text"
+id="account"
+placeholder="Account Number">
+
+<button id="withdrawBtn">
+
+Submit Request
+
+</button>
+
+</div>
+
+<script type="module" src="withdraw.js"></script>
+
+</body>
+
+</html>
