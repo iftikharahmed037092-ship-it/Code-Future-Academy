@@ -13,6 +13,32 @@ const productId = params.get("id");
 
 const productForm = document.getElementById("productForm");
 
+if(productId){
+
+const productRef = ref(db,"products/"+productId);
+
+get(productRef).then((snapshot)=>{
+
+if(snapshot.exists()){
+
+const product = snapshot.val();
+
+document.getElementById("title").value = product.title;
+
+document.getElementById("price").value = product.price;
+
+document.getElementById("category").value = product.category;
+
+document.getElementById("image").value = product.image;
+
+document.getElementById("description").value = product.description;
+
+}
+
+});
+
+}
+
 productForm.addEventListener("submit", (e) => {
 
     e.preventDefault();
