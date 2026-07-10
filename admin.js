@@ -1,4 +1,5 @@
 import { db } from "./firebase.js";
+
 import {
   ref,
   push,
@@ -8,34 +9,29 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const params = new URLSearchParams(window.location.search);
-
 const productId = params.get("id");
 
 const productForm = document.getElementById("productForm");
 
-if(productId){
+if (productId) {
 
-const productRef = ref(db,"products/"+productId);
+    const productRef = ref(db, "products/" + productId);
 
-get(productRef).then((snapshot)=>{
+    get(productRef).then((snapshot) => {
 
-if(snapshot.exists()){
+        if (snapshot.exists()) {
 
-const product = snapshot.val();
+            const product = snapshot.val();
 
-document.getElementById("title").value = product.title;
+            document.getElementById("title").value = product.title;
+            document.getElementById("price").value = product.price;
+            document.getElementById("category").value = product.category;
+            document.getElementById("image").value = product.image;
+            document.getElementById("description").value = product.description;
 
-document.getElementById("price").value = product.price;
+        }
 
-document.getElementById("category").value = product.category;
-
-document.getElementById("image").value = product.image;
-
-document.getElementById("description").value = product.description;
-
-}
-
-});
+    });
 
 }
 
@@ -49,32 +45,56 @@ productForm.addEventListener("submit", (e) => {
     const image = document.getElementById("image").value;
     const description = document.getElementById("description").value;
 
-    const productsRef = ref(db, "products");
+    const productData = {
 
-    const newProductRef = push(productsRef);
+        title,
+        price,
+        category,
+        image,
+        description
 
-    set(newProductRef, {
+    };
 
-        title: title,
-        price: price,
-        category: category,
-        image: image,
-        description: description
+    if (productId) {
 
-    })
+        update(ref(db, "products/" + productId), productData)
 
-    .then(() => {
+        .then(() => {
 
-        alert("Product Added Successfully");
+            alert("Product Updated Successfully");
 
-        productForm.reset();
+            window.location.href = "manage-products.html";
 
-    })
+        })
 
-    .catch((error) => {
+        .catch((error) => {
 
-        alert(error.message);
+            alert(error.message);
 
-    });
+        });
+
+    } else {
+
+        const productsRef = ref(db, "products");
+
+        const newProductRef = push(productsRef);
+
+        set(newProductRef, productData)
+
+        .then(() => {
+
+            alert("Product Added Successfully");
+
+            productForm.reset();
+
+        })
+
+        .catch((error) => {
+
+            alert(error.message);
+
+        });
+
+    }
 
 });
