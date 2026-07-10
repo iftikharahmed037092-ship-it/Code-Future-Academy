@@ -11,77 +11,93 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f5f7fb;
-    font-family:Arial,sans-serif;
-}
-
-.back-btn{
-    position:fixed;
-    top:20px;
-    left:20px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#fff;
-    color:#111;
-    text-decoration:none;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+background:#f5f7fb;
 }
 
 .container{
-    max-width:700px;
-    margin:80px auto;
-    padding:20px;
+max-width:900px;
+margin:40px auto;
+padding:20px;
 }
 
-.checkout-box{
-    background:#fff;
-    padding:30px;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+.card{
+background:#fff;
+border-radius:20px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 h1{
-    text-align:center;
-    margin-bottom:25px;
+text-align:center;
+margin-bottom:30px;
+}
+
+.product-box{
+display:flex;
+gap:20px;
+align-items:center;
+margin-bottom:30px;
+padding-bottom:20px;
+border-bottom:1px solid #ddd;
+}
+
+.product-box img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.product-info h2{
+margin-bottom:10px;
+}
+
+.product-info p{
+color:#0066ff;
+font-size:22px;
+font-weight:bold;
+}
+
+form{
+display:grid;
+gap:18px;
 }
 
 input,
-select,
-textarea{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:12px;
-    font-size:16px;
+textarea,
+select{
+width:100%;
+padding:14px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
 }
 
 textarea{
-    resize:none;
-    height:120px;
+resize:none;
+height:120px;
 }
 
-.place-order-btn{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:50px;
-    background:#0066ff;
-    color:#fff;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
+button{
+padding:16px;
+background:#0066ff;
+color:#fff;
+border:none;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#0052cc;
 }
 
 </style>
@@ -90,81 +106,81 @@ textarea{
 
 <body>
 
-<a href="javascript:history.back()" class="back-btn">←</a>
-
 <div class="container">
 
-    <div class="checkout-box">
+<div class="card">
 
-        <h1>Checkout</h1>
+<h1>Checkout</h1>
 
-        <form id="checkoutForm">
+<div class="product-box">
 
-            <input
-            type="text"
-            id="customerName"
-            placeholder="Full Name"
-            required>
+<img id="productImage" src="">
 
-            <input
-            type="email"
-            id="customerEmail"
-            placeholder="Email"
-            required>
+<div class="product-info">
 
-            <input
-            type="text"
-            id="customerPhone"
-            placeholder="Phone Number"
-            required>
+<h2 id="productTitle">
+Loading...
+</h2>
 
-            <input
-            type="text"
-            id="customerCountry"
-            placeholder="Country">
+<p id="productPrice">
+Rs 0
+</p>
 
-            <input
-            type="text"
-            id="customerCity"
-            placeholder="City">
+</div>
 
-            <textarea
-            id="customerAddress"
-            placeholder="Complete Address"></textarea>
+</div>
 
-            <select id="paymentMethod">
+<form id="checkoutForm">
 
-                <option value="">
-                    Select Payment Method
-                </option>
+<input
+type="text"
+id="customerName"
+placeholder="Full Name"
+required>
 
-                <option>
-                    Easypaisa
-                </option>
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
 
-                <option>
-                    JazzCash
-                </option>
+<textarea
+id="address"
+placeholder="Complete Address"
+required>
+</textarea>
 
-                <option>
-                    Bank Transfer
-                </option>
+<input
+type="text"
+id="city"
+placeholder="City"
+required>
 
-                <option>
-                    Cash On Delivery
-                </option>
+<select id="payment">
 
-            </select>
+<option>
+Cash On Delivery
+</option>
 
-            <button
-            type="submit"
-            class="place-order-btn">
-                Place Order
-            </button>
+<option>
+JazzCash
+</option>
 
-        </form>
+<option>
+EasyPaisa
+</option>
 
-    </div>
+</select>
+
+<button type="submit">
+
+Confirm Order
+
+</button>
+
+</form>
+
+</div>
 
 </div>
 
