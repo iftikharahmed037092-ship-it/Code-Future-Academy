@@ -3,7 +3,9 @@ import { db } from "./firebase.js";
 import {
 ref,
 onValue,
-update
+update,
+push,
+set
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const ordersContainer =
