@@ -147,12 +147,9 @@ totalProducts.innerHTML=count;
 
 });
 
-window.editProduct=function(productId){
-
-alert("Edit System Coming Soon");
-
+window.editProduct = function(productId){
+    window.location.href = "admin.html?id=" + productId;
 }
-
 window.deleteProduct=function(productId){
 
 if(confirm("Delete this product?")){
