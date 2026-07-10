@@ -55,10 +55,31 @@ onValue(productsRef, (snapshot) => {
                     Category: ${product.category}
                 </p>
 
-                <a href="product-details.html"
-                class="view-btn">
-                    View Details
-                </a>
+     <div style="display:flex;gap:10px;">
+
+<a href="product-details.html"
+class="view-btn"
+style="flex:1;text-align:center;">
+View Details
+</a>
+
+<button
+class="buy-btn"
+onclick="buyNow('${childSnapshot.key}')"
+style="
+flex:1;
+background:#00b894;
+color:white;
+border:none;
+border-radius:50px;
+padding:12px;
+font-weight:bold;
+cursor:pointer;
+">
+Buy Now
+</button>
+
+</div>
 
             </div>
 
