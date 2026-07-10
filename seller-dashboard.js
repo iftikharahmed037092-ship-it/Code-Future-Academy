@@ -203,7 +203,7 @@ snapshot.forEach((child)=>{
 
 const order = child.val();
 
-if(order.status=="Accepted"){
+if(order.status=="completed"){
 
 orders++;
 
