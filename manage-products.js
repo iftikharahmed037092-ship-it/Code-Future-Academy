@@ -89,6 +89,7 @@ alert("Product Deleted");
 })
 
 .catch((error)=>{
+ 
 
 alert(error.message);
 
@@ -100,6 +101,7 @@ alert(error.message);
 
 window.editProduct = function(productId){
 
-alert("Edit System Coming Soon");
+window.location.href =
+"admin.html?id="+productId;
 
 }
