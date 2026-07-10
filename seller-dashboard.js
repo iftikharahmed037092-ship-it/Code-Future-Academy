@@ -2,7 +2,8 @@ import { db } from "./firebase.js";
 
 import {
 ref,
-onValue
+onValue,
+get
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 document
