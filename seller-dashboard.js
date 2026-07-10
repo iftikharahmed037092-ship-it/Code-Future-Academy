@@ -3,7 +3,10 @@ import { db } from "./firebase.js";
 import {
 ref,
 onValue,
-get
+get,
+query,
+orderByChild,
+equalTo
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 document
