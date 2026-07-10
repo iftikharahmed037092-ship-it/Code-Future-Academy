@@ -6,7 +6,7 @@ onValue,
 remove
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
-const productsGrid = document.getElementById("productsGrid");
+const productsGrid = document.getElementById("productsContainer");
 
 const productsRef = ref(db, "products");
 
