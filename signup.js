@@ -35,13 +35,31 @@ signupForm.addEventListener("submit", function(e) {
         password
     )
 
-    .then((userCredential) => {
+    ..then((userCredential) => {
 
-        alert("Account Created Successfully");
+const user = userCredential.user;
 
-        window.location.href = "login.html";
+set(ref(db,"users/"+user.uid),{
 
-    })
+fullName: fullName,
+
+email: email,
+
+role: "buyer",
+
+createdAt: new Date().toLocaleString()
+
+})
+
+.then(()=>{
+
+alert("Account Created Successfully");
+
+window.location.href="login.html";
+
+});
+
+})
 
     .catch((error) => {
 
