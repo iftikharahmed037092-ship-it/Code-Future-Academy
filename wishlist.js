@@ -108,6 +108,8 @@ quantity:1
 
 .then(()=>{
 
+remove(ref(db,"wishlist/"+uid+"/"+id));
+
 alert("Added To Cart Successfully 🛒");
 
 })
