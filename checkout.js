@@ -4,7 +4,8 @@ import {
 ref,
 get,
 set,
-push
+push,
+remove
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const params = new URLSearchParams(window.location.search);
@@ -90,6 +91,14 @@ date: new Date().toLocaleString()
 })
 
 .then(()=>{
+
+  const uid = localStorage.getItem("uid");
+
+if(uid){
+
+remove(ref(db,"cart/"+uid));
+
+  }
 
 alert("Order Placed Successfully!");
 
