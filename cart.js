@@ -25,10 +25,14 @@ window.location.href="login.html";
 
 const cartRef = ref(db,"cart/"+uid);
 
+let cartData = null;
+
 console.log(uid);
 console.log("cart/"+uid);
 
 onValue(cartRef,(snapshot)=>{
+  
+cartData = snapshot;
 
 cartItems.innerHTML="";
 
@@ -110,8 +114,18 @@ cartTotal.innerHTML="Total: Rs "+total;
 
 checkoutBtn.addEventListener("click",()=>{
 
-const firstProduct = Object.keys(snapshot.val())[0];
+if(!cartData || !cartData.exists()){
 
-window.location.href = "checkout.html?id=" + firstProduct;
+alert("Cart is Empty");
+
+return;
+
+}
+
+const firstKey = Object.keys(cartData.val())[0];
+
+const productId = cartData.val()[firstKey].productId;
+
+window.location.href = "checkout.html?id=" + productId;
 
 });
