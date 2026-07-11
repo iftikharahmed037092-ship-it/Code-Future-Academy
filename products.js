@@ -59,12 +59,12 @@ onValue(productsRef, (snapshot) => {
                 </p>
 
      <div style="display:flex;gap:10px;">
-
-<a href="product-details.html"
-class="view-btn"
-style="flex:1;text-align:center;">
-View Details
-</a>
+     
+  <a href="product-details.html?id=${childSnapshot.key}"
+    class="view-btn"
+    style="flex:1;text-align:center;">
+    View Details
+  </a>
 
 <button
 class="buy-btn"
