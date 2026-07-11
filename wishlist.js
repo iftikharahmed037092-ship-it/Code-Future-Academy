@@ -3,7 +3,9 @@ import { db } from "./firebase.js";
 import {
 ref,
 onValue,
-remove
+remove,
+push,
+set
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const uid = localStorage.getItem("uid");
@@ -76,6 +78,48 @@ remove(ref(db,"wishlist/"+uid+"/"+id));
 
 window.addToCart=function(id){
 
-alert("Next Step: Wishlist To Cart");
+const itemRef = ref(db,"wishlist/"+uid+"/"+id);
+
+onValue(itemRef,(snapshot)=>{
+
+if(snapshot.exists()){
+
+const item = snapshot.val();
+
+const cartRef = push(ref(db,"cart/"+uid));
+
+set(cartRef,{
+
+productId:item.productId,
+
+title:item.title,
+
+price:item.price,
+
+description:item.description,
+
+category:item.category,
+
+image:item.image,
+
+quantity:1
+
+})
+
+.then(()=>{
+
+alert("Added To Cart Successfully 🛒");
+
+})
+
+.catch((error)=>{
+
+alert(error.message);
+
+});
+
+}
+
+},{onlyOnce:true});
 
 }
