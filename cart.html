@@ -66,6 +66,14 @@ h1{
     font-weight:bold;
 }
 
+.cart-total{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+text-align:right;
+color:#0066ff;
+}
+
 .checkout-btn{
     width:100%;
     padding:15px;
@@ -90,21 +98,14 @@ h1{
 
 <h1>My Cart</h1>
 
-<div id="cartItems">
+<div id="cartItems"></div>
 
-<div class="cart-item">
-
-<h3 class="item-title">
-Sample Product
-</h3>
-
-<p class="item-price">
-Rs 5,000
-</p>
+    <div id="cartTotal" class="cart-total">
+Total: Rs 0
+    </div>
 
 </div>
 
-</div>
 
 <button
 id="checkoutBtn"
