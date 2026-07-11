@@ -11,6 +11,8 @@ const checkoutBtn = document.getElementById("checkoutBtn");
 
 const uid = localStorage.getItem("uid");
 
+alert(uid);
+
 if(!uid){
 
 alert("Please Login First");
