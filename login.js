@@ -18,11 +18,17 @@ loginForm.addEventListener("submit", (e) => {
 
     .then((userCredential) => {
 
-        alert("Login Successful");
+const user = userCredential.user;
 
-        window.location.href = "dashboard.html";
+localStorage.setItem("uid", user.uid);
 
-    })
+localStorage.setItem("email", user.email);
+
+alert("Login Successful");
+
+window.location.href = "dashboard.html";
+
+})
 
     .catch((error) => {
 
