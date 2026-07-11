@@ -25,6 +25,9 @@ window.location.href="login.html";
 
 const cartRef = ref(db,"cart/"+uid);
 
+console.log(uid);
+console.log("cart/"+uid);
+
 onValue(cartRef,(snapshot)=>{
 
 cartItems.innerHTML="";
