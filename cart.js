@@ -11,6 +11,8 @@ const checkoutBtn = document.getElementById("checkoutBtn");
 
 const uid = localStorage.getItem("uid");
 
+console.log("UID:", uid);
+alert("UID = " + uid);
 alert(uid);
 
 if(!uid){
