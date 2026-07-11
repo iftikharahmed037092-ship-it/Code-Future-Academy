@@ -2,7 +2,8 @@ import { db } from "./firebase.js";
 
 import {
 ref,
-get
+get,
+set
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const params = new URLSearchParams(window.location.search);
@@ -46,7 +47,43 @@ alert("Product Not Found");
 
 addToCartBtn.addEventListener("click",()=>{
 
-alert("Add To Cart system will be connected in next step.");
+const uid = localStorage.getItem("uid");
+
+if(!uid){
+
+alert("Please Login First");
+
+return;
+
+}
+
+const cartRef = ref(db,"cart/"+uid+"/"+productId);
+
+set(cartRef,{
+
+productId: productId,
+
+title: productTitle.innerHTML,
+
+price: productPrice.innerHTML,
+
+image: productImage.src,
+
+quantity:1
+
+})
+
+.then(()=>{
+
+alert("Product Added To Cart");
+
+})
+
+.catch((error)=>{
+
+alert(error.message);
+
+});
 
 });
 
