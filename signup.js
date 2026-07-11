@@ -1,8 +1,13 @@
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 
 import {
-  createUserWithEmailAndPassword
+createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+import {
+ref,
+set
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const signupForm = document.getElementById("signupForm");
 
