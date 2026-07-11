@@ -11,147 +11,96 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
 }
 
 body{
+font-family:Arial,sans-serif;
 background:#f5f7fb;
-}
-
-.back-btn{
-position:fixed;
-top:20px;
-left:20px;
-width:45px;
-height:45px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#fff;
-border-radius:50%;
-text-decoration:none;
-color:#111;
-font-size:24px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
 .container{
 max-width:1200px;
 margin:auto;
-padding:100px 20px 40px;
+padding:30px;
 }
 
-.title{
+h1{
 text-align:center;
 margin-bottom:30px;
 }
 
-.title h1{
-font-size:36px;
-color:#111;
-}
-
-.wishlist-grid{
+#wishlistItems{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
-.wishlist-card{
+.card{
 background:#fff;
-padding:25px;
+padding:15px;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-.wishlist-card h3{
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.card h2{
+font-size:20px;
 margin-bottom:10px;
 }
 
-.wishlist-card p{
-color:#666;
-margin-bottom:15px;
-}
-
 .price{
-font-size:20px;
-font-weight:bold;
 color:#0066ff;
-margin-bottom:15px;
+font-weight:bold;
+margin-bottom:10px;
 }
 
-.btn-group{
+.buttons{
 display:flex;
 gap:10px;
+margin-top:15px;
 }
 
-.btn{
+button{
 flex:1;
 padding:12px;
 border:none;
-border-radius:12px;
+border-radius:40px;
 cursor:pointer;
-color:#fff;
+font-weight:bold;
 }
 
 .cart-btn{
 background:#0066ff;
+color:white;
 }
 
 .remove-btn{
-background:#dc3545;
-}
-
-.empty-box{
-background:#fff;
-padding:40px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+background:red;
+color:white;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<a href="dashboard.html" class="back-btn">←</a>
-
 <div class="container">
 
-<div class="title">
 <h1>My Wishlist</h1>
-</div>
 
-<div class="wishlist-grid">
-
-<div class="wishlist-card">
-
-<h3>Website Template</h3>
-
-<p>Modern responsive website template.</p>
-
-<div class="price">
-Rs 5,000
-</div>
-
-<div class="btn-group">
-
-<button class="btn cart-btn">
-Add To Cart
-</button>
-
-<button class="btn remove-btn">
-Remove
-</button>
+<div id="wishlistItems"></div>
 
 </div>
 
-</div>
-
-</div>
-
-</div>
+<script type="module" src="wishlist.js"></script>
 
 </body>
 </html>
