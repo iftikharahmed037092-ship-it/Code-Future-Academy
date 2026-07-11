@@ -110,6 +110,8 @@ cartTotal.innerHTML="Total: Rs "+total;
 
 checkoutBtn.addEventListener("click",()=>{
 
-window.location.href="checkout.html";
+const firstProduct = Object.keys(snapshot.val())[0];
+
+window.location.href = "checkout.html?id=" + firstProduct;
 
 });
