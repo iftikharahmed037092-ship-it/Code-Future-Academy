@@ -117,6 +117,58 @@ header{
         font-size:14px;
     }
 }
+        /* Header mobile scrolling fix */
+
+.navbar{
+    flex:1;
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
+    justify-content:center;
+}
+
+.navbar::-webkit-scrollbar{
+    display:none;
+}
+
+
+.header-actions{
+    flex-shrink:0;
+}
+
+
+.logo{
+    flex-shrink:0;
+}
+
+
+/* Mobile Header */
+@media(max-width:768px){
+
+header{
+    padding:0 15px;
+    gap:10px;
+}
+
+
+.navbar{
+    display:flex;
+    overflow-x:auto;
+    gap:25px;
+}
+
+
+.login-btn{
+    padding:8px 14px;
+    white-space:nowrap;
+}
+
+
+.logo h2{
+    font-size:20px;
+}
+
+}
 .hero{
     min-height:auto;
     padding:120px 8% 120px;
