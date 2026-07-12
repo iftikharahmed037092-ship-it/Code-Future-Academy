@@ -25,34 +25,29 @@ header{
     top:0;
     left:0;
     width:100%;
-    height:80px;
-    background:white;
-
+    height:75px;
+    background:#fff;
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:0 6%;
-    box-shadow:0 2px 20px rgba(0,0,0,.08);
-
-    z-index:1000;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    z-index:9999;
 }
 
-
-.logo{
-    flex-shrink:0;
-}
 
 .logo h2{
     font-size:28px;
     color:#111;
+    margin:0;
+    font-weight:700;
 }
 
 
 .navbar{
     display:flex;
-    gap:30px;
     align-items:center;
+    gap:35px;
 }
 
 
@@ -60,33 +55,122 @@ header{
     text-decoration:none;
     color:#333;
     font-size:16px;
+    font-weight:600;
 }
+
+
+.navbar a:hover{
+    color:#0066ff;
+}
+
 
 
 .header-actions{
     display:flex;
     align-items:center;
-    gap:10px;
-}
-
-
-.menu-btn{
-    display:none;
+    gap:15px;
 }
 
 
 .login-btn{
-    padding:10px 20px;
-    border:none;
-    border-radius:50px;
+
     background:#0066ff;
     color:white;
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+
+.menu-btn{
+
+    display:none;
+    background:none;
+    border:none;
+    font-size:35px;
+    cursor:pointer;
+
 }
 
 
 
+/* MOBILE */
 
-    
+@media(max-width:768px){
+
+
+header{
+
+    height:70px;
+    padding:0 20px;
+
+}
+
+
+
+.logo h2{
+
+    font-size:24px;
+
+}
+
+
+
+.navbar{
+
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:white;
+
+    display:none;
+
+    flex-direction:column;
+
+    gap:0;
+
+}
+
+
+
+.navbar a{
+
+    padding:18px 25px;
+    border-bottom:1px solid #eee;
+
+}
+
+
+
+.navbar.active{
+
+    display:flex;
+
+}
+
+
+
+.menu-btn{
+
+    display:block;
+
+}
+
+
+
+.login-btn{
+
+    padding:9px 18px;
+    font-size:14px;
+
+}
+
+
+}
 .hero{
     min-height:auto;
     padding:120px 8% 120px;
