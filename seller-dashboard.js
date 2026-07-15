@@ -13,7 +13,7 @@ document
 .getElementById("addProduct")
 .addEventListener("click",()=>{
 
-window.location.href="admin.html";
+window.location.href="add-product.html";
 
 });
 
