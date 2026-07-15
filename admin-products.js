@@ -1,33 +1,181 @@
+/*==================================================
+ CFA AI ADMIN ADD PRODUCT JS
+ FIREBASE SAVE PRODUCT
+==================================================*/
+
+
+import { db } from "./firebase.js";
+
+
+import {
+
+ref,
+push,
+set
+
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+
+
+
 const productForm =
 document.getElementById("productForm");
 
-productForm.addEventListener("submit",(e)=>{
 
-    e.preventDefault();
 
-    const product = {
 
-        name:
-        document.getElementById("productName").value,
+const imageInput =
+document.getElementById("productImage");
 
-        price:
-        document.getElementById("productPrice").value,
 
-        image:
-        document.getElementById("productImage").value,
+const imagePreview =
+document.getElementById("imagePreview");
 
-        category:
-        document.getElementById("productCategory").value,
 
-        description:
-        document.getElementById("productDescription").value
 
-    };
 
-    console.log(product);
 
-    alert("Product Added Successfully");
+/*==============================
+IMAGE PREVIEW
+==============================*/
 
-    productForm.reset();
+
+imageInput.addEventListener(
+"input",
+()=>{
+
+
+imagePreview.src =
+imageInput.value || "images/no-image.png";
+
+
+});
+
+
+
+
+
+
+/*==============================
+ADD PRODUCT
+==============================*/
+
+
+productForm.addEventListener(
+
+"submit",
+
+(e)=>{
+
+
+e.preventDefault();
+
+
+
+
+
+const productRef =
+push(ref(db,"products"));
+
+
+
+
+
+const product = {
+
+
+title:
+document.getElementById("productName").value,
+
+
+
+price:
+document.getElementById("productPrice").value,
+
+
+
+oldPrice:
+document.getElementById("oldPrice").value,
+
+
+
+discount:
+document.getElementById("discount").value,
+
+
+
+image:
+document.getElementById("productImage").value,
+
+
+
+category:
+document.getElementById("productCategory").value,
+
+
+
+badge:
+document.getElementById("productBadge").value,
+
+
+
+stock:
+document.getElementById("productStock").value,
+
+
+
+rating:
+document.getElementById("productRating").value,
+
+
+
+description:
+document.getElementById("productDescription").value,
+
+
+
+createdAt:
+Date.now()
+
+
+
+};
+
+
+
+
+
+
+set(productRef,product)
+
+.then(()=>{
+
+
+alert(
+"Product Added Successfully ✅"
+);
+
+
+
+productForm.reset();
+
+
+
+imagePreview.src=
+"images/no-image.png";
+
+
+
+})
+
+.catch((error)=>{
+
+
+alert(error.message);
+
+
+});
+
+
 
 });
