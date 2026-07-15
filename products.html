@@ -11,102 +11,438 @@
 
 <style>
 
+/* یہاں بعد میں پوری CSS آئے گی */
+    /* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+
+/* ==========================
+   BODY
+========================== */
+
 body{
+
     background:#f5f7fb;
+
     font-family:Arial,sans-serif;
+
+    color:#111;
+
 }
+
+
+/* ==========================
+   BACK BUTTON
+========================== */
 
 .back-btn{
+
     position:fixed;
+
     top:20px;
+
     left:20px;
-    width:45px;
-    height:45px;
+
+    width:48px;
+
+    height:48px;
+
     border-radius:50%;
-    background:#fff;
+
+    background:#ffffff;
+
     color:#111;
+
     text-decoration:none;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     font-size:24px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:.3s;
+
     z-index:999;
+
 }
+
+.back-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================
+   CONTAINER
+========================== */
 
 .container{
-    max-width:1200px;
+
+    max-width:1300px;
+
     margin:auto;
-    padding:90px 20px 30px;
+
+    padding:90px 20px 40px;
+
 }
+
+
+/* ==========================
+   PAGE TITLE
+========================== */
 
 .page-title{
+
     text-align:center;
+
+    font-size:38px;
+
+    font-weight:700;
+
     margin-bottom:30px;
+
     color:#111;
+
 }
+
+
+/* ==========================
+   SEARCH BOX
+========================== */
+
+.search-box{
+
+    max-width:550px;
+
+    margin:0 auto 35px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:16px 22px;
+
+    border:1px solid #ddd;
+
+    border-radius:50px;
+
+    outline:none;
+
+    font-size:16px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    border-color:#0066ff;
+
+    box-shadow:0 0 12px rgba(0,102,255,.18);
+
+}
+
+
+/* ==========================
+   PRODUCTS GRID
+========================== */
 
 .products-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+
 }
 
+
+/* ==========================
+   PRODUCT CARD
+========================== */
+
 .product-card{
-    background:#fff;
-    border-radius:20px;
+
+    background:white;
+
+    border-radius:22px;
+
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
 }
 
 .product-card:hover{
-    transform:translateY(-5px);
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
 }
+
+
+/* ==========================
+   PRODUCT IMAGE
+========================== */
 
 .product-image{
+
     width:100%;
-    height:220px;
+
+    height:230px;
+
     object-fit:cover;
+
 }
 
+
+/* ==========================
+   PRODUCT CONTENT
+========================== */
+
 .product-content{
-    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    padding:22px;
+
 }
 
 .product-title{
-    font-size:20px;
-    margin-bottom:10px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+
 }
 
 .product-price{
-    color:#0066ff;
-    font-size:22px;
+
+    font-size:24px;
+
     font-weight:bold;
-    margin-bottom:10px;
+
+    color:#0066ff;
+
+    margin-bottom:12px;
+
 }
 
 .product-description{
+
     color:#666;
-    line-height:1.6;
+
+    line-height:1.7;
+
+    min-height:90px;
+
     margin-bottom:15px;
+
+}
+    /* ==========================
+   CATEGORY
+========================== */
+
+.product-category{
+
+    color:#555;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
 }
 
-.view-btn{
-    display:inline-block;
-    text-decoration:none;
-    background:#0066ff;
-    color:white;
-    padding:12px 20px;
-    border-radius:50px;
-    font-weight:600;
+
+/* ==========================
+   BUTTON AREA
+========================== */
+
+.product-buttons{
+
+    margin-top:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
 }
+
+
+/* ==========================
+   WISHLIST BUTTON
+========================== */
+
+.wishlist-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#ff3366;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.wishlist-btn:hover{
+
+    transform:scale(1.1);
+
+    background:#ff1744;
+
+}
+
+
+/* ==========================
+   VIEW DETAILS
+========================== */
+
+.view-btn{
+
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:#0066ff;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.view-btn:hover{
+
+    background:#0052cc;
+
+}
+
+
+/* ==========================
+   BUY NOW
+========================== */
+
+.buy-btn{
+
+    flex:1;
+
+    border:none;
+
+    background:#00b894;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+    background:#009b78;
+
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.page-title{
+
+    font-size:28px;
+
+}
+
+.products-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.product-image{
+
+    height:220px;
+
+}
+
+.product-buttons{
+
+    flex-wrap:wrap;
+
+}
+
+.view-btn,
+
+.buy-btn{
+
+    width:100%;
+
+}
+
+    }
 
 </style>
 
@@ -114,19 +450,32 @@ body{
 
 <body>
 
-<a href="dashboard.html" class="back-btn">←</a>
+<a href="dashboard.html" class="back-btn">
+←
+</a>
 
 <div class="container">
 
-    <h1 class="page-title">
-        Our Products & Services
-    </h1>
+<h1 class="page-title">
+Our Products & Services
+</h1>
 
-    <div class="products-grid" id="productsGrid">
+<div class="search-box">
 
-        <!-- Products Firebase سے خودکار طور پر یہاں آئیں گے -->
+<input
+type="text"
+id="searchInput"
+placeholder="Search Products...">
 
-    </div>
+</div>
+
+<div
+class="products-grid"
+id="productsGrid">
+
+<!-- Products Firebase سے یہاں آئیں گے -->
+
+</div>
 
 </div>
 
