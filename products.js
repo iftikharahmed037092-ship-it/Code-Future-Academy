@@ -356,13 +356,7 @@ function renderProducts(products) {
 
                 <div class="product-buttons">
 
-                    <button
-                        class="wishlist-btn"
-                        onclick="addToWishlist('${product.id}')">
-
-                        <i class="fas fa-heart"></i>
-
-                    </button>
+                
 
                     <a
                         href="product-details.html?id=${product.id}"
