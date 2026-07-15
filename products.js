@@ -284,7 +284,7 @@ function renderProducts(products) {
 
         <button
            class="wishlist-top-btn"
-            onclick="addToWishlist('${product.id}')">
+            onclick="addToWishlist(event,'${product.id}')">
 
       <i class="fa-regular fa-heart"></i>
 
@@ -511,7 +511,11 @@ window.buyNow = function (productId) {
 ADD TO WISHLIST
 ==============================*/
 
-window.addToWishlist = function (productId) {
+window.addToWishlist = function (event, productId) {
+
+    const heartBtn = event.currentTarget;
+
+    heartBtn.classList.toggle("active");
 
     if (!uid) {
 
