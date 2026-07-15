@@ -451,6 +451,71 @@ transform:scale(1.05);
 
 }
 
+/*==============================
+PRODUCT IMAGE BOX
+==============================*/
+
+.product-image-box{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/*==============================
+TOP WISHLIST BUTTON
+==============================*/
+
+.wishlist-top-btn{
+
+position:absolute;
+
+top:15px;
+
+right:15px;
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.95);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+z-index:5;
+
+}
+
+.wishlist-top-btn i{
+
+font-size:20px;
+
+color:#22c55e;
+
+}
+
+.wishlist-top-btn:hover{
+
+transform:scale(1.1);
+
+background:#fff;
+
+}
 
 /*==============================
 PRODUCT CONTENT
