@@ -3,42 +3,212 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Products</title>
+    <meta name="description"
+          content="Browse Premium Products">
 
-<style>
-/*======================================
+    <meta name="keywords"
+          content="Templates, Apps, Logos, Products">
+
+    <meta name="author"
+          content="Code Future Academy AI">
+
+    <title>Products | Code Future Academy AI</title>
+
+    <!-- CSS -->
+
+    /*==================================================
+   PRODUCTS PAGE CSS
+   PART 1
+   RESET + ROOT + BODY + CONTAINER
+==================================================*/
+
+
+/*==============================
 RESET
-======================================*/
+==============================*/
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 
-/*======================================
+/*==============================
+ROOT COLORS
+==============================*/
+
+:root{
+
+    --primary:#2563eb;
+
+    --primary-dark:#1d4ed8;
+
+    --secondary:#10b981;
+
+    --danger:#ef4444;
+
+    --warning:#f59e0b;
+
+    --dark:#111827;
+
+    --gray:#6b7280;
+
+    --light:#f8fafc;
+
+    --white:#ffffff;
+
+    --border:#e5e7eb;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+/*==============================
 BODY
-======================================*/
+==============================*/
 
 body{
 
-background:#f5f7fb;
+    background:var(--light);
 
-font-family:Arial,sans-serif;
+    color:var(--dark);
 
-color:#111;
+    font-family:
+
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    line-height:1.6;
+
+    overflow-x:hidden;
 
 }
 
 
-/*======================================
+/*==============================
+LINKS
+==============================*/
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+/*==============================
+IMAGES
+==============================*/
+
+img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+
+/*==============================
+BUTTONS
+==============================*/
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+}
+
+
+/*==============================
+MAIN CONTAINER
+==============================*/
+
+.container{
+
+    width:100%;
+
+    max-width:1600px;
+
+    margin:auto;
+
+    padding:
+
+    90px
+    25px
+    40px;
+
+}
+
+
+/*==============================
+PAGE HEADER
+==============================*/
+
+.page-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+
+/*==============================
+PAGE TITLE
+==============================*/
+
+.page-title{
+
+    font-size:40px;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+    margin-bottom:10px;
+
+}
+
+
+/*==============================
+PAGE SUBTITLE
+==============================*/
+
+.page-subtitle{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--gray);
+
+    font-size:17px;
+
+}
+    /*==================================================
+   PRODUCTS PAGE CSS
+   PART 2
+   BACK BUTTON + SEARCH + FILTER BAR
+==================================================*/
+
+
+/*==============================
 BACK BUTTON
-======================================*/
+==============================*/
 
 .back-btn{
 
@@ -48,9 +218,13 @@ top:20px;
 
 left:20px;
 
-width:48px;
+width:50px;
 
-height:48px;
+height:50px;
+
+border-radius:50%;
+
+background:var(--white);
 
 display:flex;
 
@@ -58,19 +232,13 @@ justify-content:center;
 
 align-items:center;
 
-background:#fff;
+font-size:22px;
 
-color:#111;
+color:var(--dark);
 
-text-decoration:none;
+box-shadow:var(--shadow);
 
-font-size:24px;
-
-border-radius:50%;
-
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-
-transition:.3s;
+transition:.30s;
 
 z-index:999;
 
@@ -78,58 +246,44 @@ z-index:999;
 
 .back-btn:hover{
 
+background:var(--primary);
+
+color:white;
+
 transform:translateY(-3px);
 
 }
 
 
-/*======================================
-MAIN CONTAINER
-======================================*/
-
-.container{
-
-max-width:1600px;
-
-margin:auto;
-
-padding:90px 25px 40px;
-
-}
-
-
-/*======================================
-PAGE TITLE
-======================================*/
-
-.page-title{
-
-font-size:40px;
-
-font-weight:700;
-
-text-align:center;
-
-margin-bottom:35px;
-
-color:#111;
-
-}
-
-
-/*======================================
+/*==============================
 SEARCH BOX
-======================================*/
+==============================*/
 
 .search-box{
 
 width:100%;
 
-max-width:650px;
+max-width:700px;
 
-margin:auto;
+margin:35px auto;
 
-margin-bottom:40px;
+position:relative;
+
+}
+
+.search-box i{
+
+position:absolute;
+
+left:20px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:18px;
+
+color:var(--gray);
 
 }
 
@@ -137,43 +291,121 @@ margin-bottom:40px;
 
 width:100%;
 
-padding:18px 25px;
+height:58px;
 
-border:1px solid #ddd;
+padding-left:55px;
+
+padding-right:20px;
 
 border-radius:50px;
 
-font-size:17px;
-
-outline:none;
+border:2px solid var(--border);
 
 background:white;
 
-transition:.3s;
+font-size:16px;
+
+outline:none;
+
+transition:.30s;
 
 }
 
 .search-box input:focus{
 
-border-color:#0066ff;
+border-color:var(--primary);
 
-box-shadow:0 0 12px rgba(0,102,255,.18);
+box-shadow:
+0 0 0 4px
+rgba(37,99,235,.15);
 
 }
 
 
-/*======================================
-PRODUCT GRID
-======================================*/
+/*==============================
+FILTER BAR
+==============================*/
+
+.filter-bar{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:12px;
+
+flex-wrap:wrap;
+
+margin-bottom:40px;
+
+}
+
+
+/*==============================
+FILTER BUTTON
+==============================*/
+
+.filter-btn{
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:var(--dark);
+
+font-size:15px;
+
+font-weight:600;
+
+box-shadow:
+
+0 5px 15px
+rgba(0,0,0,.05);
+
+transition:.30s;
+
+}
+
+.filter-btn:hover{
+
+background:var(--primary);
+
+color:white;
+
+transform:translateY(-2px);
+
+}
+
+.filter-btn.active{
+
+background:var(--primary);
+
+color:white;
+
+}
+    /*==================================================
+   PRODUCTS PAGE CSS
+   PART 3
+   PRODUCTS GRID + PRODUCT CARD
+==================================================*/
+
+
+/*==============================
+PRODUCTS GRID
+==============================*/
 
 .products-grid{
 
 display:grid;
 
-/* Desktop پر خود بخود زیادہ Cards */
-
 grid-template-columns:
-repeat(auto-fill,minmax(260px,1fr));
+repeat(auto-fit,minmax(280px,1fr));
 
 gap:30px;
 
@@ -182,13 +414,13 @@ align-items:stretch;
 }
 
 
-/*======================================
+/*==============================
 PRODUCT CARD
-======================================*/
+==============================*/
 
 .product-card{
 
-background:white;
+background:var(--white);
 
 border-radius:22px;
 
@@ -200,11 +432,11 @@ flex-direction:column;
 
 height:100%;
 
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.08);
+box-shadow:var(--shadow);
 
 transition:.35s;
+
+position:relative;
 
 }
 
@@ -214,12 +446,14 @@ transform:translateY(-8px);
 
 box-shadow:
 
-0 18px 40px rgba(0,0,0,.14);
+0 20px 40px rgba(0,0,0,.15);
 
 }
-    /*======================================
+
+
+/*==============================
 PRODUCT IMAGE
-======================================*/
+==============================*/
 
 .product-image{
 
@@ -229,14 +463,20 @@ height:240px;
 
 object-fit:cover;
 
-display:block;
+transition:.35s;
+
+}
+
+.product-card:hover .product-image{
+
+transform:scale(1.05);
 
 }
 
 
-/*======================================
+/*==============================
 PRODUCT CONTENT
-======================================*/
+==============================*/
 
 .product-content{
 
@@ -251,30 +491,32 @@ padding:22px;
 }
 
 
-/*======================================
-TITLE
-======================================*/
+/*==============================
+PRODUCT TITLE
+==============================*/
 
 .product-title{
 
-font-size:22px;
+font-size:20px;
 
 font-weight:700;
 
-color:#111;
+color:var(--dark);
 
 margin-bottom:12px;
 
-min-height:56px;
+line-height:1.4;
 
-line-height:1.3;
+height:56px;
+
+overflow:hidden;
 
 }
 
 
-/*======================================
-PRICE
-======================================*/
+/*==============================
+PRODUCT PRICE
+==============================*/
 
 .product-price{
 
@@ -282,75 +524,192 @@ font-size:24px;
 
 font-weight:bold;
 
-color:#0066ff;
+color:var(--primary);
 
 margin-bottom:12px;
 
 }
 
 
-/*======================================
+/*==============================
 DESCRIPTION
-======================================*/
+==============================*/
 
 .product-description{
 
 font-size:15px;
 
+color:var(--gray);
+
 line-height:1.7;
 
-color:#666;
-
-min-height:95px;
-
-margin-bottom:18px;
+height:72px;
 
 overflow:hidden;
 
+margin-bottom:15px;
+
 }
 
 
-/*======================================
+/*==============================
 CATEGORY
-======================================*/
+==============================*/
 
 .product-category{
 
-font-size:15px;
+display:inline-block;
 
-color:#555;
+padding:8px 16px;
+
+background:#eef4ff;
+
+color:var(--primary);
+
+font-size:14px;
+
+font-weight:600;
+
+border-radius:30px;
 
 margin-bottom:20px;
 
+width:max-content;
+
 }
+    
+/*==================================================
+   PRODUCTS PAGE CSS
+   PART 4
+   PRODUCT DETAILS + BUTTONS
+==================================================*/
 
 
-/*======================================
-BUTTON AREA
-======================================*/
+/*==============================
+RATING
+==============================*/
 
-.product-buttons{
+.product-rating{
 
 display:flex;
 
 align-items:center;
 
-gap:12px;
+gap:6px;
 
-margin-top:auto;
+margin-bottom:12px;
+
+font-size:14px;
+
+color:#f59e0b;
+
+font-weight:600;
+
+}
+
+.product-rating span{
+
+color:var(--gray);
+
+font-size:13px;
 
 }
 
 
-/*======================================
-WISHLIST BUTTON
-======================================*/
+/*==============================
+PRICE ROW
+==============================*/
+
+.price-row{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-bottom:14px;
+
+}
+
+.old-price{
+
+font-size:15px;
+
+color:#9ca3af;
+
+text-decoration:line-through;
+
+}
+
+.discount{
+
+background:#ef4444;
+
+color:#fff;
+
+padding:3px 8px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+
+/*==============================
+STOCK
+==============================*/
+
+.stock{
+
+display:inline-block;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+background:#dcfce7;
+
+color:#16a34a;
+
+font-size:13px;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+
+/*==============================
+BUTTON AREA
+==============================*/
+
+.product-buttons{
+
+margin-top:auto;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+
+/*==============================
+WISHLIST
+==============================*/
 
 .wishlist-btn{
 
-width:50px;
+width:48px;
 
-height:50px;
+height:48px;
 
 border:none;
 
@@ -358,289 +717,605 @@ border-radius:50%;
 
 background:#ff3366;
 
-color:white;
+color:#fff;
 
-font-size:20px;
+font-size:18px;
 
-cursor:pointer;
+display:flex;
 
-transition:.3s;
+align-items:center;
 
-flex-shrink:0;
+justify-content:center;
+
+transition:.30s;
 
 }
 
 .wishlist-btn:hover{
 
-background:#ff1744;
+background:#e11d48;
 
 transform:scale(1.08);
 
 }
 
 
-/*======================================
+/*==============================
 VIEW DETAILS
-======================================*/
+==============================*/
 
 .view-btn{
 
 flex:1;
 
-text-align:center;
+height:48px;
 
-text-decoration:none;
+display:flex;
 
-background:#0066ff;
+align-items:center;
 
-color:white;
+justify-content:center;
 
-padding:14px;
+background:var(--primary);
+
+color:#fff;
 
 border-radius:50px;
 
-font-weight:bold;
+font-size:15px;
 
-transition:.3s;
+font-weight:600;
+
+transition:.30s;
 
 }
 
 .view-btn:hover{
 
-background:#0052cc;
+background:var(--primary-dark);
 
 }
 
 
-/*======================================
+/*==============================
 BUY NOW
-======================================*/
+==============================*/
 
 .buy-btn{
 
 flex:1;
 
+height:48px;
+
 border:none;
-
-background:#00b894;
-
-color:white;
-
-padding:14px;
 
 border-radius:50px;
 
-font-weight:bold;
+background:var(--secondary);
 
-cursor:pointer;
+color:#fff;
 
-transition:.3s;
+font-size:15px;
+
+font-weight:600;
+
+transition:.30s;
 
 }
 
 .buy-btn:hover{
 
-background:#009b78;
-
-    }
-    /*======================================
-LARGE DESKTOP
-======================================*/
-
-@media (min-width:1600px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(5,1fr);
+background:#059669;
 
 }
-
-}
-
-
-/*======================================
-DESKTOP
-======================================*/
-
-@media (max-width:1400px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(4,1fr);
-
-}
-
-}
+    /*==================================================
+   PRODUCTS PAGE CSS
+   PART 5
+   BADGES + LOADING + EMPTY STATE
+==================================================*/
 
 
-/*======================================
-LAPTOP
-======================================*/
+/*==============================
+PRODUCT BADGE
+==============================*/
 
-@media (max-width:1100px){
+.product-badge{
 
-.products-grid{
+position:absolute;
 
-grid-template-columns:
-repeat(3,1fr);
+top:15px;
 
-}
+left:15px;
+
+background:#ef4444;
+
+color:#fff;
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:.5px;
+
+box-shadow:0 6px 15px rgba(0,0,0,.15);
+
+z-index:5;
 
 }
 
 
-/*======================================
-TABLET
-======================================*/
+/*==============================
+NEW BADGE
+==============================*/
 
-@media (max-width:768px){
+.badge-new{
 
-.container{
-
-padding:85px 18px 30px;
+background:#10b981;
 
 }
 
-.page-title{
 
-font-size:30px;
+/*==============================
+SALE BADGE
+==============================*/
 
-margin-bottom:25px;
+.badge-sale{
 
-}
-
-.search-box{
-
-margin-bottom:30px;
+background:#ef4444;
 
 }
 
-.products-grid{
 
-grid-template-columns:
-repeat(2,1fr);
+/*==============================
+HOT BADGE
+==============================*/
 
-gap:20px;
+.badge-hot{
 
-}
-
-.product-image{
-
-height:200px;
+background:#f59e0b;
 
 }
 
-.product-title{
 
-font-size:18px;
+/*==============================
+FEATURED BADGE
+==============================*/
 
-min-height:48px;
+.badge-featured{
+
+background:#2563eb;
 
 }
 
-.product-price{
+
+/*==============================
+BEST SELLER
+==============================*/
+
+.badge-best{
+
+background:#7c3aed;
+
+}
+
+
+/*==============================
+LOADING BOX
+==============================*/
+
+.loading-box{
+
+width:100%;
+
+padding:50px;
+
+text-align:center;
 
 font-size:20px;
 
-}
+font-weight:bold;
 
-.product-description{
-
-min-height:80px;
-
-font-size:14px;
-
-}
-
-.product-buttons{
-
-gap:8px;
-
-}
-
-.view-btn,
-
-.buy-btn{
-
-padding:12px;
-
-font-size:14px;
-
-}
+color:var(--gray);
 
 }
 
 
-/*======================================
-SMALL MOBILE
-======================================*/
+/*==============================
+EMPTY PRODUCTS
+==============================*/
 
-@media (max-width:480px){
+.empty-products{
 
-.products-grid{
+padding:70px 20px;
 
-grid-template-columns:1fr;
+text-align:center;
+
+background:#fff;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
 
 }
 
-.page-title{
+.empty-products h2{
 
-font-size:26px;
+font-size:30px;
+
+margin-bottom:15px;
+
+color:var(--dark);
 
 }
 
-.search-box input{
+.empty-products p{
+
+font-size:16px;
+
+color:var(--gray);
+
+}
+
+
+/*==============================
+FOOTER
+==============================*/
+
+.products-footer{
+
+margin-top:70px;
+
+padding:30px 20px;
+
+text-align:center;
+
+background:#111827;
+
+color:#fff;
 
 font-size:15px;
 
-padding:15px 20px;
+}
+
+.products-footer p{
+
+opacity:.85;
+
+}
+    /*==================================================
+   PRODUCTS PAGE CSS
+   PART 6
+   PREMIUM EFFECTS + ANIMATIONS
+==================================================*/
+
+
+/*==============================
+SMOOTH TRANSITIONS
+==============================*/
+
+.product-card,
+.product-image,
+.view-btn,
+.buy-btn,
+.wishlist-btn,
+.filter-btn,
+.search-box input{
+
+transition:all .35s ease;
 
 }
 
-.product-image{
 
-height:220px;
+/*==============================
+CARD HOVER
+==============================*/
+
+.product-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 20px 45px rgba(0,0,0,.15);
 
 }
 
+
+/*==============================
+IMAGE EFFECT
+==============================*/
+
+.product-card{
+
+overflow:hidden;
+
+}
+
+.product-card:hover .product-image{
+
+transform:scale(1.08);
+
+}
+
+
+/*==============================
+BUTTON PRESS
+==============================*/
+
+.view-btn:active,
+.buy-btn:active,
+.wishlist-btn:active{
+
+transform:scale(.96);
+
+}
+
+
+/*==============================
+SEARCH HOVER
+==============================*/
+
+.search-box input:hover{
+
+border-color:var(--primary);
+
+}
+
+
+/*==============================
+FILTER HOVER
+==============================*/
+
+.filter-btn:hover{
+
+box-shadow:
+
+0 10px 20px
+rgba(37,99,235,.20);
+
+}
+
+
+/*==============================
+SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#eef2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary-dark);
+
+}
+
+
+/*==============================
+SELECTION
+==============================*/
+
+::selection{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+
+/*==============================
+FADE ANIMATION
+==============================*/
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.product-card{
+
+animation:fadeUp .5s ease;
+
+}
     }
+    <link rel="stylesheet" href="products.css">
 
-</style>
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<a href="dashboard.html" class="back-btn">
-←
+<!-- ==========================
+     BACK BUTTON
+========================== -->
+
+<a href="index.html"
+   class="back-btn">
+
+    <i class="fas fa-arrow-left"></i>
+
 </a>
+
+<!-- ==========================
+     PAGE CONTAINER
+========================== -->
 
 <div class="container">
 
+<!-- ==========================
+     PAGE HEADER
+========================== -->
+
+<div class="page-header">
+
 <h1 class="page-title">
-Our Products & Services
+
+    Our Products & Services
+
 </h1>
 
+<p class="page-subtitle">
+
+Premium Templates, Apps, Logos,
+Graphics, AI Tools & Digital Products
+
+</p>
+
+</div>
+
+<!-- ==========================
+     SEARCH BAR
+========================== -->
+
 <div class="search-box">
+
+<i class="fas fa-search"></i>
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search Products...">
+placeholder="Search products...">
 
 </div>
+<!-- ==========================
+     CATEGORY FILTERS
+========================== -->
+
+<div class="filter-bar">
+
+<button class="filter-btn active">
+All
+</button>
+
+<button class="filter-btn">
+Templates
+</button>
+
+<button class="filter-btn">
+Apps
+</button>
+
+<button class="filter-btn">
+Logos
+</button>
+
+<button class="filter-btn">
+Graphics
+</button>
+
+<button class="filter-btn">
+AI Tools
+</button>
+
+</div>
+
+<!-- ==========================
+     PRODUCTS GRID
+========================== -->
 
 <div
 class="products-grid"
 id="productsGrid">
 
-<!-- Products Firebase سے یہاں آئیں گے -->
+<!-- Products Firebase سے یہاں Load ہوں گے -->
+
+</div>
+
+<!-- ==========================
+     LOADING
+========================== -->
+
+<div
+id="loadingBox"
+class="loading-box"
+style="display:none;">
+
+Loading Products...
+
+</div>
+
+<!-- ==========================
+     EMPTY PRODUCTS
+========================== -->
+
+<div
+id="emptyProducts"
+class="empty-products"
+style="display:none;">
+
+<h2>
+
+No Products Found
+
+</h2>
+
+<p>
+
+Try another search or category.
+
+</p>
 
 </div>
 
 </div>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer class="products-footer">
+
+<p>
+
+© 2026 Code Future Academy AI
+All Rights Reserved.
+
+</p>
+
+</footer>
+
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
 
 <script type="module" src="products.js"></script>
 
