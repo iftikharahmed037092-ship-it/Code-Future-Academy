@@ -4,142 +4,384 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admin Products</title>
+<title>Add Product | CFA AI</title>
 
-<style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<!-- CSS -->
+<link rel="stylesheet" href="admin-products.css">
 
-body{
-    background:#f5f7fb;
-    font-family:Arial,sans-serif;
-}
 
-.back-btn{
-    position:fixed;
-    top:20px;
-    left:20px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#fff;
-    color:#111;
-    text-decoration:none;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-}
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:90px 20px;
-}
-
-.admin-box{
-    background:#fff;
-    padding:30px;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
-}
-
-h1{
-    text-align:center;
-    margin-bottom:25px;
-}
-
-input,
-textarea,
-select{
-    width:100%;
-    padding:14px;
-    margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:12px;
-}
-
-textarea{
-    height:120px;
-    resize:none;
-}
-
-button{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:50px;
-    background:#0066ff;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-</style>
 
 </head>
-
 <body>
 
-<a href="javascript:history.back()" class="back-btn">←</a>
 
-<div class="container">
+<div class="admin-container">
 
-<div class="admin-box">
 
-<h1>Add Product</h1>
+
+<!-- HEADER -->
+
+<header class="admin-header">
+
+
+<a href="products.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</a>
+
+
+
+<div>
+
+<h1>
+Add New Product
+</h1>
+
+
+<p>
+Create and manage CFA AI products
+</p>
+
+
+</div>
+
+
+</header>
+
+
+
+
+
+
 
 <form id="productForm">
+
+
+
+<!-- IMAGE BOX -->
+
+
+<div class="image-card">
+
+
+<h2>
+Product Image
+</h2>
+
+
+
+<img 
+id="imagePreview"
+src="images/no-image.png"
+alt="Product Preview">
+
+
+
+<input
+type="url"
+id="productImage"
+placeholder="Paste Image URL">
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- DETAILS BOX -->
+
+
+<div class="form-card">
+
+
+<h2>
+Product Details
+</h2>
+
+
+
+
+
+<label>
+Product Name
+</label>
+
 
 <input
 type="text"
 id="productName"
-placeholder="Product Name"
+placeholder="Enter Product Name"
 required>
+
+
+
+
+
+
+
+
+<label>
+Price
+</label>
+
 
 <input
 type="number"
 id="productPrice"
-placeholder="Price"
+placeholder="Enter Price"
 required>
+
+
+
+
+
+
+
+
+<label>
+Old Price
+</label>
+
+
+<input
+type="number"
+id="oldPrice"
+placeholder="Enter Old Price">
+
+
+
+
+
+
+
+<label>
+Discount
+</label>
+
 
 <input
 type="text"
-id="productImage"
-placeholder="Image URL">
+id="discount"
+placeholder="Example: 50% OFF">
 
-<select id="productCategory">
 
-<option>Website Template</option>
-<option>Logo Design</option>
-<option>Web Development</option>
-<option>Graphic Design</option>
-<option>Mobile App</option>
+
+
+
+
+
+<!-- CATEGORY SELECT -->
+
+
+<label>
+Category
+</label>
+
+
+<select id="productCategory" required>
+
+
+<option value="">
+Select Category
+</option>
+
+
+<option value="Website Templates">
+Website Templates
+</option>
+
+
+<option value="AI Tools">
+AI Tools
+</option>
+
+
+<option value="Mobile Apps">
+Mobile Apps
+</option>
+
+
+<option value="Logos">
+Logo Design
+</option>
+
+
+<option value="Graphics">
+Graphics Design
+</option>
+
+
+<option value="Web Development">
+Web Development
+</option>
+
+
+<option value="Courses">
+Courses
+</option>
+
+
+<option value="Digital Products">
+Digital Products
+</option>
+
 
 </select>
 
+
+
+
+
+
+
+<label>
+Badge
+</label>
+
+
+<select id="productBadge">
+
+
+<option value="None">
+None
+</option>
+
+
+<option value="New">
+New
+</option>
+
+
+<option value="Sale">
+Sale
+</option>
+
+
+<option value="Hot">
+Hot
+</option>
+
+
+<option value="Featured">
+Featured
+</option>
+
+
+<option value="Best Seller">
+Best Seller
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<label>
+Stock Status
+</label>
+
+
+<select id="productStock">
+
+
+<option value="Available">
+Available
+</option>
+
+
+<option value="Out Of Stock">
+Out Of Stock
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<label>
+Rating
+</label>
+
+
+<input
+type="number"
+id="productRating"
+value="5"
+min="1"
+max="5">
+
+
+
+
+
+
+
+<label>
+Description
+</label>
+
+
 <textarea
 id="productDescription"
-placeholder="Product Description">
+placeholder="Write Product Description">
 </textarea>
 
+
+
+
+
+
+
+
 <button type="submit">
+
+<i class="fa-solid fa-plus"></i>
+
 Add Product
+
 </button>
+
+
+
+
+
+</div>
+
+
 
 </form>
 
-</div>
+
+
 
 </div>
+
+
 
 <script type="module" src="admin-products.js"></script>
+
 
 </body>
 
