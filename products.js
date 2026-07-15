@@ -600,22 +600,24 @@ window.addToWishlist = function (event, productId) {
 
     .then(() => {
 
-        alert(
-            "Added To Wishlist ❤️"
-        );
+    const icon = heartBtn.querySelector("i");
 
-    })
+    icon.classList.remove("fa-regular");
+
+    icon.classList.add("fa-solid");
+
+})
 
     .catch((error) => {
 
-        console.error(error);
+    heartBtn.classList.remove("active");
 
-        alert(
-            error.message
-        );
+    console.error(error);
 
-    });
+    alert(error.message);
 
+});
+    
 };
 
 /*==================================================
