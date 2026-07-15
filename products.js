@@ -275,12 +275,24 @@ function renderProducts(products) {
             </div>
             ` : ""}
 
-            <img
-                src="${image}"
-                alt="${title}"
-                class="product-image">
+            <div class="product-image-box">
 
-            <div class="product-content">
+       <img
+           src="${image}"
+           alt="${title}"
+           class="product-image">
+
+        <button
+           class="wishlist-top-btn"
+            onclick="addToWishlist('${product.id}')">
+
+      <i class="fa-regular fa-heart"></i>
+
+        </button>
+
+      </div>
+
+           <div class="product-content">
 
                 <h2 class="product-title">
                     ${title}
@@ -329,12 +341,6 @@ function renderProducts(products) {
                     ` : ""}
 
                 </div>
-
-                <p class="product-description">
-
-                    ${description}
-
-                </p>
 
                 <div class="product-category">
 
