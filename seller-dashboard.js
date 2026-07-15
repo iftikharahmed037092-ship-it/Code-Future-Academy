@@ -160,7 +160,7 @@ totalProducts.innerHTML=count;
 });
 
 window.editProduct = function(productId){
-    window.location.href = "admin.html?id=" + productId;
+    window.location.href = "edit-product.html?id=" + productId;
 }
 window.deleteProduct=function(productId){
 
