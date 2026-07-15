@@ -1154,11 +1154,11 @@ transform:translateY(0);
 animation:fadeUp .5s ease;
 
 }
-    /*==================================================
+
+   /*==================================================
    PRODUCTS PAGE CSS
    PART 7
-   RESPONSIVE DESIGN
-   DESKTOP + LAPTOP + TABLET + MOBILE
+   DESKTOP + LAPTOP + TABLET RESPONSIVE
 ==================================================*/
 
 
@@ -1169,57 +1169,39 @@ LARGE DESKTOP
 
 @media (min-width:1600px){
 
-    .products-grid{
+.products-grid{
 
-        grid-template-columns:
-        repeat(5,1fr);
+grid-template-columns:
+repeat(5,1fr);
 
-    }
-
-
-    .container{
-
-        padding-left:40px;
-        padding-right:40px;
-
-    }
-
-
-    .page-title{
-
-        font-size:48px;
-
-    }
+gap:32px;
 
 }
 
+.container{
+
+max-width:1700px;
+
+}
+
+}
 
 
 /*==============================
-DESKTOP / LAPTOP
+DESKTOP
 1200px - 1599px
 ==============================*/
 
-@media (max-width:1599px){
+@media (min-width:1200px) and (max-width:1599px){
 
+.products-grid{
 
-    .products-grid{
-
-        grid-template-columns:
-        repeat(4,1fr);
-
-    }
-
-
-    .product-image{
-
-        height:220px;
-
-    }
-
+grid-template-columns:
+repeat(4,1fr);
 
 }
 
+}
 
 
 /*==============================
@@ -1227,35 +1209,22 @@ LAPTOP
 992px - 1199px
 ==============================*/
 
-@media (max-width:1199px){
+@media (min-width:992px) and (max-width:1199px){
 
+.products-grid{
 
-    .products-grid{
-
-        grid-template-columns:
-        repeat(3,1fr);
-
-        gap:25px;
-
-    }
-
-
-    .page-title{
-
-        font-size:36px;
-
-    }
-
-
-    .container{
-
-        padding-top:80px;
-
-    }
-
+grid-template-columns:
+repeat(3,1fr);
 
 }
 
+.page-title{
+
+font-size:34px;
+
+}
+
+}
 
 
 /*==============================
@@ -1263,649 +1232,275 @@ TABLET
 768px - 991px
 ==============================*/
 
-@media (max-width:991px){
+@media (min-width:768px) and (max-width:991px){
 
+.products-grid{
 
-    .products-grid{
+grid-template-columns:
+repeat(2,1fr);
 
-        grid-template-columns:
-        repeat(2,1fr);
-
-        gap:22px;
-
-    }
-
-
-    .page-title{
-
-        font-size:32px;
-
-    }
-
-
-    .page-subtitle{
-
-        font-size:16px;
-
-    }
-
-
-    .filter-bar{
-
-        gap:10px;
-
-    }
-
-
-    .filter-btn{
-
-        padding:10px 18px;
-
-        font-size:14px;
-
-    }
-
-
-    .product-image{
-
-        height:200px;
-
-    }
-
+gap:24px;
 
 }
 
+.page-title{
 
-
-/*==============================
-MOBILE
-480px - 767px
-==============================*/
-
-@media (max-width:767px){
-
-
-    .container{
-
-        padding:
-
-        80px
-        15px
-        30px;
-
-    }
-
-
-    .page-title{
-
-        font-size:28px;
-
-    }
-
-
-    .page-subtitle{
-
-        font-size:15px;
-
-    }
-
-
-    .search-box{
-
-        margin:25px auto;
-
-    }
-
-
-    .search-box input{
-
-        height:52px;
-
-        font-size:14px;
-
-    }
-
-
-    .filter-bar{
-
-        justify-content:flex-start;
-
-        overflow-x:auto;
-
-        flex-wrap:nowrap;
-
-        padding-bottom:10px;
-
-    }
-
-
-    .filter-btn{
-
-        white-space:nowrap;
-
-    }
-
-
-    .products-grid{
-
-        grid-template-columns:
-        1fr;
-
-        gap:20px;
-
-    }
-
-
-    .product-image{
-
-        height:230px;
-
-    }
-
-
-    .product-title{
-
-        font-size:18px;
-
-    }
-
-
-    .product-price{
-
-        font-size:22px;
-
-    }
-
-
-    .product-buttons{
-
-        flex-direction:row;
-
-    }
-
+font-size:30px;
 
 }
 
+.page-subtitle{
 
-
-/*==============================
-SMALL MOBILE
-320px - 479px
-==============================*/
-
-@media (max-width:479px){
-
-
-    .back-btn{
-
-        width:42px;
-
-        height:42px;
-
-        font-size:18px;
-
-        top:15px;
-
-        left:15px;
-
-    }
-
-
-    .page-title{
-
-        font-size:24px;
-
-    }
-
-
-    .product-content{
-
-        padding:18px;
-
-    }
-
-
-    .product-buttons{
-
-        flex-direction:column;
-
-    }
-
-
-    .wishlist-btn,
-    .view-btn,
-    .buy-btn{
-
-        width:100%;
-
-    }
-
-
-    .product-image{
-
-        height:200px;
-
-    }
-
+font-size:15px;
 
 }
 
+.container{
 
-
-/*==============================
-LANDSCAPE MOBILE
-==============================*/
-
-@media (max-height:500px)
-and (orientation:landscape){
-
-
-    .container{
-
-        padding-top:60px;
-
-    }
-
-
-    .product-image{
-
-        height:180px;
-
-    }
-
+padding:80px 18px 35px;
 
 }
 
+.search-box{
 
-
-/*==============================
-TOUCH DEVICE IMPROVEMENT
-==============================*/
-
-@media (hover:none){
-
-
-    .product-card:hover{
-
-        transform:none;
-
-    }
-
-
-    .product-card:hover .product-image{
-
-        transform:none;
-
-    }
-
-
-    .filter-btn:hover,
-    .view-btn:hover,
-    .buy-btn:hover{
-
-        transform:none;
-
-    }
-
+max-width:100%;
 
 }
-    /*==================================================
+
+.filter-bar{
+
+justify-content:center;
+
+}
+
+}
+        /*==================================================
    PRODUCTS PAGE CSS
    PART 8
-   PREMIUM ANIMATIONS + SHADOWS
-   LOADING + EMPTY STATE + FINAL POLISH
+   MOBILE RESPONSIVE + FINAL POLISH
 ==================================================*/
 
 
 /*==============================
-PAGE SMOOTH SCROLL
+MOBILE
+0px - 767px
 ==============================*/
 
-html{
+@media (max-width:767px){
 
-    scroll-behavior:smooth;
+.container{
+
+padding:75px 15px 30px;
 
 }
 
+.page-title{
 
+font-size:26px;
 
-/*==============================
-PRODUCT CARD ENTRANCE
-==============================*/
+line-height:1.3;
+
+}
+
+.page-subtitle{
+
+font-size:14px;
+
+padding:0 8px;
+
+}
+
+.search-box{
+
+margin:25px auto;
+
+}
+
+.search-box input{
+
+height:52px;
+
+font-size:15px;
+
+padding-left:48px;
+
+}
+
+.search-box i{
+
+left:16px;
+
+font-size:16px;
+
+}
+
+.filter-bar{
+
+justify-content:flex-start;
+
+overflow-x:auto;
+
+flex-wrap:nowrap;
+
+padding-bottom:10px;
+
+scrollbar-width:none;
+
+}
+
+.filter-bar::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.filter-btn{
+
+flex:0 0 auto;
+
+padding:10px 18px;
+
+font-size:14px;
+
+}
+
+.products-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
 
 .product-card{
 
-    opacity:0;
-
-    animation:
-    cardShow .7s ease forwards;
+border-radius:18px;
 
 }
 
+.product-image{
 
-.product-card:nth-child(2){
-
-    animation-delay:.1s;
-
-}
-
-
-.product-card:nth-child(3){
-
-    animation-delay:.2s;
+height:220px;
 
 }
 
+.product-content{
 
-.product-card:nth-child(4){
-
-    animation-delay:.3s;
-
-}
-
-
-
-@keyframes cardShow{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(40px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
+padding:18px;
 
 }
 
+.product-title{
 
+font-size:18px;
 
-/*==============================
-PREMIUM CARD SHADOW
-==============================*/
-
-.product-card{
-
-    box-shadow:
-
-    0 10px 30px
-    rgba(0,0,0,.08),
-
-    0 2px 8px
-    rgba(0,0,0,.05);
+height:auto;
 
 }
 
+.product-price{
 
-
-.product-card:hover{
-
-    box-shadow:
-
-    0 25px 60px
-    rgba(0,0,0,.18);
+font-size:22px;
 
 }
 
+.product-description{
 
+height:auto;
 
-/*==============================
-BUTTON GLOW EFFECT
-==============================*/
-
-
-.buy-btn:hover{
-
-    box-shadow:
-
-    0 10px 25px
-    rgba(16,185,129,.35);
+min-height:60px;
 
 }
 
+.product-buttons{
 
-
-.view-btn:hover{
-
-    box-shadow:
-
-    0 10px 25px
-    rgba(37,99,235,.35);
+flex-wrap:wrap;
 
 }
 
+.wishlist-btn{
 
+width:46px;
 
-/*==============================
-LOADING ANIMATION
-==============================*/
-
-
-.loading-box{
-
-    animation:
-    pulseLoading 1.5s infinite;
+height:46px;
 
 }
 
+.view-btn,
 
+.buy-btn{
 
-@keyframes pulseLoading{
+flex:1 1 calc(50% - 5px);
 
+height:46px;
 
-    0%{
-
-        opacity:.4;
-
-    }
-
-
-    50%{
-
-        opacity:1;
-
-    }
-
-
-    100%{
-
-        opacity:.4;
-
-    }
-
+font-size:14px;
 
 }
 
+.back-btn{
 
+width:44px;
 
-/*==============================
-EMPTY STATE PREMIUM DESIGN
-==============================*/
+height:44px;
 
+font-size:20px;
 
-.empty-products{
+top:15px;
 
-    animation:
-    emptyShow .6s ease;
-
-}
-
-
-
-@keyframes emptyShow{
-
-
-    from{
-
-        opacity:0;
-
-        transform:
-        scale(.95);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:
-        scale(1);
-
-    }
+left:15px;
 
 }
-
-
-
-.empty-products h2{
-
-    font-weight:800;
-
-}
-
-
-
-/*==============================
-INPUT FOCUS EFFECT
-==============================*/
-
-
-.search-box input:focus{
-
-    transform:
-
-    translateY(-2px);
-
-}
-
-
-
-/*==============================
-FILTER ACTIVE EFFECT
-==============================*/
-
-
-.filter-btn.active{
-
-    box-shadow:
-
-    0 10px 25px
-    rgba(37,99,235,.25);
-
-}
-
-
-
-/*==============================
-IMAGE SHINE EFFECT
-==============================*/
-
-
-.product-card{
-
-    position:relative;
-
-}
-
-
-
-.product-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-100%;
-
-    width:50%;
-
-    height:100%;
-
-    background:
-
-    linear-gradient(
-
-    120deg,
-
-    transparent,
-
-    rgba(255,255,255,.4),
-
-    transparent
-
-    );
-
-    transition:.6s;
-
-    z-index:2;
-
-}
-
-
-
-.product-card:hover::before{
-
-    left:120%;
-
-}
-
-
-
-/*==============================
-FOOTER FINAL STYLE
-==============================*/
-
 
 .products-footer{
 
-    letter-spacing:.3px;
+margin-top:40px;
+
+padding:25px 15px;
+
+font-size:14px;
 
 }
 
-
-
-.products-footer:hover{
-
-    background:#0b1220;
-
 }
-
 
 
 /*==============================
-DISABLE ANIMATION
-FOR ACCESSIBILITY
+FINAL POLISH
 ==============================*/
 
+.product-card{
 
-@media(prefers-reduced-motion:reduce){
-
-
-    *{
-
-        animation:none!important;
-
-        transition:none!important;
-
-        scroll-behavior:auto;
-
-    }
-
+border:1px solid rgba(0,0,0,.04);
 
 }
+
+.product-card:hover{
+
+border-color:rgba(37,99,235,.20);
+
+}
+
+.product-image{
+
+background:#f3f4f6;
+
+}
+
+.buy-btn,
+.view-btn,
+.wishlist-btn{
+
+user-select:none;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+                              }
+        
     </style>
 
     <link rel="stylesheet" href="products.css">
