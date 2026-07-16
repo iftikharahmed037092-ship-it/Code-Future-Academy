@@ -891,3 +891,394 @@ alert(error.message);
    PASSWORD UPDATE
    RESET SETTINGS
 ==================================================*/
+
+/*==================================================
+   SETTINGS.JS
+   PART 7
+   PASSWORD UPDATE + RESET SETTINGS
+==================================================*/
+
+
+/*==============================
+CHANGE PASSWORD
+==============================*/
+
+if(newPassword){
+
+newPassword.addEventListener("keyup",()=>{
+
+if(newPassword.value.length<6){
+
+newPassword.style.borderColor="#ef4444";
+
+}else{
+
+newPassword.style.borderColor="#10b981";
+
+}
+
+});
+
+}
+
+
+/*==============================
+UPDATE PASSWORD
+==============================*/
+
+function changePassword(){
+
+if(newPassword.value===""){
+
+return;
+
+}
+
+if(newPassword.value.length<6){
+
+alert("Password must be at least 6 characters");
+
+return;
+
+}
+
+if(newPassword.value!=confirmPassword.value){
+
+alert("Passwords do not match");
+
+return;
+
+}
+
+updatePassword(
+
+currentUser,
+
+newPassword.value
+
+)
+
+.then(()=>{
+
+alert("Password Updated Successfully");
+
+newPassword.value="";
+
+confirmPassword.value="";
+
+currentPassword.value="";
+
+})
+
+.catch((error)=>{
+
+alert(error.message);
+
+});
+
+}
+
+
+/*==============================
+RESET SETTINGS
+==============================*/
+
+resetSettings.addEventListener("click",()=>{
+
+if(!confirm("Reset all unsaved changes?")){
+
+return;
+
+}
+
+loadUserData();
+
+alert("Settings Reset");
+
+});
+
+
+/*==============================
+SAVE BUTTON
+==============================*/
+
+saveSettings.addEventListener("click",()=>{
+
+changePassword();
+
+});
+
+
+/*==================================================
+   END OF PART 7
+
+   NEXT:
+   PART 8
+
+   DARK MODE
+   LANGUAGE
+   CURRENCY
+   NOTIFICATIONS
+==================================================*/
+
+/*==================================================
+   SETTINGS.JS
+   PART 8
+   THEME + LANGUAGE + CURRENCY
+==================================================*/
+
+
+/*==============================
+APPLY THEME
+==============================*/
+
+function applyTheme(themeName){
+
+if(themeName==="dark"){
+
+document.body.classList.add("dark-mode");
+
+}
+
+else{
+
+document.body.classList.remove("dark-mode");
+
+}
+
+}
+
+
+/*==============================
+THEME CHANGE
+==============================*/
+
+theme.addEventListener("change",()=>{
+
+applyTheme(theme.value);
+
+});
+
+
+/*==============================
+LANGUAGE CHANGE
+==============================*/
+
+language.addEventListener("change",()=>{
+
+console.log(
+
+"Language Changed :",
+
+language.value
+
+);
+
+});
+
+
+/*==============================
+CURRENCY CHANGE
+==============================*/
+
+currency.addEventListener("change",()=>{
+
+console.log(
+
+"Currency Changed :",
+
+currency.value
+
+);
+
+});
+
+
+/*==============================
+NOTIFICATIONS
+==============================*/
+
+function notificationStatus(){
+
+return{
+
+email:
+
+emailNotifications.checked,
+
+orders:
+
+orderNotifications.checked,
+
+messages:
+
+messageNotifications.checked,
+
+promotions:
+
+promotionNotifications.checked
+
+};
+
+}
+
+
+/*==============================
+LOAD SAVED THEME
+==============================*/
+
+window.addEventListener("load",()=>{
+
+applyTheme(
+
+theme.value
+
+);
+
+});
+
+
+/*==================================================
+   END OF PART 8
+
+   NEXT:
+   PART 9
+
+   INITIALIZE PAGE
+   AUTO LOAD
+   FINAL FUNCTIONS
+==================================================*/
+
+/*==================================================
+   SETTINGS.JS
+   PART 9
+   FINAL INITIALIZATION
+==================================================*/
+
+
+/*==============================
+INITIALIZE PAGE
+==============================*/
+
+function initializeSettings(){
+
+hideAllTabs();
+
+profileTab.style.display="block";
+
+menuButtons.forEach((button)=>{
+
+button.classList.remove("active");
+
+});
+
+if(menuButtons.length>0){
+
+menuButtons[0].classList.add("active");
+
+}
+
+}
+
+
+/*==============================
+AUTO LOAD
+==============================*/
+
+window.addEventListener("load",()=>{
+
+initializeSettings();
+
+});
+
+
+/*==============================
+AUTO SAVE STATUS
+==============================*/
+
+const allInputs=document.querySelectorAll(
+
+"input, textarea, select"
+
+);
+
+allInputs.forEach((input)=>{
+
+input.addEventListener("change",()=>{
+
+console.log("Settings Changed");
+
+});
+
+});
+
+
+/*==============================
+PREVENT EMPTY STORE NAME
+==============================*/
+
+if(storeName){
+
+storeName.addEventListener("blur",()=>{
+
+if(storeName.value.trim()==""){
+
+storeName.value="My Store";
+
+}
+
+});
+
+}
+
+
+/*==============================
+PREVENT EMPTY FULL NAME
+==============================*/
+
+if(fullName){
+
+fullName.addEventListener("blur",()=>{
+
+if(fullName.value.trim()==""){
+
+fullName.value=currentUser?.displayName||"Seller";
+
+}
+
+});
+
+}
+
+
+/*==============================
+AUTO EMAIL
+==============================*/
+
+if(currentUser){
+
+if(email){
+
+email.value=currentUser.email;
+
+}
+
+}
+
+
+/*==============================
+CONSOLE
+==============================*/
+
+console.log(
+
+"Settings Page Loaded Successfully"
+
+);
+
+
+/*==================================================
+   END OF SETTINGS.JS
+
+   FILE COMPLETED
+==================================================*/
