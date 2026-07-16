@@ -1066,3 +1066,208 @@ if(productId){
     loadProduct(productId);
 
 }
+
+/*==================================================
+    CHECKOUT.JS
+    PART 7
+    QUANTITY + LIVE TOTAL
+==================================================*/
+
+/*==============================
+QUANTITY ELEMENTS
+==============================*/
+
+const minusQty =
+document.getElementById("minusQty");
+
+const plusQty =
+document.getElementById("plusQty");
+
+const quantityValue =
+document.getElementById("quantityValue");
+
+
+/*==============================
+DEFAULT VALUES
+==============================*/
+
+let quantity = 1;
+
+let productPrice = 0;
+
+
+/*==============================
+UPDATE TOTAL
+==============================*/
+
+function updateTotal(){
+
+    productPrice =
+    Number(currentProduct.price || 0);
+
+    const total =
+    productPrice * quantity;
+
+    quantityValue.textContent =
+    quantity;
+
+    summaryPrice.textContent =
+    "Rs " + productPrice;
+
+    totalAmount.textContent =
+    "Rs " + total;
+
+    paymentAmount.textContent =
+    "Rs " + total;
+
+}
+
+
+/*==============================
+PLUS BUTTON
+==============================*/
+
+plusQty.addEventListener(
+
+    "click",
+
+    () => {
+
+        quantity++;
+
+        updateTotal();
+
+    }
+
+);
+
+
+/*==============================
+MINUS BUTTON
+==============================*/
+
+minusQty.addEventListener(
+
+    "click",
+
+    () => {
+
+        if(quantity > 1){
+
+            quantity--;
+
+            updateTotal();
+
+        }
+
+    }
+
+);
+
+
+/*==============================
+UPDATE AFTER PRODUCT LOAD
+==============================*/
+
+const oldUpdateProductUI =
+updateProductUI;
+
+updateProductUI = function(){
+
+    oldUpdateProductUI();
+
+    updateTotal();
+
+};
+
+/*==================================================
+    CHECKOUT.JS
+    PART 8
+    SAVE QUANTITY + TOTAL
+==================================================*/
+
+
+/*==============================
+GET FINAL TOTAL
+==============================*/
+
+function getFinalTotal(){
+
+    return Number(currentProduct.price || 0)
+    * quantity;
+
+}
+
+
+/*==============================
+ORDER OBJECT
+==============================*/
+
+function createOrderObject(){
+
+    return{
+
+        productId: productId,
+
+        productTitle:
+        currentProduct.title || "",
+
+        productImage:
+        currentProduct.image || "",
+
+        productCategory:
+        currentProduct.category || "",
+
+        productPrice:
+        Number(currentProduct.price || 0),
+
+        quantity:
+        quantity,
+
+        totalAmount:
+        getFinalTotal(),
+
+        customerName:
+        customerName.value.trim(),
+
+        customerEmail:
+        customerEmail.value.trim(),
+
+        phone:
+        phone.value.trim(),
+
+        country:
+        country.value,
+
+        province:
+        province.value.trim(),
+
+        city:
+        city.value.trim(),
+
+        postalCode:
+        postalCode.value.trim(),
+
+        address:
+        address.value.trim(),
+
+        notes:
+        orderNotes.value.trim(),
+
+        paymentMethod:
+        document.querySelector(
+        'input[name="payment"]:checked'
+        ).value,
+
+        transactionId:
+        transactionId.value.trim(),
+
+        orderStatus:
+        "Pending",
+
+        createdAt:
+        Date.now()
+
+    };
+
+}
