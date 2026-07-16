@@ -1,67 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Settings</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Seller Settings | Code Future Academy AI</title>
+
+<link rel="stylesheet"
+href="settings.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
+
 <body>
 
-<a href="dashboard.html" class="back-btn">←</a>
+<!--==============================
+MAIN CONTAINER
+===============================-->
 
 <div class="settings-container">
 
-    <div class="settings-box">
+<!--==============================
+HEADER
+===============================-->
 
-        <h1>Account Settings</h1>
+<header class="settings-header">
 
-        <form id="settingsForm">
+<a href="seller-dashboard.html"
+class="back-btn">
 
-            <input
-                type="text"
-                id="fullName"
-                placeholder="Full Name"
-            >
+<i class="fas fa-arrow-left"></i>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Email Address"
-                readonly
-            >
+</a>
 
-            <input
-                type="password"
-                id="newPassword"
-                placeholder="New Password"
-            >
+<div>
 
-            <button
-                type="submit"
-                id="saveBtn"
-            >
-                Save Changes
-            </button>
+<h1>
 
-        </form>
+Seller Settings
 
-        <hr>
+</h1>
 
-        <button
-            id="deleteAccountBtn"
-            class="delete-btn"
-        >
-            Delete Account
-        </button>
+<p>
 
-    </div>
+Manage your profile, store and account settings.
+
+</p>
 
 </div>
 
-<script type="module" src="settings.js"></script>
+</header>
+
+<!--==============================
+PROFILE CARD
+===============================-->
+
+<div class="profile-card">
+
+<div class="profile-image">
+
+<img
+id="profilePreview"
+src="images/default-user.png"
+alt="Profile">
+
+<label
+for="profileImage">
+
+<i class="fas fa-camera"></i>
+
+</label>
+
+<input
+type="file"
+id="profileImage"
+accept="image/*"
+hidden>
+
+</div>
+
+<div class="profile-info">
+
+<h2 id="sellerName">
+
+Seller Name
+
+</h2>
+
+<p id="sellerEmail">
+
+seller@email.com
+
+</p>
+
+<span class="seller-badge">
+
+Verified Seller
+
+</span>
+
+</div>
+
+</div>
+
+<!--==============================
+SETTINGS NAVIGATION
+===============================-->
+
+<div class="settings-menu">
+
+<button
+class="menu-btn active"
+data-tab="profile">
+
+<i class="fas fa-user"></i>
+
+Profile
+
+</button>
+
+<button
+class="menu-btn"
+data-tab="store">
+
+<i class="fas fa-store"></i>
+
+Store
+
+</button>
+
+<button
+class="menu-btn"
+data-tab="payment">
+
+<i class="fas fa-wallet"></i>
+
+Payment
+
+</button>
+
+<button
+class="menu-btn"
+data-tab="security">
+
+<i class="fas fa-lock"></i>
+
+Security
+
+</button>
+
+<button
+class="menu-btn"
+data-tab="notifications">
+
+<i class="fas fa-bell"></i>
+
+Notifications
+
+</button>
+
+<button
+class="menu-btn"
+data-tab="appearance">
+
+<i class="fas fa-palette"></i>
+
+Appearance
+
+</button>
+
+</div>
+
+<!--==============================
+PROFILE SETTINGS
+===============================-->
+
+<div
+class="settings-card"
+id="profileTab">
+
+<h2>
+
+Profile Settings
+
+</h2>
+
+    <!--==============================
+PROFILE FORM
+===============================-->
+
+<form id="profileForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="Enter Full Name">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Username
+
+</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter Username">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Email
+
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Email">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Phone Number
+
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Enter Phone Number">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Bio
+
+</label>
+
+<textarea
+id="bio"
+placeholder="Write a short bio about yourself...">
+
+</textarea>
+
+</div>
+
+</form>
+
+</div>
+
+<!--==============================
+STORE SETTINGS
+===============================-->
+
+<div
+class="settings-card"
+id="storeTab"
+style="display:none;">
+
+<h2>
+
+Store Settings
+
+</h2>
+
+<div class="form-group">
+
+<label>
+
+Store Logo
+
+</label>
+
+<input
+type="file"
+id="storeLogo"
+accept="image/*">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Store Banner
+
+</label>
+
+<input
+type="file"
+id="storeBanner"
+accept="image/*">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Store Name
+
+</label>
+
+<input
+type="text"
+id="storeName"
+placeholder="Enter Store Name">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Store Description
+
+</label>
+
+<textarea
+id="storeDescription"
+placeholder="Write Store Description">
+
+</textarea>
+
+</div>
+
+</div>
+
+<!--==============================
+PAYMENT SETTINGS
+===============================-->
+
+<div
+class="settings-card"
+id="paymentTab"
+style="display:none;">
+
+<h2>
+
+Payment Settings
+
+</h2>
+
+<div class="form-grid">
+
+<div class="form-group">
+
+<label>
+
+JazzCash Number
+
+</label>
+
+<input
+type="text"
+id="jazzCash"
+placeholder="03XXXXXXXXX">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+EasyPaisa Number
+
+</label>
+
+<input
+type="text"
+id="easyPaisa"
+placeholder="03XXXXXXXXX">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Bank Account
+
+</label>
+
+<input
+type="text"
+id="bankAccount"
+placeholder="Account Number">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+PayPal Email
+
+</label>
+
+<input
+type="email"
+id="paypal"
+placeholder="example@gmail.com">
+
+</div>
+
+</div>
+
+</div>
+<!--==============================
+SECURITY SETTINGS
+===============================-->
+
+<div
+class="settings-card"
+id="securityTab"
+style="display:none;">
+
+<h2>
+
+Security Settings
+
+</h2>
+
+<div class="form-group">
+
+<label>
+
+Current Password
+
+</label>
+
+<input
+type="password"
+id="currentPassword"
+placeholder="Enter Current Password">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+New Password
+
+</label>
+
+<input
+type="password"
+id="newPassword"
+placeholder="Enter New Password">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Confirm Password
+
+</label>
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Confirm New Password">
+
+</div>
+
+<div class="form-group">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="twoFactor">
+
+<span class="slider"></span>
+
+Enable Two-Factor Authentication
+
+</label>
+
+</div>
+
+</div>
+
+<!--==============================
+NOTIFICATION SETTINGS
+===============================-->
+
+<div
+class="settings-card"
+id="notificationsTab"
+style="display:none;">
+
+<h2>
+
+Notification Settings
+
+</h2>
+
+<div class="form-group">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="emailNotifications"
+checked>
+
+<span class="slider"></span>
+
+Email Notifications
+
+</label>
+
+</div>
+
+<div class="form-group">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="orderNotifications"
+checked>
+
+<span class="slider"></span>
+
+Order Notifications
+
+</label>
+
+</div>
+
+<div class="form-group">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="messageNotifications"
+checked>
+
+<span class="slider"></span>
+
+Message Notifications
+
+</label>
+
+</div>
+
+<div class="form-group">
+
+<label class="switch">
+
+<input
+type="checkbox"
+id="promotionNotifications">
+
+<span class="slider"></span>
+
+Promotion Notifications
+
+</label>
+
+</div>
+
+</div>
+
+<!--==============================
+APPEARANCE SETTINGS
+===============================-->
+
+<div
+class="settings-card"
+id="appearanceTab"
+style="display:none;">
+
+<h2>
+
+Appearance
+
+</h2>
+
+<div class="form-group">
+
+<label>
+
+Dashboard Theme
+
+</label>
+
+<select id="theme">
+
+<option value="light">
+
+Light Mode
+
+</option>
+
+<option value="dark">
+
+Dark Mode
+
+</option>
+
+<option value="system">
+
+System Default
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Language
+
+</label>
+
+<select id="language">
+
+<option value="en">
+
+English
+
+</option>
+
+<option value="ur">
+
+Urdu
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Currency
+
+</label>
+
+<select id="currency">
+
+<option value="PKR">
+
+Pakistani Rupee (PKR)
+
+</option>
+
+<option value="USD">
+
+US Dollar (USD)
+
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+    <!--==============================
+SAVE SETTINGS
+===============================-->
+
+<div class="settings-card save-card">
+
+<h2>
+
+Save Changes
+
+</h2>
+
+<p>
+
+Review your settings before saving. Your changes will be applied to your seller account after clicking the Save button.
+
+</p>
+
+<div class="action-buttons">
+
+<button
+type="button"
+id="resetSettings"
+class="reset-btn">
+
+<i class="fas fa-rotate-left"></i>
+
+Reset
+
+</button>
+
+<button
+type="button"
+id="saveSettings"
+class="save-btn">
+
+<i class="fas fa-floppy-disk"></i>
+
+Save Changes
+
+</button>
+
+</div>
+
+</div>
+
+<!--==============================
+FOOTER
+===============================-->
+
+<footer class="settings-footer">
+
+<p>
+
+© 2026 Code Future Academy AI
+
+</p>
+
+</footer>
+
+</div>
+
+<script
+type="module"
+src="settings.js">
+
+</script>
 
 </body>
+
 </html>
