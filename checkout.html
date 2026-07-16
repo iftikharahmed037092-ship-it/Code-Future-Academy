@@ -4,175 +4,715 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Checkout</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<style>
+<title>Secure Checkout | Code Future Academy AI</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<link rel="stylesheet"
+href="checkout.css">
 
-body{
-background:#f5f7fb;
-}
-
-.container{
-max-width:900px;
-margin:40px auto;
-padding:20px;
-}
-
-.card{
-background:#fff;
-border-radius:20px;
-padding:30px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-h1{
-text-align:center;
-margin-bottom:30px;
-}
-
-.product-box{
-display:flex;
-gap:20px;
-align-items:center;
-margin-bottom:30px;
-padding-bottom:20px;
-border-bottom:1px solid #ddd;
-}
-
-.product-box img{
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:15px;
-}
-
-.product-info h2{
-margin-bottom:10px;
-}
-
-.product-info p{
-color:#0066ff;
-font-size:22px;
-font-weight:bold;
-}
-
-form{
-display:grid;
-gap:18px;
-}
-
-input,
-textarea,
-select{
-width:100%;
-padding:14px;
-border:1px solid #ccc;
-border-radius:10px;
-font-size:16px;
-}
-
-textarea{
-resize:none;
-height:120px;
-}
-
-button{
-padding:16px;
-background:#0066ff;
-color:#fff;
-border:none;
-border-radius:12px;
-font-size:18px;
-cursor:pointer;
-font-weight:bold;
-}
-
-button:hover{
-background:#0052cc;
-}
-
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="checkout-wrapper">
 
-<div class="card">
+<!--==============================
+HEADER
+===============================-->
 
-<h1>Checkout</h1>
+<header class="checkout-header">
 
-<div class="product-box">
+<a href="javascript:history.back()"
+class="back-btn">
 
-<img id="productImage" src="">
+<i class="fa-solid fa-arrow-left"></i>
 
-<div class="product-info">
+</a>
 
-<h2 id="productTitle">
-Loading...
-</h2>
+<h1>
 
-<p id="productPrice">
-Rs 0
+Secure Checkout
+
+</h1>
+
+<div class="secure-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<span>256-bit Secure</span>
+
+</div>
+
+</header>
+
+<!--==============================
+CHECKOUT PROGRESS
+===============================-->
+
+<div class="checkout-progress">
+
+<div class="progress-item active">
+
+<div class="circle">
+
+1
+
+</div>
+
+<p>
+
+Product
+
+</p>
+
+</div>
+
+<div class="line active"></div>
+
+<div class="progress-item">
+
+<div class="circle">
+
+2
+
+</div>
+
+<p>
+
+Payment
+
+</p>
+
+</div>
+
+<div class="line"></div>
+
+<div class="progress-item">
+
+<div class="circle">
+
+3
+
+</div>
+
+<p>
+
+Complete
+
 </p>
 
 </div>
 
 </div>
 
+<!--==============================
+PRODUCT CARD
+===============================-->
+
+<section class="product-card">
+
+<div class="product-image">
+
+<img
+id="productImage"
+src=""
+alt="Product">
+
+</div>
+
+<div class="product-details">
+
+<div class="category-badge"
+id="productCategory">
+
+Website Template
+
+</div>
+
+<h2
+id="productTitle">
+
+Loading...
+
+</h2>
+
+<p
+class="seller-name">
+
+<i class="fa-solid fa-store"></i>
+
+<span id="sellerName">
+
+Code Future Academy AI
+
+</span>
+
+</p>
+
+<div class="price-row">
+
+<h3
+id="productPrice">
+
+Rs 0
+
+</h3>
+
+<span
+class="stock">
+
+In Stock
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================
+NEXT PART STARTS HERE
+BUYER INFORMATION FORM
+===============================-->
+
+  <!--==============================
+BUYER INFORMATION
+===============================-->
+
+<section class="checkout-card">
+
+<div class="section-title">
+
+<i class="fa-solid fa-user"></i>
+
+<h2>Buyer Information</h2>
+
+</div>
+
 <form id="checkoutForm">
+
+<div class="form-grid">
+
+<div class="input-box">
+
+<label>
+
+Full Name
+
+</label>
 
 <input
 type="text"
 id="customerName"
-placeholder="Full Name"
+placeholder="Enter your full name"
 required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+Email Address
+
+</label>
+
+<input
+type="email"
+id="customerEmail"
+placeholder="example@gmail.com"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+Phone Number
+
+</label>
 
 <input
 type="tel"
 id="phone"
-placeholder="Phone Number"
+placeholder="+92 300 1234567"
 required>
 
-<textarea
-id="address"
-placeholder="Complete Address"
+</div>
+
+<div class="input-box">
+
+<label>
+
+Country
+
+</label>
+
+<select id="country">
+
+<option>Pakistan</option>
+
+<option>India</option>
+
+<option>Bangladesh</option>
+
+<option>United Arab Emirates</option>
+
+<option>Saudi Arabia</option>
+
+<option>United Kingdom</option>
+
+<option>United States</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+Province / State
+
+</label>
+
+<input
+type="text"
+id="province"
+placeholder="Punjab"
 required>
-</textarea>
+
+</div>
+
+<div class="input-box">
+
+<label>
+
+City
+
+</label>
 
 <input
 type="text"
 id="city"
-placeholder="City"
+placeholder="Islamabad"
 required>
 
-<select id="payment">
+</div>
 
-<option>
+<div class="input-box">
+
+<label>
+
+Postal Code
+
+</label>
+
+<input
+type="text"
+id="postalCode"
+placeholder="44000">
+
+</div>
+
+<div class="input-box full-width">
+
+<label>
+
+Complete Address
+
+</label>
+
+<textarea
+id="address"
+placeholder="Enter complete address..."
+required>
+
+</textarea>
+
+</div>
+
+<div class="input-box full-width">
+
+<label>
+
+Order Notes (Optional)
+
+</label>
+
+<textarea
+id="orderNotes"
+placeholder="Any special instructions for seller...">
+
+</textarea>
+
+</div>
+
+</div>
+
+<!--==============================
+NEXT PART STARTS HERE
+PAYMENT METHODS
+===============================-->
+
+  <!--==============================
+PAYMENT METHODS
+===============================-->
+
+<section class="checkout-card">
+
+<div class="section-title">
+
+<i class="fa-solid fa-wallet"></i>
+
+<h2>
+
+Choose Payment Method
+
+</h2>
+
+</div>
+
+<div class="payment-methods">
+
+<label class="payment-card active">
+
+<input
+type="radio"
+name="payment"
+value="Cash On Delivery"
+checked>
+
+<div class="payment-icon">
+
+<i class="fa-solid fa-box"></i>
+
+</div>
+
+<div class="payment-info">
+
+<h3>
+
 Cash On Delivery
-</option>
 
-<option>
+</h3>
+
+<p>
+
+Pay after receiving your order.
+
+</p>
+
+</div>
+
+</label>
+
+<label class="payment-card">
+
+<input
+type="radio"
+name="payment"
+value="JazzCash">
+
+<div class="payment-icon">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+</div>
+
+<div class="payment-info">
+
+<h3>
+
 JazzCash
-</option>
 
-<option>
+</h3>
+
+<p>
+
+Secure mobile payment.
+
+</p>
+
+</div>
+
+</label>
+
+<label class="payment-card">
+
+<input
+type="radio"
+name="payment"
+value="EasyPaisa">
+
+<div class="payment-icon">
+
+<i class="fa-solid fa-money-bill-wave"></i>
+
+</div>
+
+<div class="payment-info">
+
+<h3>
+
 EasyPaisa
-</option>
 
-</select>
+</h3>
 
-<button type="submit">
+<p>
+
+Fast and secure payment.
+
+</p>
+
+</div>
+
+</label>
+
+<label class="payment-card">
+
+<input
+type="radio"
+name="payment"
+value="Bank Transfer">
+
+<div class="payment-icon">
+
+<i class="fa-solid fa-building-columns"></i>
+
+</div>
+
+<div class="payment-info">
+
+<h3>
+
+Bank Transfer
+
+</h3>
+
+<p>
+
+Transfer directly to bank account.
+
+</p>
+
+</div>
+
+</label>
+
+</div>
+
+</section>
+
+<!--==============================
+PAYMENT DETAILS
+===============================-->
+
+<section
+class="checkout-card"
+id="paymentDetails"
+style="display:none;">
+
+<div class="section-title">
+
+<i class="fa-solid fa-circle-info"></i>
+
+<h2>
+
+Payment Details
+
+</h2>
+
+</div>
+
+<div class="payment-details-box">
+
+<p>
+
+<strong>Account Name</strong>
+
+<span id="accountName">
+
+Loading...
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Account Number</strong>
+
+<span id="paymentNumber">
+
+Loading...
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Total Amount</strong>
+
+<span id="paymentAmount">
+
+Rs 0
+
+</span>
+
+</p>
+
+<div class="input-box">
+
+<label>
+
+Transaction ID
+
+</label>
+
+<input
+type="text"
+id="transactionId"
+placeholder="Enter Transaction ID">
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================
+NEXT PART STARTS HERE
+ORDER SUMMARY
+===============================-->
+
+  <!--==============================
+ORDER SUMMARY
+===============================-->
+
+<section class="checkout-card">
+
+<div class="section-title">
+
+<i class="fa-solid fa-receipt"></i>
+
+<h2>
+
+Order Summary
+
+</h2>
+
+</div>
+
+<div class="summary-box">
+
+<div class="summary-row">
+
+<span>
+
+Product Price
+
+</span>
+
+<span id="summaryPrice">
+
+Rs 0
+
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>
+
+Quantity
+
+</span>
+
+<span>
+
+1
+
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span>
+
+Delivery Charges
+
+</span>
+
+<span>
+
+Free
+
+</span>
+
+</div>
+
+<div class="summary-row total">
+
+<span>
+
+Total Amount
+
+</span>
+
+<span id="totalAmount">
+
+Rs 0
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==============================
+TERMS & CONDITIONS
+===============================-->
+
+<div class="terms-box">
+
+<label>
+
+<input
+type="checkbox"
+id="acceptTerms"
+required>
+
+I agree to the Terms & Conditions and Privacy Policy.
+
+</label>
+
+</div>
+
+<!--==============================
+PLACE ORDER BUTTON
+===============================-->
+
+<button
+type="submit"
+class="checkout-btn">
+
+<i class="fa-solid fa-lock"></i>
 
 Confirm Order
 
@@ -180,11 +720,68 @@ Confirm Order
 
 </form>
 
+<!--==============================
+LOADING
+===============================-->
+
+<div
+class="loading-box"
+id="loadingBox">
+
+<div class="loader"></div>
+
+<p>
+
+Processing your order...
+
+</p>
+
+</div>
+
+<!--==============================
+SUCCESS POPUP
+===============================-->
+
+<div
+class="success-popup"
+id="successPopup">
+
+<div class="success-content">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2>
+
+Order Placed Successfully
+
+</h2>
+
+<p>
+
+Thank you for your purchase.
+
+</p>
+
+<button
+id="continueBtn">
+
+Continue
+
+</button>
+
+</div>
+
 </div>
 
 </div>
 
-<script type="module" src="checkout.js"></script>
+</div>
+
+<script
+type="module"
+src="checkout.js">
+
+</script>
 
 </body>
 
