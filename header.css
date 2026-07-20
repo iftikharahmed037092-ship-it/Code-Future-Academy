@@ -2025,6 +2025,11 @@ a{
 touch-action:manipulation;
 }
 
+/* ہیڈر کے نیچے کنٹینٹ کو صحیح جگہ دینے کے لیے */
+main, .hero {
+    padding-top: calc(var(--header-height) + var(--offer-height));
+}
+
 /*==================================================
 END OF HEADER CSS
 ==================================================*/
