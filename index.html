@@ -318,8 +318,7 @@ id="menuToggle"
 type="button"
 aria-label="Open navigation menu"
 aria-expanded="false"
-aria-controls="mobileNav"
-aria-haspopup="true">
+aria-controls="mobileNav">
 
     <span aria-hidden="true"></span>
     <span aria-hidden="true"></span>
@@ -402,6 +401,7 @@ aria-hidden="true">
 <li class="mobile-nav-item mobile-dropdown">
 
     <button
+    id="mobileDashboardButton"
     class="mobile-dropdown-btn"
     type="button"
     aria-label="Open Dashboard Menu"
@@ -422,9 +422,10 @@ aria-hidden="true">
     </button>
 
     <div
-        class="mobile-dropdown-menu"
-        id="mobileDashboardDropdown"
-        role="menu">
+class="mobile-dropdown-menu"
+id="mobileDashboardDropdown"
+role="menu"
+aria-labelledby="mobileDashboardButton">
 
         <a href="dashboard.html" role="menuitem">
             <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
