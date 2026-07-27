@@ -1,91 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <a href="#mainContent" class="skip-link">Skip to Content</a>
+<div class="top-offer-bar"><span>🔥 Premium Templates • 24/7 Support • Secure Payments</span></div>
 
-<div class="top-offer-bar" role="region" aria-label="Top announcement bar">
-    <span>🔥 Premium Templates • 24/7 Support • Secure Payments</span>
-</div>
-
-<header class="main-header" aria-label="Main website header">
+<header class="main-header">
 <div class="header-container">
-
-<a href="index.html" class="logo" aria-label="Code Future Academy AI - Home Page">
-    <div class="logo-icon" aria-hidden="true">
-        <span class="logo-c">C</span>
-        <span class="logo-f">F</span>
-        <span class="logo-a">AI</span>
-    </div>
-    <div class="brand">
-       <span class="brand-title">Code Future Academy</span>
-        <span class="brand-subtitle">AI Marketplace</span>
-    </div>
+<a href="index.html" class="logo">
+    <div class="logo-icon"><span class="logo-c">C</span><span class="logo-f">F</span><span class="logo-a">AI</span></div>
+    <div class="brand"><span class="brand-title">Code Future Academy</span><span class="brand-subtitle">AI Marketplace</span></div>
 </a>
-
-<nav class="desktop-nav" aria-label="Main navigation">
+<nav class="desktop-nav">
 <ul class="nav-list">
-<li><a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
 <li><a href="products.html"><i class="fa-solid fa-store"></i> Products</a></li>
 <li><a href="categories.html"><i class="fa-solid fa-layer-group"></i> Categories</a></li>
 <li><a href="services.html"><i class="fa-solid fa-briefcase"></i> Services</a></li>
-
 <li class="nav-dropdown">
-<button class="nav-dropdown-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dashboardDropdown">
-<i class="fa-solid fa-table-columns"></i><span>Dashboard</span><i class="fa-solid fa-chevron-down"></i>
-</button>
-<div class="dropdown-menu" id="dashboardDropdown" role="menu">
-<a href="dashboard.html" role="menuitem"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
-<a href="profile.html" role="menuitem"><i class="fa-solid fa-user"></i> Profile</a>
-<a href="orders.html" role="menuitem"><i class="fa-solid fa-box"></i> My Orders</a>
-<a href="wishlist.html" role="menuitem"><i class="fa-solid fa-heart"></i> Wishlist</a>
-<a href="cart.html" role="menuitem"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-<a href="seller-dashboard.html" role="menuitem"><i class="fa-solid fa-shop"></i> Seller Dashboard</a>
-<a href="settings.html" role="menuitem"><i class="fa-solid fa-gear"></i> Settings</a>
+<button class="nav-dropdown-btn" type="button"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span><i class="fa-solid fa-chevron-down"></i></button>
+<div class="dropdown-menu" id="dashboardDropdown">
+<a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+<a href="profile.html"><i class="fa-solid fa-user"></i> Profile</a>
+<a href="orders.html"><i class="fa-solid fa-box"></i> My Orders</a>
+<a href="wishlist.html"><i class="fa-solid fa-heart"></i> Wishlist</a>
+<a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+<a href="seller-dashboard.html"><i class="fa-solid fa-shop"></i> Seller Dashboard</a>
+<a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
 </div>
 </li>
-
 <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
 <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
 <li><a href="support.html"><i class="fa-solid fa-headset"></i> Support</a></li>
 </ul>
 </nav>
-
 <div class="header-actions">
-<a href="search.html" class="action-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-<a href="wishlist.html" class="action-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge" id="wishlistCount">0</span></a>
-<a href="cart.html" class="action-btn" title="Shopping Cart"><i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cartCount">0</span></a>
-<a href="notifications.html" class="action-btn" title="Notifications"><i class="fa-regular fa-bell"></i><span class="badge" id="notificationCount">0</span></a>
+<a href="search.html" class="action-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+<a href="wishlist.html" class="action-btn"><i class="fa-regular fa-heart"></i><span class="badge" id="wishlistCount">0</span></a>
+<a href="cart.html" class="action-btn"><i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cartCount">0</span></a>
+<a href="notifications.html" class="action-btn"><i class="fa-regular fa-bell"></i><span class="badge" id="notificationCount">0</span></a>
 <a href="login.html" class="login-btn"><i class="fa-solid fa-right-to-bracket"></i><span>Login</span></a>
-<button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
-    <span></span><span></span><span></span>
-</button>
+<button class="menu-toggle" id="menuToggle" type="button"><span></span><span></span><span></span></button>
 </div>
 </div>
-
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation menu" aria-hidden="true">
+<nav class="mobile-nav" id="mobileNav">
 <ul class="mobile-nav-list">
 <li class="mobile-nav-item"><a href="index.html" class="active"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
 <li class="mobile-nav-item"><a href="products.html"><i class="fa-solid fa-store"></i><span>Products</span></a></li>
 <li class="mobile-nav-item"><a href="categories.html"><i class="fa-solid fa-layer-group"></i><span>Categories</span></a></li>
 <li class="mobile-nav-item"><a href="services.html"><i class="fa-solid fa-briefcase"></i><span>Services</span></a></li>
-
 <li class="mobile-nav-item mobile-dropdown">
-    <button id="mobileDashboardButton" class="mobile-dropdown-btn" type="button" aria-expanded="false">
-      <span class="mobile-dropdown-label"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></span>
-      <i class="fa-solid fa-chevron-down"></i>
-    </button>
+    <button id="mobileDashboardButton" class="mobile-dropdown-btn" type="button"><span><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></span><i class="fa-solid fa-chevron-down"></i></button>
     <div class="mobile-dropdown-menu" id="mobileDashboardDropdown">
         <a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
         <a href="profile.html"><i class="fa-solid fa-user"></i><span>Profile</span></a>
@@ -96,14 +69,12 @@
         <a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
     </div>
 </li>
-
 <li class="mobile-nav-item"><a href="about.html"><i class="fa-solid fa-circle-info"></i><span>About</span></a></li>
 <li class="mobile-nav-item"><a href="contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
 <li class="mobile-nav-item"><a href="support.html"><i class="fa-solid fa-headset"></i><span>Support</span></a></li>
 <li class="mobile-nav-item"><a href="login.html" class="mobile-login-btn"><i class="fa-solid fa-right-to-bracket"></i><span>Login</span></a></li>
 </ul>
 </nav>
-
 <div class="mobile-overlay" id="mobileOverlay"></div>
 </header>
 
@@ -126,12 +97,55 @@
     <div class="wave"></div>
 </section>
 
-<!-- باقی تمہارے سارے section یہاں رہیں گے -->
-<section class="services"> ... </section>
-<section class="portfolio"> ... </section>
-<section class="pricing"> ... </section>
-<section class="testimonials"> ... </section>
-<section class="faq"> ... </section>
+<section class="services">
+    <div class="section-title"><span>OUR SERVICES</span><h2>What We Offer</h2><p>Professional solutions designed to help your business grow faster and perform better.</p></div>
+    <div class="services-grid">
+        <div class="service-card"><h3>Service One</h3><p>Description goes here.</p></div>
+        <div class="service-card"><h3>Service Two</h3><p>Description goes here.</p></div>
+        <div class="service-card"><h3>Service Three</h3><p>Description goes here.</p></div>
+        <div class="service-card"><h3>Service Four</h3><p>Description goes here.</p></div>
+        <div class="service-card"><h3>Service Five</h3><p>Description goes here.</p></div>
+        <div class="service-card"><h3>Service Six</h3><p>Description goes here.</p></div>
+    </div>
+</section>
+
+<section class="portfolio">
+    <div class="section-title"><span>OUR PORTFOLIO</span><h2>Recent Projects</h2><p>Showcase your best work, products, services or projects here.</p></div>
+    <div class="portfolio-grid">
+        <div class="portfolio-card"><img src="project1.jpg" alt="Project"><div class="portfolio-content"><h3>Project One</h3><p>Short description here.</p><a href="#">View Project</a></div></div>
+        <div class="portfolio-card"><img src="project2.jpg" alt="Project"><div class="portfolio-content"><h3>Project Two</h3><p>Short description here.</p><a href="#">View Project</a></div></div>
+        <div class="portfolio-card"><img src="project3.jpg" alt="Project"><div class="portfolio-content"><h3>Project Three</h3><p>Short description here.</p><a href="#">View Project</a></div></div>
+        <div class="portfolio-card"><img src="project4.jpg" alt="Project"><div class="portfolio-content"><h3>Project Four</h3><p>Short description here.</p><a href="#">View Project</a></div></div>
+    </div>
+</section>
+
+<section class="pricing">
+    <div class="section-title"><span>PRICING PLANS</span><h2>Choose Your Plan</h2><p>Flexible plans for every type of customer.</p></div>
+    <div class="pricing-grid">
+        <div class="pricing-card"><h3>Basic</h3><div class="price">$9</div><p>Perfect for beginners</p><button>Choose Plan</button></div>
+        <div class="pricing-card featured"><h3>Premium</h3><div class="price">$29</div><p>Most popular package</p><button>Choose Plan</button></div>
+        <div class="pricing-card"><h3>Pro</h3><div class="price">$59</div><p>Advanced business solution</p><button>Choose Plan</button></div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="section-title"><span>TESTIMONIALS</span><h2>What Our Clients Say</h2><p>Trusted by customers around the world.</p></div>
+    <div class="testimonial-grid">
+        <div class="testimonial-card"><p>Excellent service and professional support. Highly recommended.</p><h3>Client Name</h3></div>
+        <div class="testimonial-card"><p>Amazing experience and outstanding quality.</p><h3>Client Name</h3></div>
+        <div class="testimonial-card"><p>Fast delivery and excellent communication.</p><h3>Client Name</h3></div>
+    </div>
+</section>
+
+<section class="faq">
+    <div class="section-title"><span>FAQ</span><h2>Frequently Asked Questions</h2><p>Find answers to the most common questions.</p></div>
+    <div class="faq-container">
+        <details><summary>What services do you provide?</summary><p>Answer goes here.</p></details>
+        <details><summary>How can I contact you?</summary><p>Answer goes here.</p></details>
+        <details><summary>Do you offer support?</summary><p>Answer goes here.</p></details>
+        <details><summary>How does payment work?</summary><p>Answer goes here.</p></details>
+    </div>
+</section>
 
 </main>
         
@@ -141,8 +155,6 @@
     <p>© 2026 All Rights Reserved</p>
 </footer>
 
-<!-- FIX 1: پرانا toggleMenu والا script ڈیلیٹ کر دیا -->
-<!-- FIX 2: type="module" ہٹا دیا -->
 <script src="header.js"></script>
 </body>
 </html>
