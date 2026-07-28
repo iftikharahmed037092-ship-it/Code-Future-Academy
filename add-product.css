@@ -1,5 +1,5 @@
 /*==================================================
- CFA AI - PREMIUM ADD PRODUCT PAGE CSS v7.0
+ CFA AI - PREMIUM ADD PRODUCT PAGE CSS v7.1
  100% MATCH WITH PRODUCTS PAGE - ULTRA PREMIUM
 ==================================================*/
 
@@ -149,21 +149,56 @@ IMAGE BOX
     transform:scale(1.03);
 }
 
-.image-card input{
+/* ===== NEW: UPLOAD + URL TABS ===== */
+.image-options{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.img-tab{
+    flex:1;
+    padding:12px;
+    border:2px solid var(--border);
+    background:var(--white);
+    border-radius:12px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+    font-family:inherit;
+}
+.img-tab:hover{
+    border-color:var(--primary);
+}
+.img-tab.active{
+    background:var(--primary);
+    color:white;
+    border-color:var(--primary);
+}
+
+.tab-content{
+    display:none;
+}
+.tab-content.active{
+    display:block;
+}
+
+#imageUpload{
     width:100%;
     padding:14px 18px;
     border-radius:15px;
-    border:2px dashed var(--border);
-    background:var(--light);
+    border:2px dashed var(--primary);
+    background:#eff6ff;
     cursor:pointer;
     font-family:inherit;
     font-size:15px;
     font-weight:500;
     transition:.3s;
 }
-.image-card input:hover{
-    border-color:var(--primary);
-    background:#eef4ff;
+
+#imageUrl{
+    margin:0;
 }
 
 /*==============================
@@ -196,6 +231,7 @@ select,
 textarea{
     width:100%;
     padding:15px 18px;
+    margin-bottom:20px;
     border-radius:15px;
     border:2px solid var(--border);
     background:var(--white);
@@ -226,7 +262,7 @@ textarea{
 /*==============================
 SUBMIT BUTTON
 ==============================*/
-.btn-submit{
+button{
     width:100%;
     padding:16px;
     border:none;
@@ -241,12 +277,12 @@ SUBMIT BUTTON
     user-select:none;
     margin-top:10px;
 }
-.btn-submit:hover{
+button:hover{
     background:var(--primary-dark);
     transform:translateY(-2px);
     box-shadow:0 10px 20px rgba(37,99,235,.20);
 }
-.btn-submit:active{
+button:active{
     transform:scale(.96);
 }
 
