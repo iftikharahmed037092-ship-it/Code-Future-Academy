@@ -1,6 +1,6 @@
 /*==================================================
- CFA AI ADMIN ADD PRODUCT JS v2.1
- FIREBASE SAVE PRODUCT + UPLOAD + URL
+ CFA AI ADMIN ADD PRODUCT JS v2.3
+ FIREBASE SAVE PRODUCT + UPLOAD + URL + MOBILE FIX
 ==================================================*/
 
 import { db } from "./firebase.js";
@@ -13,7 +13,7 @@ import {
 
 const productForm = document.getElementById("productForm");
 
-// ===== نئے IDs =====
+// ===== Elements =====
 const imageUpload = document.getElementById("imageUpload");
 const imageUrl = document.getElementById("imageUrl");
 const imagePreview = document.getElementById("imagePreview");
@@ -39,14 +39,21 @@ window.showTab = function(tab) {
 IMAGE PREVIEW
 ==============================*/
 
-// 1. گیلری سے سلیکٹ
+// 1. گیلری سے سلیکٹ - سائز چیک کے ساتھ
 imageUpload.addEventListener("change", (e)=>{
     const file = e.target.files[0];
     if(file){
+        // اگر 2MB سے بڑی ہے تو روک دو
+        if(file.size > 2000000){
+            alert("تصویر 2MB سے چھوٹی ہونی چاہیے ⚠️");
+            imageUpload.value = "";
+            return;
+        }
+
         const reader = new FileReader();
         reader.onload = (event)=>{
             imagePreview.src = event.target.result;
-            finalImage.value = event.target.result; // Base64 کو hidden میں ڈالا
+            finalImage.value = event.target.result; // Base64
         }
         reader.readAsDataURL(file);
     }
@@ -54,9 +61,9 @@ imageUpload.addEventListener("change", (e)=>{
 
 // 2. URL پیسٹ
 imageUrl.addEventListener("input", (e)=>{
-    if(e.target.value){
+    if(e.target.value.trim()!== ""){
         imagePreview.src = e.target.value;
-        finalImage.value = e.target.value; // URL کو hidden میں ڈالا
+        finalImage.value = e.target.value; // URL
     } else {
         imagePreview.src = "images/no-image.png";
         finalImage.value = "";
@@ -69,7 +76,20 @@ ADD PRODUCT TO FIREBASE
 productForm.addEventListener("submit", (e)=>{
     e.preventDefault();
 
-    if(!finalImage.value){
+    // ===== VALIDATION =====
+    const title = document.getElementById("productName").value.trim();
+    const price = document.getElementById("productPrice").value;
+    const image = finalImage.value;
+
+    if(title === ""){
+        alert("Product Name لازمی ہے ⚠️");
+        return;
+    }
+    if(price === "" || price <= 0){
+        alert("Valid Price ڈالیں ⚠️");
+        return;
+    }
+    if(image === ""){
         alert("براہ کرم تصویر Upload کریں یا URL پیسٹ کریں ⚠️");
         return;
     }
@@ -77,11 +97,11 @@ productForm.addEventListener("submit", (e)=>{
     const productRef = push(ref(db,"products"));
 
     const product = {
-        title: document.getElementById("productName").value,
-        price: document.getElementById("productPrice").value,
+        title: title,
+        price: price,
         oldPrice: document.getElementById("oldPrice").value,
         discount: document.getElementById("discount").value,
-        image: finalImage.value, // <-- اب یہاں سے جائے گا
+        image: image, // <-- یہاں Base64 یا URL جائے گا
         category: document.getElementById("productCategory").value,
         badge: document.getElementById("productBadge").value,
         stock: document.getElementById("productStock").value,
@@ -91,14 +111,16 @@ productForm.addEventListener("submit", (e)=>{
     };
 
     set(productRef, product)
-  .then(()=>{
+ .then(()=>{
         alert("Product Added Successfully ✅");
         productForm.reset();
         imagePreview.src = "images/no-image.png";
         finalImage.value = "";
-        showTab('upload'); // واپس Upload Tab پر
+        showTab('upload');
+        window.scrollTo(0,0); // اوپر لے جائے
     })
-  .catch((error)=>{
-        alert("Error: " + error.message);
+ .catch((error)=>{
+        console.error(error);
+        alert("Firebase Error: " + error.message + "\nنوٹ: تصویر 2MB سے بڑی نہ ہو");
     });
 });
