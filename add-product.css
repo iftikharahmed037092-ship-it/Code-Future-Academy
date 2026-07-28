@@ -1,7 +1,9 @@
 /*==================================================
- CFA AI - PREMIUM ADD PRODUCT PAGE CSS
+ CFA AI - PREMIUM ADD PRODUCT PAGE CSS v7.0
+ 100% MATCH WITH PRODUCTS PAGE - ULTRA PREMIUM
 ==================================================*/
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 *{
     margin:0;
@@ -9,730 +11,268 @@
     box-sizing:border-box;
 }
 
-
 :root{
-
-    --primary:#2563eb;
-    --secondary:#7c3aed;
-    --cyan:#06b6d4;
-    --green:#10b981;
-    --danger:#ef4444;
-
-    --dark:#0f172a;
-    --gray:#64748b;
-
-    --shadow:
-    0 25px 60px rgba(15,23,42,.12);
-
+    --primary:#2563eb;  
+    --primary-dark:#1d4ed8;  
+    --secondary:#10b981;  
+    --danger:#ef4444;  
+    --warning:#f59e0b;  
+    --dark:#111827;  
+    --gray:#6b7280;  
+    --light:#f8fafc;  
+    --white:#ffffff;  
+    --border:#e5e7eb;  
+    --shadow:0 10px 30px rgba(0,0,0,.08);
 }
-
-
 
 body{
-
     min-height:100vh;
-
-    font-family:
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-
-    background:
-
-    radial-gradient(
-    circle at top left,
-    rgba(37,99,235,.25),
-    transparent 35%
-    ),
-
-    radial-gradient(
-    circle at bottom right,
-    rgba(124,58,237,.25),
-    transparent 35%
-    ),
-
-    #f8fafc;
-
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
 }
-
-
-
-
-
 
 /*==============================
 MAIN CONTAINER
 ==============================*/
-
-
 .admin-container{
-
-    max-width:1400px;
-
+    max-width:1600px;
     margin:auto;
-
-    padding:45px;
-
+    padding:90px 25px 40px;
 }
-
-
-
-
-
-
 
 /*==============================
 HEADER
 ==============================*/
-
-
 .admin-header{
-
     display:flex;
-
     align-items:center;
-
     gap:25px;
-
-    margin-bottom:40px;
-
+    margin-bottom:35px;
+    animation:fadeUp .5s ease;
 }
-
-
 
 .admin-header h1{
-
-    font-size:42px;
-
-    font-weight:800;
-
-
-    background:
-
-    linear-gradient(
-    90deg,
-    #2563eb,
-    #7c3aed
-    );
-
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
+    font-size:40px;
+    font-weight:700;
+    color:var(--dark);
 }
-
-
 
 .admin-header p{
-
-    color:#64748b;
-
+    color:var(--gray);
     font-size:17px;
-
 }
-
-
-
-
-
-
 
 /*==============================
-BACK BUTTON
+BACK BUTTON - SAME AS PRODUCTS
 ==============================*/
-
-
 .back-btn{
-
-
-    width:58px;
-
-    height:58px;
-
-
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:50px;
+    height:50px;
     border-radius:50%;
-
-
+    background:var(--white);
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-
-    color:white;
-
-
-    text-decoration:none;
-
-
     font-size:22px;
-
-
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #06b6d4
-    );
-
-
-    box-shadow:
-
-    0 15px 35px
-    rgba(37,99,235,.35);
-
-
-    transition:.3s;
-
+    color:var(--dark);
+    box-shadow:var(--shadow);
+    transition:.30s;
+    z-index:999;
+    text-decoration:none;
 }
-
-
-
 .back-btn:hover{
-
-
-    transform:
-
-    translateY(-5px)
-    rotate(-10deg);
-
+    background:var(--primary);
+    color:white;
+    transform:translateY(-3px);
 }
-
-
-
-
-
-
 
 /*==============================
 FORM LAYOUT
 ==============================*/
-
-
 #productForm{
-
-
     display:grid;
-
-
-    grid-template-columns:
-
-    380px 1fr;
-
-
-    gap:35px;
-
-
+    grid-template-columns: 400px 1fr;
+    gap:30px;
     align-items:start;
-
 }
-
-
-
-
-
-
 
 /*==============================
-COMMON BOX
+COMMON BOX - PRODUCT CARD STYLE
 ==============================*/
-
-
 .image-card,
 .form-card{
-
-
-    padding:32px;
-
-
-    border-radius:30px;
-
-
-    border:
-
-    1px solid
-    rgba(255,255,255,.8);
-
-
-    box-shadow:
-
-    var(--shadow);
-
-
-    backdrop-filter:
-
-    blur(20px);
-
-
+    background:var(--white);
+    padding:30px;
+    border-radius:22px;
+    border:1px solid rgba(0,0,0,.04);
+    box-shadow:var(--shadow);
+    transition:.35s;
+    animation:fadeUp .5s ease;
 }
-
-
-
-
-
-
+.image-card:hover,
+.form-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    border-color:rgba(37,99,235,.20);
+}
 
 /*==============================
 IMAGE BOX
 ==============================*/
-
-
 .image-card{
-
-
-    background:
-
-    linear-gradient(
-    145deg,
-    #dbeafe,
-    #cffafe
-    );
-
-
     position:sticky;
-
-    top:30px;
-
+    top:110px;
 }
-
-
-
 .image-card h2{
-
-    color:#1e40af;
-
-    margin-bottom:25px;
-
+    color:var(--dark);
+    margin-bottom:20px;
+    font-size:20px;
+    font-weight:700;
 }
-
-
-
-
-
 
 #imagePreview{
-
-
     width:100%;
-
-
     height:320px;
-
-
     object-fit:cover;
-
-
-    background:white;
-
-
-    border-radius:25px;
-
-
-    border:
-
-    6px solid white;
-
-
-    box-shadow:
-
-    0 20px 40px
-    rgba(0,0,0,.15);
-
-
-    margin-bottom:25px;
-
+    background:#f3f4f6;
+    border-radius:18px;
+    border:1px solid var(--border);
+    margin-bottom:20px;
+    transition:.35s;
 }
-
-
-
-
-
+.image-card:hover #imagePreview{
+    transform:scale(1.03);
+}
 
 .image-card input{
-
-
     width:100%;
-
-
-    padding:15px;
-
-
+    padding:14px 18px;
     border-radius:15px;
-
-
-    border:
-
-    2px dashed #06b6d4;
-
-
-    background:white;
-
-
+    border:2px dashed var(--border);
+    background:var(--light);
+    cursor:pointer;
+    font-family:inherit;
+    font-size:15px;
+    font-weight:500;
+    transition:.3s;
 }
-
-
-
-
-
-
-
+.image-card input:hover{
+    border-color:var(--primary);
+    background:#eef4ff;
+}
 
 /*==============================
 DETAILS BOX
 ==============================*/
-
-
-.form-card{
-
-
-    background:
-
-    linear-gradient(
-    145deg,
-    #ffffff,
-    #f5f3ff
-    );
-
-}
-
-
-
 .form-card h2{
-
-
-    color:#6d28d9;
-
-
-    margin-bottom:30px;
-
+    color:var(--dark);
+    margin-bottom:25px;
+    font-size:20px;
+    font-weight:700;
 }
-
-
-
-
-
 
 /*==============================
-LABEL
+FORM ELEMENTS
 ==============================*/
-
+.form-group{
+    margin-bottom:20px;
+}
 
 label{
-
-
     display:block;
-
-
-    margin-bottom:8px;
-
-
-    font-weight:700;
-
-
-    color:#334155;
-
+    margin-bottom:10px;
+    font-weight:600;
+    color:var(--dark);
+    font-size:15px;
 }
-
-
-
-
-
-
-
-/*==============================
-INPUTS
-==============================*/
-
 
 input,
 select,
 textarea{
-
-
     width:100%;
-
-
-    padding:16px 18px;
-
-
-    margin-bottom:22px;
-
-
-    border-radius:18px;
-
-
-    border:
-
-    2px solid #dbeafe;
-
-
-    background:
-
-    linear-gradient(
-    135deg,
-    #ffffff,
-    #f8fafc
-    );
-
-
+    padding:15px 18px;
+    border-radius:15px;
+    border:2px solid var(--border);
+    background:var(--white);
     outline:none;
-
-
     font-size:15px;
-
-
+    font-family:inherit;
     transition:.3s;
-
 }
-
-
-
 
 input:hover,
 select:hover,
 textarea:hover{
-
-
-    border-color:#93c5fd;
-
+    border-color:var(--primary);
 }
-
-
-
 
 input:focus,
 select:focus,
 textarea:focus{
-
-
-    border-color:#2563eb;
-
-
-    box-shadow:
-
-
-    0 0 0 5px
-    rgba(37,99,235,.15);
-
-
+    border-color:var(--primary);
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
 }
-
-
-
-
-
-
 
 textarea{
-
-
     height:130px;
-
-
     resize:none;
-
 }
-
-
-
-
-
-
 
 /*==============================
-BUTTON
+SUBMIT BUTTON
 ==============================*/
-
-
-button{
-
-
+.btn-submit{
     width:100%;
-
-
-    padding:17px;
-
-
+    padding:16px;
     border:none;
-
-
     border-radius:50px;
-
-
     color:white;
-
-
-    font-size:17px;
-
-
-    font-weight:700;
-
-
+    font-size:16px;
+    font-weight:600;
     cursor:pointer;
-
-
-
-    background:
-
-
-    linear-gradient(
-    135deg,
-    #2563eb,
-    #7c3aed
-    );
-
-
-    box-shadow:
-
-
-    0 15px 35px
-    rgba(37,99,235,.35);
-
-
-
+    background:var(--primary);
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
     transition:.3s;
-
+    user-select:none;
+    margin-top:10px;
 }
-
-
-
-button:hover{
-
-
-    transform:
-
-    translateY(-5px);
-
-
+.btn-submit:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(37,99,235,.20);
 }
-
-
-
-
-
-
+.btn-submit:active{
+    transform:scale(.96);
+}
 
 /*==============================
 ANIMATION
 ==============================*/
-
-
-.image-card,
-.form-card{
-
-
-    animation:
-
-    fade .7s ease;
-
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(25px); }
+    to{ opacity:1; transform:translateY(0); }
 }
-
-
-
-
-@keyframes fade{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(35px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-
-
 
 /*==============================
 TABLET
 ==============================*/
-
-
-@media(max-width:1000px){
-
-
-#productForm{
-
-grid-template-columns:1fr;
-
+@media(max-width:992px){
+    #productForm{ grid-template-columns:1fr; }
+    .image-card{ position:relative; top:0; }
 }
-
-
-.image-card{
-
-position:relative;
-
-}
-
-
-}
-
-
-
-
-
-
-
 
 /*==============================
 MOBILE
 ==============================*/
-
-
-@media(max-width:600px){
-
-
-.admin-container{
-
-padding:25px 15px;
-
-}
-
-
-
-.admin-header h1{
-
-font-size:30px;
-
-}
-
-
-
-.image-card,
-.form-card{
-
-padding:22px;
-
-}
-
-
-
-#imagePreview{
-
-height:240px;
-
-}
-
-
+@media(max-width:767px){
+    .admin-container{ padding:75px 15px 30px; }
+    .admin-header h1{ font-size:26px; }
+    .image-card, .form-card{ padding:22px; }
+    #imagePreview{ height:240px; }
+    .back-btn{ width:44px; height:44px; font-size:20px; top:15px; left:15px; }
 }
