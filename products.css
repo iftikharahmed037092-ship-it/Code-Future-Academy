@@ -1,1545 +1,290 @@
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 1
-   RESET + ROOT + BODY + CONTAINER
-==================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-
-/*==============================
-RESET
-==============================*/
+:root{
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --bg: #f5f7fb;
+    --white: rgba(255,255,255,0.95);
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
-
-/*==============================
-ROOT COLORS
-==============================*/
-
-:root{
-
-    --primary:#2563eb;
-
-    --primary-dark:#1d4ed8;
-
-    --secondary:#10b981;
-
-    --danger:#ef4444;
-
-    --warning:#f59e0b;
-
-    --dark:#111827;
-
-    --gray:#6b7280;
-
-    --light:#f8fafc;
-
-    --white:#ffffff;
-
-    --border:#e5e7eb;
-
-    --shadow:
-    0 10px 30px rgba(0,0,0,.08);
-
-}
-
-
-/*==============================
-BODY
-==============================*/
 
 body{
-
-    background:var(--light);
-
-    color:var(--dark);
-
-    font-family:
-
-    Arial,
-    Helvetica,
-    sans-serif;
-
-    line-height:1.6;
-
-    overflow-x:hidden;
-
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
 }
 
-
-/*==============================
-LINKS
-==============================*/
-
-a{
-
-    text-decoration:none;
-
-    color:inherit;
-
-}
-
-
-/*==============================
-IMAGES
-==============================*/
-
-img{
-
-    display:block;
-
-    width:100%;
-
-}
-
-
-/*==============================
-BUTTONS
-==============================*/
-
-button{
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-}
-
-
-/*==============================
-MAIN CONTAINER
-==============================*/
-
-.container{
-
-    width:100%;
-
-    max-width:1600px;
-
-    margin:auto;
-
-    padding:
-
-    90px
-    25px
-    40px;
-
-}
-
-
-/*==============================
-PAGE HEADER
-==============================*/
-
-.page-header{
-
-    text-align:center;
-
-    margin-bottom:35px;
-
-}
-
-
-/*==============================
-PAGE TITLE
-==============================*/
-
-.page-title{
-
-    font-size:40px;
-
-    font-weight:700;
-
-    color:var(--dark);
-
-    margin-bottom:10px;
-
-}
-
-
-/*==============================
-PAGE SUBTITLE
-==============================*/
-
-.page-subtitle{
-
-    max-width:700px;
-
-    margin:auto;
-
-    color:var(--gray);
-
-    font-size:17px;
-
-}
-
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 2
-   BACK BUTTON + SEARCH + FILTER BAR
-==================================================*/
-
-
-/*==============================
-BACK BUTTON
-==============================*/
-
+/* ========== BACK BUTTON ========== */
 .back-btn{
-
-position:fixed;
-
-top:20px;
-
-left:20px;
-
-width:50px;
-
-height:50px;
-
-border-radius:50%;
-
-background:var(--white);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:22px;
-
-color:var(--dark);
-
-box-shadow:var(--shadow);
-
-transition:.30s;
-
-z-index:999;
-
+    position:fixed;
+    top:25px;
+    left:25px;
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius:50%;
+    text-decoration:none;
+    color:#111;
+    font-size:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    z-index:999;
+    transition: .3s;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
 .back-btn:hover{
-
-background:var(--primary);
-
-color:white;
-
-transform:translateY(-3px);
-
+    transform: scale(1.1) rotate(-10deg);
+    background: #fff;
 }
 
+/* ========== CONTAINER ========== */
+.container{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 30px 40px;
+}
 
-/*==============================
-SEARCH BOX
-==============================*/
+/* ========== PAGE HEADER ========== */
+.page-header{
+    text-align: center;
+    margin-bottom: 40px;
+    background: var(--white);
+    backdrop-filter: blur(20px);
+    padding: 50px 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    border: 1px solid rgba(255,255,255,0.2);
+}
 
+.page-title{
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+}
+
+.page-subtitle{
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* ========== SEARCH BOX ========== */
 .search-box{
-
-width:100%;
-
-max-width:700px;
-
-margin:35px auto;
-
-position:relative;
-
+    background: var(--white);
+    backdrop-filter: blur(20px);
+    padding: 20px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .search-box i{
-
-position:absolute;
-
-left:20px;
-
-top:50%;
-
-transform:translateY(-50%);
-
-font-size:18px;
-
-color:var(--gray);
-
+    color: var(--primary);
+    font-size: 18px;
 }
 
 .search-box input{
-
-width:100%;
-
-height:58px;
-
-padding-left:55px;
-
-padding-right:20px;
-
-border-radius:50px;
-
-border:2px solid var(--border);
-
-background:white;
-
-font-size:16px;
-
-outline:none;
-
-transition:.30s;
-
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    font-family: 'Poppins';
+    color: #333;
 }
 
-.search-box input:focus{
-
-border-color:var(--primary);
-
-box-shadow:
-0 0 0 4px
-rgba(37,99,235,.15);
-
+.search-box input::placeholder{
+    color: #999;
 }
 
-
-/*==============================
-FILTER BAR
-==============================*/
-
+/* ========== FILTER BAR ========== */
 .filter-bar{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-gap:12px;
-
-flex-wrap:wrap;
-
-margin-bottom:40px;
-
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
-
-/*==============================
-FILTER BUTTON
-==============================*/
 
 .filter-btn{
-
-padding:12px 22px;
-
-border:none;
-
-border-radius:50px;
-
-background:white;
-
-color:var(--dark);
-
-font-size:15px;
-
-font-weight:600;
-
-box-shadow:
-
-0 5px 15px
-rgba(0,0,0,.05);
-
-transition:.30s;
-
+    padding: 12px 24px;
+    border: 2px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .3s;
 }
 
 .filter-btn:hover{
-
-background:var(--primary);
-
-color:white;
-
-transform:translateY(-2px);
-
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
 }
 
 .filter-btn.active{
-
-background:var(--primary);
-
-color:white;
-
+    background: #fff;
+    color: var(--primary);
+    border-color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
 }
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 3
-   PRODUCTS GRID + PRODUCT CARD
-==================================================*/
 
-
-/*==============================
-PRODUCTS GRID
-==============================*/
-
+/* ========== PRODUCTS GRID ========== */
 .products-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-align-items:stretch;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
-
-/*==============================
-PRODUCT CARD
-==============================*/
-
+/* Product Card - اسے آپ کا products.js use کرے گا */
 .product-card{
-
-background:var(--white);
-
-border-radius:22px;
-
-overflow:hidden;
-
-display:flex;
-
-flex-direction:column;
-
-height:100%;
-
-box-shadow:var(--shadow);
-
-transition:.35s;
-
-position:relative;
-
+    background: var(--white);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all .4s cubic-bezier(.2,.8,.2,1);
 }
 
 .product-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:
-
-0 20px 40px rgba(0,0,0,.15);
-
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(102,126,234,.3);
 }
 
-
-/*==============================
-PRODUCT IMAGE
-==============================*/
-
-.product-image{
-
-width:100%;
-
-height:240px;
-
-object-fit:cover;
-
-transition:.35s;
-
+.product-img{
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    object-fit: cover;
 }
 
-.product-card:hover .product-image{
-
-transform:scale(1.05);
-
+.product-info{
+    padding: 25px;
 }
-
-/*==============================
-PRODUCT IMAGE BOX
-==============================*/
-
-.product-image-box{
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-/*==============================
-TOP WISHLIST BUTTON
-==============================*/
-
-.wishlist-top-btn{
-
-position:absolute;
-
-top:15px;
-
-right:15px;
-
-width:45px;
-
-height:45px;
-
-border:none;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.95);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-cursor:pointer;
-
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-transition:.3s;
-
-z-index:5;
-
-}
-
-.wishlist-top-btn i{
-
-font-size:20px;
-
-color:#22c55e;
-
-}
-
-.wishlist-top-btn:hover{
-
-transform:scale(1.1);
-
-background:#fff;
-
-}
-
-/*==============================
-PRODUCT CONTENT
-==============================*/
-
-.product-content{
-
-display:flex;
-
-flex-direction:column;
-
-flex:1;
-
-padding:22px;
-
-}
-
-
-/*==============================
-PRODUCT TITLE
-==============================*/
-
-.product-title{
-
-font-size:20px;
-
-font-weight:700;
-
-color:var(--dark);
-
-margin-bottom:12px;
-
-line-height:1.4;
-
-height:56px;
-
-overflow:hidden;
-
-}
-
-
-/*==============================
-PRODUCT PRICE
-==============================*/
-
-.product-price{
-
-font-size:24px;
-
-font-weight:bold;
-
-color:var(--primary);
-
-margin-bottom:12px;
-
-}
-
-
-/*==============================
-DESCRIPTION
-==============================*/
-
-.product-description{
-
-font-size:15px;
-
-color:var(--gray);
-
-line-height:1.7;
-
-height:72px;
-
-overflow:hidden;
-
-margin-bottom:15px;
-
-}
-
-
-/*==============================
-CATEGORY
-==============================*/
 
 .product-category{
-
-display:inline-block;
-
-padding:8px 16px;
-
-background:#eef4ff;
-
-color:var(--primary);
-
-font-size:14px;
-
-font-weight:600;
-
-border-radius:30px;
-
-margin-bottom:20px;
-
-width:max-content;
-
-}
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 4
-   PRODUCT DETAILS + BUTTONS
-==================================================*/
-
-
-/*==============================
-RATING
-==============================*/
-
-.product-rating{
-
-display:flex;
-
-align-items:center;
-
-gap:6px;
-
-margin-bottom:12px;
-
-font-size:14px;
-
-color:#f59e0b;
-
-font-weight:600;
-
+    display: inline-block;
+    background: rgba(102,126,234,0.1);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-.product-rating span{
-
-color:var(--gray);
-
-font-size:13px;
-
+.product-title{
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
 }
 
-
-/*==============================
-PRICE ROW
-==============================*/
-
-.price-row{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-margin-bottom:14px;
-
+.product-desc{
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-.old-price{
-
-font-size:15px;
-
-color:#9ca3af;
-
-text-decoration:line-through;
-
+.product-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,.05);
 }
 
-.discount{
-
-background:#ef4444;
-
-color:#fff;
-
-padding:3px 8px;
-
-border-radius:20px;
-
-font-size:12px;
-
-font-weight:bold;
-
+.product-price{
+    font-size: 22px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-
-/*==============================
-STOCK
-==============================*/
-
-.stock{
-
-display:inline-block;
-
-padding:6px 12px;
-
-border-radius:20px;
-
-background:#dcfce7;
-
-color:#16a34a;
-
-font-size:13px;
-
-font-weight:600;
-
-margin-bottom:18px;
-
+.btn-buy{
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
 }
 
-
-/*==============================
-BUTTON AREA
-==============================*/
-
-.product-buttons{
-
-margin-top:auto;
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
+.btn-buy:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102,126,234,.4);
 }
 
-
-/*==============================
-WISHLIST
-==============================*/
-
-.wishlist-btn{
-
-width:48px;
-
-height:48px;
-
-border:none;
-
-border-radius:50%;
-
-background:#ff3366;
-
-color:#fff;
-
-font-size:18px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-transition:.30s;
-
+/* ========== LOADING & EMPTY ========== */
+.loading-box, .empty-products{
+    background: var(--white);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    border: 1px solid rgba(255,255,255,0.2);
 }
-
-.wishlist-btn:hover{
-
-background:#e11d48;
-
-transform:scale(1.08);
-
-}
-
-
-/*==============================
-VIEW DETAILS
-==============================*/
-
-.view-btn{
-
-flex:1;
-
-height:48px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:var(--primary);
-
-color:#fff;
-
-border-radius:50px;
-
-font-size:15px;
-
-font-weight:600;
-
-transition:.30s;
-
-}
-
-.view-btn:hover{
-
-background:var(--primary-dark);
-
-}
-
-
-/*==============================
-BUY NOW
-==============================*/
-
-.buy-btn{
-
-flex:1;
-
-height:48px;
-
-border:none;
-
-border-radius:50px;
-
-background:var(--secondary);
-
-color:#fff;
-
-font-size:15px;
-
-font-weight:600;
-
-transition:.30s;
-
-}
-
-.buy-btn:hover{
-
-background:#059669;
-
-}
-
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 5
-   BADGES + LOADING + EMPTY STATE
-==================================================*/
-
-
-/*==============================
-PRODUCT BADGE
-==============================*/
-
-.product-badge{
-
-position:absolute;
-
-top:15px;
-
-left:15px;
-
-background:#ef4444;
-
-color:#fff;
-
-padding:8px 14px;
-
-border-radius:30px;
-
-font-size:12px;
-
-font-weight:700;
-
-letter-spacing:.5px;
-
-box-shadow:0 6px 15px rgba(0,0,0,.15);
-
-z-index:5;
-
-}
-
-
-/*==============================
-NEW BADGE
-==============================*/
-
-.badge-new{
-
-background:#10b981;
-
-}
-
-
-/*==============================
-SALE BADGE
-==============================*/
-
-.badge-sale{
-
-background:#ef4444;
-
-}
-
-
-/*==============================
-HOT BADGE
-==============================*/
-
-.badge-hot{
-
-background:#f59e0b;
-
-}
-
-
-/*==============================
-FEATURED BADGE
-==============================*/
-
-.badge-featured{
-
-background:#2563eb;
-
-}
-
-
-/*==============================
-BEST SELLER
-==============================*/
-
-.badge-best{
-
-background:#7c3aed;
-
-}
-
-
-/*==============================
-LOADING BOX
-==============================*/
 
 .loading-box{
-
-width:100%;
-
-padding:50px;
-
-text-align:center;
-
-font-size:20px;
-
-font-weight:bold;
-
-color:var(--gray);
-
-}
-
-
-/*==============================
-EMPTY PRODUCTS
-==============================*/
-
-.empty-products{
-
-padding:70px 20px;
-
-text-align:center;
-
-background:#fff;
-
-border-radius:20px;
-
-box-shadow:var(--shadow);
-
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .empty-products h2{
-
-font-size:30px;
-
-margin-bottom:15px;
-
-color:var(--dark);
-
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .empty-products p{
-
-font-size:16px;
-
-color:var(--gray);
-
+    color: #777;
 }
 
-
-/*==============================
-FOOTER
-==============================*/
-
+/* ========== FOOTER ========== */
 .products-footer{
-
-margin-top:70px;
-
-padding:30px 20px;
-
-text-align:center;
-
-background:#111827;
-
-color:#fff;
-
-font-size:15px;
-
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 25px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 50px;
 }
 
-.products-footer p{
-
-opacity:.85;
-
-}
-
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 6
-   PREMIUM EFFECTS + ANIMATIONS
-==================================================*/
-
-
-/*==============================
-SMOOTH TRANSITIONS
-==============================*/
-
-.product-card,
-.product-image,
-.view-btn,
-.buy-btn,
-.wishlist-btn,
-.filter-btn,
-.search-box input{
-
-transition:all .35s ease;
-
-}
-
-
-/*==============================
-CARD HOVER
-==============================*/
-
-.product-card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:
-0 20px 45px rgba(0,0,0,.15);
-
-}
-
-
-/*==============================
-IMAGE EFFECT
-==============================*/
-
-.product-card{
-
-overflow:hidden;
-
-}
-
-.product-card:hover .product-image{
-
-transform:scale(1.08);
-
-}
-
-
-/*==============================
-BUTTON PRESS
-==============================*/
-
-.view-btn:active,
-.buy-btn:active,
-.wishlist-btn:active{
-
-transform:scale(.96);
-
-}
-
-
-/*==============================
-SEARCH HOVER
-==============================*/
-
-.search-box input:hover{
-
-border-color:var(--primary);
-
-}
-
-
-/*==============================
-FILTER HOVER
-==============================*/
-
-.filter-btn:hover{
-
-box-shadow:
-
-0 10px 20px
-rgba(37,99,235,.20);
-
-}
-
-
-/*==============================
-SCROLLBAR
-==============================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#eef2f7;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:var(--primary);
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:var(--primary-dark);
-
-}
-
-
-/*==============================
-SELECTION
-==============================*/
-
-::selection{
-
-background:var(--primary);
-
-color:#fff;
-
-}
-
-
-/*==============================
-FADE ANIMATION
-==============================*/
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(25px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-.product-card{
-
-animation:fadeUp .5s ease;
-
-}
-
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 7
-   DESKTOP + LAPTOP + TABLET RESPONSIVE
-==================================================*/
-
-
-/*==============================
-LARGE DESKTOP
-1600px+
-==============================*/
-
-@media (min-width:1600px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(5,1fr);
-
-gap:32px;
-
-}
-
-.container{
-
-max-width:1700px;
-
-}
-
-}
-
-
-/*==============================
-DESKTOP
-1200px - 1599px
-==============================*/
-
-@media (min-width:1200px) and (max-width:1599px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(4,1fr);
-
-}
-
-}
-
-
-/*==============================
-LAPTOP
-992px - 1199px
-==============================*/
-
-@media (min-width:992px) and (max-width:1199px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(3,1fr);
-
-}
-
-.page-title{
-
-font-size:34px;
-
-}
-
-}
-
-
-/*==============================
-TABLET
-768px - 991px
-==============================*/
-
-@media (min-width:768px) and (max-width:991px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:24px;
-
-}
-
-.page-title{
-
-font-size:30px;
-
-}
-
-.page-subtitle{
-
-font-size:15px;
-
-}
-
-.container{
-
-padding:80px 18px 35px;
-
-}
-
-.search-box{
-
-max-width:100%;
-
-}
-
-.filter-bar{
-
-justify-content:center;
-
-}
-
-}
-
-/*==================================================
-   PRODUCTS PAGE CSS
-   PART 8
-   MOBILE RESPONSIVE + FINAL POLISH
-==================================================*/
-
-
-/*==============================
-MOBILE
-0px - 767px
-==============================*/
-
-@media (max-width:767px){
-
-.container{
-
-padding:75px 15px 30px;
-
-}
-
-.page-title{
-
-font-size:26px;
-
-line-height:1.3;
-
-}
-
-.page-subtitle{
-
-font-size:14px;
-
-padding:0 8px;
-
-}
-
-.search-box{
-
-margin:25px auto;
-
-}
-
-.search-box input{
-
-height:52px;
-
-font-size:15px;
-
-padding-left:48px;
-
-}
-
-.search-box i{
-
-left:16px;
-
-font-size:16px;
-
-}
-
-.filter-bar{
-
-justify-content:flex-start;
-
-overflow-x:auto;
-
-flex-wrap:nowrap;
-
-padding-bottom:10px;
-
-scrollbar-width:none;
-
-}
-
-.filter-bar::-webkit-scrollbar{
-
-display:none;
-
-}
-
-.filter-btn{
-
-flex:0 0 auto;
-
-padding:10px 18px;
-
-font-size:14px;
-
-}
-
-.products-grid{
-
-grid-template-columns:1fr;
-
-gap:20px;
-
-}
-
-.product-card{
-
-border-radius:18px;
-
-}
-
-.product-image{
-
-height:220px;
-
-}
-
-.product-content{
-
-padding:18px;
-
-}
-
-.product-title{
-
-font-size:18px;
-
-height:auto;
-
-}
-
-.product-price{
-
-font-size:22px;
-
-}
-
-.product-description{
-
-height:auto;
-
-min-height:60px;
-
-}
-
-.product-buttons{
-
-flex-wrap:wrap;
-
-}
-
-.wishlist-btn{
-
-width:46px;
-
-height:46px;
-
-}
-
-.view-btn,
-
-.buy-btn{
-
-flex:1 1 calc(50% - 5px);
-
-height:46px;
-
-font-size:14px;
-
-}
-
-.back-btn{
-
-width:44px;
-
-height:44px;
-
-font-size:20px;
-
-top:15px;
-
-left:15px;
-
-}
-
-.products-footer{
-
-margin-top:40px;
-
-padding:25px 15px;
-
-font-size:14px;
-
-}
-
-}
-
-
-/*==============================
-FINAL POLISH
-==============================*/
-
-.product-card{
-
-border:1px solid rgba(0,0,0,.04);
-
-}
-
-.product-card:hover{
-
-border-color:rgba(37,99,235,.20);
-
-}
-
-.product-image{
-
-background:#f3f4f6;
-
-}
-
-.buy-btn,
-.view-btn,
-.wishlist-btn{
-
-user-select:none;
-
-}
-
-html{
-
-scroll-behavior:smooth;
-
+/* ========== MOBILE ========== */
+@media (max-width: 768px){
+    .container{ padding: 80px 15px 20px; }
+    .page-title{ font-size: 28px; }
+    .page-header{ padding: 30px 20px; }
+    .products-grid{ grid-template-columns: 1fr; gap: 20px; }
+    .filter-bar{ gap: 8px; }
+    .filter-btn{ padding: 10px 18px; font-size: 13px; }
 }
