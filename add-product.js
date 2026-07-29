@@ -1,21 +1,10 @@
 /*==================================================
- CFA AI ADMIN ADD PRODUCT JS v3.0
- FIREBASE + STORAGE + UPLOAD + URL - NO CRASH
+ CFA AI ADMIN ADD PRODUCT JS v3.1
+ COMPRESS IMAGE + NO CRASH FIX
 ==================================================*/
 
-import { db, storage } from "./firebase.js"; // storage بھی امپورٹ
-
-import {
-    ref,
-    push,
-    set
-} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
-
-import {
-    ref as sRef,
-    uploadBytes,
-    getDownloadURL
-} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js"; // نئے
+import { db } from "./firebase.js";
+import { ref, push, set } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
 
 const productForm = document.getElementById("productForm");
 const imageUpload = document.getElementById("imageUpload");
@@ -23,15 +12,12 @@ const imageUrl = document.getElementById("imageUrl");
 const imagePreview = document.getElementById("imagePreview");
 const finalImage = document.getElementById("finalImage");
 
-let uploadedFile = null; // فائل کو یہاں سیو کریں گے
-
 /*==============================
 TAB SWITCH
 ==============================*/
 window.showTab = function(tab) {
     document.querySelectorAll('.img-tab').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
-
     if(tab === 'upload'){
         document.querySelector('.img-tab:nth-child(1)').classList.add('active');
         document.getElementById('uploadTab').classList.add('active');
@@ -42,25 +28,50 @@ window.showTab = function(tab) {
 }
 
 /*==============================
+IMAGE COMPRESS FUNCTION
+==============================*/
+function compressImage(file, maxWidth = 800, quality = 0.7) {
+    return new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (event) => {
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                let width = img.width;
+                let height = img.height;
+                if (width > maxWidth) {
+                    height *= maxWidth / width;
+                    width = maxWidth;
+                }
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                resolve(canvas.toDataURL('image/jpeg', quality)); // 70% quality
+            };
+        };
+    });
+}
+
+/*==============================
 IMAGE PREVIEW
 ==============================*/
-imageUpload.addEventListener("change", (e)=>{
-    uploadedFile = e.target.files[0]; // فائل سیو کر لی
-    if(uploadedFile){
-        const reader = new FileReader();
-        reader.onload = (event)=>{
-            imagePreview.src = event.target.result; // صرف Preview کے لیے
-            finalImage.value = "uploading"; // Flag
-        }
-        reader.readAsDataURL(uploadedFile);
+imageUpload.addEventListener("change", async (e)=>{
+    const file = e.target.files[0];
+    if(file){
+        alert("تصویر Compress ہو رہی ہے..."); // بتانے کے لیے
+        const compressed = await compressImage(file); // Compress کر دی
+        imagePreview.src = compressed;
+        finalImage.value = compressed; // اب یہ 200KB سے کم ہوگی
     }
 });
 
 imageUrl.addEventListener("input", (e)=>{
-    uploadedFile = null; // URL ہے تو فائل null
     if(e.target.value.trim()!== ""){
         imagePreview.src = e.target.value;
-        finalImage.value = e.target.value; // سیدھا URL
+        finalImage.value = e.target.value;
     } else {
         imagePreview.src = "images/no-image.png";
         finalImage.value = "";
@@ -68,46 +79,31 @@ imageUrl.addEventListener("input", (e)=>{
 });
 
 /*==============================
-ADD PRODUCT TO FIREBASE
+ADD PRODUCT
 ==============================*/
-productForm.addEventListener("submit", async (e)=>{
+productForm.addEventListener("submit", (e)=>{
     e.preventDefault();
 
     const title = document.getElementById("productName").value.trim();
     const price = document.getElementById("productPrice").value;
-    let image = finalImage.value;
+    const image = finalImage.value;
 
     if(title === "" || price === "" || price <= 0){
         alert("Name اور Price لازمی ہیں ⚠️");
         return;
     }
-
-    // اگر Upload والی ہے تو Storage میں اپلوڈ کرو
-    if(uploadedFile){
-        try{
-            alert("تصویر اپلوڈ ہو رہی ہے... تھوڑا انتظار کریں");
-            const storageRef = sRef(storage, `products/${Date.now()}_${uploadedFile.name}`);
-            const snapshot = await uploadBytes(storageRef, uploadedFile);
-            image = await getDownloadURL(snapshot.ref); // لنک مل گیا
-        } catch(err){
-            alert("تصویر اپلوڈ فیل: " + err.message);
-            return;
-        }
-    }
-
-    if(image === "" || image === "uploading"){
-        alert("براہ کرم تصویر Upload کریں یا URL پیسٹ کریں ⚠️");
+    if(image === ""){
+        alert("تصویر لازمی ہے ⚠️");
         return;
     }
 
     const productRef = push(ref(db,"products"));
 
     const product = {
-        title: title,
-        price: price,
+        title, price,
         oldPrice: document.getElementById("oldPrice").value,
         discount: document.getElementById("discount").value,
-        image: image, // اب یہاں صرف لنک جائے گا
+        image, // اب یہ Compress ہو چکی ہے
         category: document.getElementById("productCategory").value,
         badge: document.getElementById("productBadge").value,
         stock: document.getElementById("productStock").value,
@@ -117,14 +113,18 @@ productForm.addEventListener("submit", async (e)=>{
     };
 
     set(productRef, product)
-.then(()=>{
+   .then(()=>{
         alert("Product Added Successfully ✅");
         productForm.reset();
         imagePreview.src = "images/no-image.png";
         finalImage.value = "";
-        uploadedFile = null;
         showTab('upload');
         window.scrollTo(0,0);
+    })
+   .catch((error)=>{
+        alert("Error: " + error.message);
+    });
+});
     })
 .catch((error)=>{
         alert("Firebase Error: " + error.message);
