@@ -1,8 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-
 import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
-
 import { getDatabase } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js"; // نئی لائن
 
 const firebaseConfig = {
   apiKey: "AIzaSyA65Nzil2LTMZbMWU5AIGqsKDd24tEuDAM",
@@ -16,6 +15,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
-
-export const db = getDatabase(app);
+export const auth = getAuth(app); // پرانا جیسا
+export const db = getDatabase(app); // پرانا جیسا
+export const storage = getStorage(app); // نئی لائن - پروڈکٹ اپلوڈ کے لیے
